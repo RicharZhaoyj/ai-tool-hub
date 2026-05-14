@@ -12,9 +12,11 @@ export default function AffiliateLink({ tool }: AffiliateLinkProps) {
 
   // 构建最终跳转链接：优先用联盟链接，否则用官网链接
   const getTargetUrl = (): string => {
-    if (tool.affiliateUrl) {
+    if (tool.affiliateUrl && !tool.affiliateUrl.includes('YOUR_ID') && !tool.affiliateUrl.includes('XXXXX')) {
+      // 有效联盟链接：拼接目标网址
       return tool.affiliateUrl + encodeURIComponent(tool.officialUrl);
     }
+    // 无效或未配置联盟链接 → 直接跳官网
     return tool.officialUrl;
   };
 

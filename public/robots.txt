@@ -1,0 +1,6 @@
+# AI Tool Hub - Robots.txt
+
+User-agent: *
+Allow: /
+
+Sitemap: https://tools.link.cn/sitemap.xml

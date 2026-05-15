@@ -31,3 +31,35 @@ export interface Category {
   color: string;
   description: string;
 }
+
+// 评测文章类型定义
+export interface Review {
+  id: string;
+  slug: string;
+  title: string;
+  subtitle: string;
+  description: string; // SEO描述, 150-160字符
+  content: ReviewSection[]; // 评测章节内容
+  tools: string[]; // 涉及的工具slug列表
+  category: string; // 主分类
+  tags: string[];
+  author: string;
+  publishedAt: string;
+  updatedAt: string;
+  readingTime: number; // 阅读时间(分钟)
+  featured: boolean;
+}
+
+export interface ReviewSection {
+  type: 'heading' | 'text' | 'comparison-table' | 'pros-cons' | 'verdict' | 'pricing-table' | 'callout';
+  level?: 1 | 2 | 3; // heading级别
+  title?: string;
+  content?: string;
+  rows?: { tool: string; values: (string | number)[] }[]; // comparison table
+  headers?: string[]; // comparison table headers
+  pros?: string[];
+  cons?: string[];
+  toolName?: string; // pros-cons对应的工具名
+  verdicts?: { persona: string; recommendation: string; reason: string }[];
+  calloutType?: 'tip' | 'warning' | 'info';
+}

@@ -8,6 +8,7 @@ import CategoryNav from '@/components/CategoryNav';
 import ToolGrid from '@/components/ToolGrid';
 import { tools, getFeaturedTools, getHotTools, searchTools, getToolsByCategory } from '@/data/tools';
 import { categories } from '@/data/categories';
+import Link from 'next/link';
 
 type SortType = 'default' | 'rating' | 'newest' | 'hot';
 
@@ -111,6 +112,45 @@ function HomePageContent() {
               <ToolGrid tools={featuredTools} />
             </section>
           )}
+
+          {/* Reviews Section */}
+          <section className="mt-16" id="reviews">
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-2">
+                <h2 className="text-xl font-bold text-gray-900 dark:text-white">📝 深度评测</h2>
+                <span className="text-sm text-gray-400">真实体验 + 数据对比</span>
+              </div>
+              <Link href="/reviews" className="text-sm font-medium text-violet-600 hover:text-violet-700 transition-colors flex items-center gap-1">
+                查看全部
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </Link>
+            </div>
+            {/* Latest reviews - inline preview since page is 'use client' */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Link href="/review/chatgpt-vs-claude-vs-gemini-2026" className="group block bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-950/20 dark:to-purple-950/20 rounded-2xl border border-violet-200 dark:border-violet-800 p-6 hover:border-violet-400 transition-all">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="px-2 py-0.5 text-xs font-bold bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-full">热门</span>
+                  <span className="text-xs text-gray-400">12 min read</span>
+                </div>
+                <h3 className="font-bold text-gray-900 group-hover:text-violet-600 transition-colors mb-2">ChatGPT vs Claude vs Gemini：2026终极对决</h3>
+                <p className="text-sm text-gray-500 mb-3">三大AI助手全面横评，从推理能力到编程效率，实测100+任务告诉你该选谁</p>
+                <div className="flex gap-2">
+                  {['chatgpt', 'claude', 'gemini'].map(t => (<span key={t} className="px-2 py-0.5 text-xs bg-white/80 dark:bg-gray-800/80 text-gray-600 rounded">{t}</span>))}
+                </div>
+              </Link>
+              <Link href="/review/cursor-vs-copilot-vs-windsurf-2026" className="group block bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20 rounded-2xl border border-blue-200 dark:border-blue-800 p-6 hover:border-blue-400 transition-all">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="px-2 py-0.5 text-xs font-bold bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-full">开发者必看</span>
+                  <span className="text-xs text-gray-400">10 min read</span>
+                </div>
+                <h3 className="font-bold text-gray-900 group-hover:text-violet-600 transition-colors mb-2">Cursor vs Copilot vs Windsurf：AI编程工具王者之争</h3>
+                <p className="text-sm text-gray-500 mb-3">三款主流AI代码编辑器全方位对比，谁才是真正的效率神器？</p>
+                <div className="flex gap-2">
+                  {['Cursor', 'Copilot', 'Windsurf'].map(t => (<span key={t} className="px-2 py-0.5 text-xs bg-white/80 dark:bg-gray-800/80 text-gray-600 rounded">{t}</span>))}
+                </div>
+              </Link>
+            </div>
+          </section>
         </>
       )}
     </div>

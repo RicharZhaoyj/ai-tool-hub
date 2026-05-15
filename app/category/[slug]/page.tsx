@@ -1,23 +1,24 @@
 import { Metadata } from 'next';
-import { tools, getToolsByCategory } from '@/data/tools';
+import { getToolsByCategory } from '@/data/tools';
 import { categories, getCategoryBySlug } from '@/data/categories';
 import { notFound } from 'next/navigation';
 import CategoryNav from '@/components/CategoryNav';
 import ToolGrid from '@/components/ToolGrid';
 
 interface CategoryPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
   return categories.map((cat) => ({ slug: cat.slug }));
 }
 
-export function generateMetadata({ params }: CategoryPageProps): Metadata {
-  const category = getCategoryBySlug(params.slug);
+export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const category = getCategoryBySlug(slug);
   if (!category) return {};
 
-  const categoryTools = getToolsByCategory(params.slug);
+  const categoryTools = getToolsByCategory(slug);
 
   return {
     title: `${category.nameZh}（${category.nameEn}）AI工具推荐`,
@@ -29,11 +30,12 @@ export function generateMetadata({ params }: CategoryPageProps): Metadata {
   };
 }
 
-export default function CategoryPage({ params }: CategoryPageProps) {
-  const category = getCategoryBySlug(params.slug);
+export default async function CategoryPage({ params }: CategoryPageProps) {
+  const { slug } = await params;
+  const category = getCategoryBySlug(slug);
   if (!category) notFound();
 
-  const categoryTools = getToolsByCategory(params.slug);
+  const categoryTools = getToolsByCategory(slug);
   const allCategories = categories;
 
   return (
@@ -69,7 +71,7 @@ export default function CategoryPage({ params }: CategoryPageProps) {
         <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">📂 其他分类</h2>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
           {allCategories
-            .filter((c) => c.slug !== params.slug)
+            .filter((c) => c.slug !== slug)
             .map((cat) => (
               <a
                 key={cat.slug}

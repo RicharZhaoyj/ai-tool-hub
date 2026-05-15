@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { Tool } from '@/lib/types';
 import { cn, getPricingBadgeColor, getPricingLabel, getRatingColor, formatPrice } from '@/lib/utils';

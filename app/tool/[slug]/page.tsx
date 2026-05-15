@@ -7,15 +7,16 @@ import ToolGrid from '@/components/ToolGrid';
 import AffiliateLink from '@/components/AffiliateLink';
 
 interface ToolPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 export function generateStaticParams() {
   return tools.map((tool) => ({ slug: tool.slug }));
 }
 
-export function generateMetadata({ params }: ToolPageProps): Metadata {
-  const tool = getToolBySlug(params.slug);
+export async function generateMetadata({ params }: ToolPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const tool = getToolBySlug(slug);
   if (!tool) return {};
 
   return {
@@ -51,8 +52,9 @@ export function generateMetadata({ params }: ToolPageProps): Metadata {
   };
 }
 
-export default function ToolDetailPage({ params }: ToolPageProps) {
-  const tool = getToolBySlug(params.slug);
+export default async function ToolDetailPage({ params }: ToolPageProps) {
+  const { slug } = await params;
+  const tool = getToolBySlug(slug);
   if (!tool) notFound();
 
   const category = getCategoryBySlug(tool.category);

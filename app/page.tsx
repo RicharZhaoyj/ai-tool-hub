@@ -127,26 +127,26 @@ function HomePageContent() {
             </div>
             {/* Latest reviews - inline preview since page is 'use client' */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Link href="/review/suno-vs-udio-ai-music-battle-2026" className="group block bg-gradient-to-br from-pink-50 to-violet-50 dark:from-pink-950/20 dark:to-violet-950/20 rounded-2xl border border-pink-200 dark:border-pink-800 p-6 hover:border-pink-400 transition-all">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="px-2 py-0.5 text-xs font-bold bg-pink-100 dark:bg-pink-900/30 text-pink-600 dark:text-pink-400 rounded-full">NEW</span>
+                  <span className="text-xs text-gray-400">9 min read</span>
+                </div>
+                <h3 className="font-bold text-gray-900 group-hover:text-pink-600 transition-colors mb-2">Suno vs Udio：2026年AI音乐生成终极横评</h3>
+                <p className="text-sm text-gray-500 mb-3">两款最火AI音乐生成器全方位对比，从音质、风格到价格，哪个更值？</p>
+                <div className="flex gap-2">
+                  {['Suno', 'Udio', 'ElevenLabs'].map(t => (<span key={t} className="px-2 py-0.5 text-xs bg-white/80 dark:bg-gray-800/80 text-gray-600 rounded">{t}</span>))}
+                </div>
+              </Link>
               <Link href="/review/chatgpt-vs-claude-vs-gemini-2026" className="group block bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-950/20 dark:to-purple-950/20 rounded-2xl border border-violet-200 dark:border-violet-800 p-6 hover:border-violet-400 transition-all">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="px-2 py-0.5 text-xs font-bold bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-full">热门</span>
                   <span className="text-xs text-gray-400">12 min read</span>
                 </div>
-                <h3 className="font-bold text-gray-900 group-hover:text-violet-600 transition-colors mb-2">ChatGPT vs Claude vs Gemini：2026终极对决</h3>
-                <p className="text-sm text-gray-500 mb-3">三大AI助手全面横评，从推理能力到编程效率，实测100+任务告诉你该选谁</p>
+                <h3 className="font-bold text-gray-900 group-hover:text-violet-600 transition-colors mb-2">ChatGPT vs Claude vs Gemini：2026年AI助手终极对决</h3>
+                <p className="text-sm text-gray-500 mb-3">三大AI巨头全面横评，从推理能力到编程效率，实测100+任务告诉你该选谁</p>
                 <div className="flex gap-2">
                   {['chatgpt', 'claude', 'gemini'].map(t => (<span key={t} className="px-2 py-0.5 text-xs bg-white/80 dark:bg-gray-800/80 text-gray-600 rounded">{t}</span>))}
-                </div>
-              </Link>
-              <Link href="/review/cursor-vs-copilot-vs-windsurf-2026" className="group block bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20 rounded-2xl border border-blue-200 dark:border-blue-800 p-6 hover:border-blue-400 transition-all">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="px-2 py-0.5 text-xs font-bold bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-full">开发者必看</span>
-                  <span className="text-xs text-gray-400">10 min read</span>
-                </div>
-                <h3 className="font-bold text-gray-900 group-hover:text-violet-600 transition-colors mb-2">Cursor vs Copilot vs Windsurf：AI编程工具王者之争</h3>
-                <p className="text-sm text-gray-500 mb-3">三款主流AI代码编辑器全方位对比，谁才是真正的效率神器？</p>
-                <div className="flex gap-2">
-                  {['Cursor', 'Copilot', 'Windsurf'].map(t => (<span key={t} className="px-2 py-0.5 text-xs bg-white/80 dark:bg-gray-800/80 text-gray-600 rounded">{t}</span>))}
                 </div>
               </Link>
             </div>

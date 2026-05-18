@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { tools } from '@/data/tools';
 import { categories } from '@/data/categories';
+import { reviews } from '@/data/reviews';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://tools.link.cn';
@@ -12,6 +13,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 1,
+    },
+    {
+      url: `${baseUrl}/reviews`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
     },
   ];
 
@@ -31,5 +38,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...categoryPages, ...toolPages];
+  // Review detail pages
+  const reviewPages: MetadataRoute.Sitemap = reviews.map((review) => ({
+    url: `${baseUrl}/review/${review.slug}`,
+    lastModified: new Date(review.updatedAt),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }));
+
+  return [...staticPages, ...categoryPages, ...toolPages, ...reviewPages];
 }

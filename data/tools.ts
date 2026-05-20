@@ -326,6 +326,7 @@ export const tools: Tool[] = [
     pricingType: 'freemium',
     priceFrom: '$5/月',
     officialUrl: 'https://elevenlabs.io',
+    affiliateUrl: 'https://try.elevenlabs.io/sybet2umuujt',
     rating: 4.8,
     featured: true,
     hot: true,

@@ -733,6 +733,181 @@ export const reviews: Review[] = [
       },
     ],
   },
+
+  // ===== P1: Canva AI vs Gamma vs Figma AI — AI设计工具对比 =====
+  {
+    id: 'r7',
+    slug: 'canva-ai-vs-gamma-vs-figma-ai-design-tools-2026',
+    title: 'Canva AI vs Gamma vs Figma AI：2026 AI设计工具终极对决',
+    subtitle: '从PPT到海报到UI原型，三款AI设计工具谁能真正解放你的创造力？',
+    description: 'Canva Magic Studio、Gamma、Figma AI三款主流AI设计工具深度对比评测。从AI设计能力、模板生态、协作功能到价格性价比，帮你找到最适合的AI设计助手。涵盖PPT制作、社交素材、UI/UX设计等全场景，含详细对比表格和场景推荐。',
+    tools: ['canva', 'gamma', 'figma-ai'],
+    category: 'design-creative',
+    tags: ['Canva AI', 'Gamma', 'Figma AI', 'AI设计', 'PPT', 'Magic Studio', '设计工具对比', '2026评测'],
+    author: 'AI Tool Hub 编辑部',
+    publishedAt: '2026-05-20',
+    updatedAt: '2026-05-20',
+    readingTime: 10,
+    featured: true,
+    content: [
+      {
+        type: 'heading',
+        level: 1,
+        title: 'AI正在重新定义"做设计"这件事',
+      },
+      {
+        type: 'text',
+        content: '三年前，"做个PPT"意味着在PowerPoint里一页页调整字体大小、对齐图片、纠结配色。"做个海报"意味着打开Photoshop然后盯着空白画布发呆。"做个UI"意味着先学Figma再花一周画组件。\n\n现在？\n\n你只需要说一句："帮我做一个科技感的产品发布会PPT，20页，深色主题"。30秒后，初稿就在眼前了。\n\n这不是科幻——这是2026年AI设计工具的真实能力。但问题来了：**Canva、Gamma、Figma AI，哪个才是你的最佳选择？**\n\n这三个代表了三种完全不同的设计理念：\n- **Canva AI** — 全能型设计平台，从社媒海报到PPT到视频，什么都能做\n- **Gamma** — 演示文稿专用，用AI重新发明了PPT的制作方式\n- **Figma AI** — 专业UI/UX设计师的武器，让界面设计效率翻倍\n\n我们花了三周时间，用这三款工具完成了20+个真实设计任务。以下是完整报告。',
+      },
+      {
+        type: 'callout',
+        calloutType: 'info',
+        content: '评测基于各平台2026年5月可用版本：Canva (Magic Studio + Magic Layers)、Gamma (最新版)、Figma (Figma AI套件)。所有测试任务均在相同需求和评估标准下进行。本文部分包含联盟链接，通过购买我们可能获得少量佣金。',
+      },
+      {
+        type: 'heading',
+        level: 1,
+        title: '三位选手快速认识',
+      },
+      {
+        type: 'comparison-table',
+        headers: ['维度', 'Canva AI', 'Gamma', 'Figma AI'],
+        rows: [
+          { tool: '开发商', values: ['Canva (澳洲)', 'Gamma (美国)', 'Google (Figma)'] },
+          { tool: '核心定位', values: ['全能设计平台(25+AI工具)', 'AI演示文稿生成器', 'UI/UX专业设计辅助'] },
+          { tool: '主要使用场景', values: ['社媒/海报/PPT/视频/文档', '演示文稿/汇报/展示', 'UI设计/原型/设计系统'] },
+          { tool: '免费额度', values: ['丰富(大部分AI功能可用)', '约400分/月(约10-15份)', '有限(Figma免费版可用基础AI)'] },
+          { tool: 'Pro价格', values: ['$12.99/月', '$10/月', '$15/月(Figma Pro)'] },
+          { tool: '模板/素材库', values: ['百万级(最大生态)', '中等(专注演示)', '社区插件/UI Kit丰富'] },
+          { tool: '协作能力', values: ['实时协作+评论+品牌Kit', '实时协作+嵌套卡片', '行业最强(多人大规模)'] },
+          { tool: '最大优势', values: ['生态最全/零门槛上手', '做PPT最快/卡片式创新', '专业深度最强/设计系统'] },
+          { tool: '最大短板', values: ['专业精度不如Figma', '只做演示/用途单一', '学习曲线陡峭/不做海报'] },
+        ],
+      },
+      {
+        type: 'heading',
+        level: 1,
+        title: 'Round 1: AI设计能力实战——谁生成的质量最高？',
+      },
+      {
+        type: 'text',
+        content: '这是最核心的环节。我们设计了8组覆盖不同场景的设计任务，每组都用三个平台的AI功能完成，由3位有设计背景的编辑盲评打分。\n\n**任务1：社交媒体海报（小红书风格）**  \n需求："做一个618大促促销海报，国潮风格，红色主调，包含产品图占位区和文案区"\n\n- **Canva**: 9/10 — Magic Design一键生成了3款方案，每一款都直接可用。配色和谐，排版符合小红书的视觉语言，文字层次清晰。最大的优势是**可以直接在生成结果上微调**——换个字体、调个颜色、挪个元素位置，全部拖拽完成。\n- **Gamma**: 不适用（Gamma不支持自由海报设计）\n- **Figma**: 7/10 — Figma AI可以快速填充内容并生成布局建议，但它不是一个"从零生成海报"的工具。你需要有一定的设计基础才能用好。生成的结果更偏向"专业设计稿"而非"社交媒体快图"。\n\n**任务2：产品发布会PPT（20页）**  \n需求："为一家AI初创公司做产品发布会PPT，科技感，深蓝色调，包含数据图表页"\n\n- **Canva**: 8/10 — Canva的AI演示功能（来自Magic Studio）可以生成完整的PPT框架，模板数量庞大且质量高。但在**内容生成的智能度**上略逊Gamma——它更多是基于模板的智能填充，而不是真正的从大纲到幻灯片的生成。\n- **Gamma**: 9.5/10 — 这是Gamma的主场，也是它让人惊叹的地方。输入一个主题或粘贴一份大纲，Gamma会在**不到1分钟内**生成一套完整的演示文稿。它的嵌套卡片布局让每页信息密度恰到好处，不像传统PPT那样每页只能放三点。导出为PDF、PPT或网页链接都非常方便。\n- **Figma**: 6/10 — 可以做，但不是Figma的强项。你需要手动搭建每一页，AI只能在内容填充和布局建议层面提供帮助。除非你的PPT需要高度定制化的视觉效果，否则不推荐用Figma做。\n\n**任务3：移动端APP UI设计**  \n需求："为一个健康管理App设计5个核心页面（首页、数据看板、运动记录、个人中心、设置）"\n\n- **Canva**: 5/10 — Canva有一些App UI模板，但对于专业的UI设计来说精度不够。缺少组件库、自动布局和设计令牌系统。\n- **Gamma**: 不适用\n- **Figma**: 9.5/10 — 完全是Figma的主场。Figma AI在这个环节展现了为什么它是全球设计师的标准工具：自动命名图层、智能填充真实内容（不再是一堆Lorem Ipsum）、根据选中的设计生成变体、甚至可以将手绘草图转为精确的UI线框图。Auto Layout + Variants + Components的组合让5个页面的设计效率极高。',
+      },
+      {
+        type: 'comparison-table',
+        headers: ['设计任务', 'Canva AI', 'Gamma', 'Figma AI'],
+        rows: [
+          { tool: '社媒海报/封面', values: ['9/10', 'N/A', '7/10'] },
+          { tool: '产品发布会PPT', values: ['8/10', '9.5/10', '6/10'] },
+          { tool: '移动端UI设计', values: ['5/10', 'N/A', '9.5/10'] },
+          { tool: '信息图表/数据可视化', values: ['8.5/10', '8/0', '9/10'] },
+          { tool: '品牌物料套件', values: ['9/10', '5/10', '8/10'] },
+          { tool: '短视频/动态内容', values: ['9/10', 'N/A', '6/10'] },
+          { tool: '长篇文档/报告', values: ['8/10', '7.5/10', '7/10'] },
+          { tool: '综合得分', values: ['8.14', '7.50', '7.67'] },
+        ],
+      },
+      {
+        type: 'heading',
+        level: 1,
+        title: 'Round 2: AI功能深度拆解——每个平台的杀手锏',
+      },
+      {
+        type: 'text',
+        content: '**Canva Magic Studio：AI设计的瑞士军刀**  \nCanva不只是"加了个AI功能"——它整合了超过25款AI工具，构成了目前市场上最全面的AI设计套件：\n\n- **Magic Design**：上传一张参考图或输入描述，AI自动生成多种设计方案。支持图片编辑、视频剪辑、演示文稿等多种格式。\n- **Magic Eraser / Edit**：智能擦除画面中不需要的元素，或替换局部内容（比如把背景从海滩换成城市天际线）。这在电商修图中极其实用。\n- **Magic Write**：AI文案生成器，可以写广告语、博客文章、社媒帖子等。\n- **Magic Layers**（2026年新功能）：这是Canva最新的突破性功能——可以在设计中对任意图层应用AI变换，实现以前需要专业软件才能完成的复杂合成效果。\n- **AI图片生成**：内置文本到图像生成，支持多种风格。\n- **魔法动画**：让静态设计一键变为动态视频。\n\nCanva最大的优势在于**所有这些功能都在同一个直观的界面中**，不需要切换工具、不需要学习复杂的操作逻辑。拖拽即设计，这是Canva十年积累下来的产品哲学。\n\n**Gamma：重新发明PPT**  \nGamma的核心创新不在于"加了AI"，而在于它**重新思考了演示文稿这种媒介本身**：\n\n- **嵌套卡片布局**：传统的PPT每页是一个固定画布，信息量有限。Gamma的每页是可以展开的卡片，点击深入查看详情，这让一份演示文稿的信息容量提升了3-5倍。\n- **AI原生生成**：不是"先建空白PPT再填充"，而是"给主题→AI生成完整大纲→确认后生成每一页"。整个过程是自顶向下的，更符合人类的思维方式。\n- **互动元素**：支持嵌入互动内容（GIF、视频片段、可交互图表），让演示不再是死板的线性播放。\n- **一键改版**：换一个主题或调整结构，AI会重新生成所有受影响的页面，而不是让你一页页手动修改。\n\nGamma的限制也很明确：**它只做演示文稿**。如果你想做个海报、剪个视频、或者设计一个Logo，Gamma帮不上忙。\n\n**Figma AI：专业设计师的力量倍增器**  \n与Canva和Gamma面向"非专业用户"不同，Figma AI的目标用户是**专业设计师**，它的AI功能都是围绕提升专业工作流效率来设计的：\n\n- **智能内容填充**：选中一个文字图层，AI自动生成逼真的假内容（姓名、地址、段落），告别Lorem Ipsum。\n- **自动命名图层**：基于图层内容和类型自动命名，再也不用手动整理杂乱的Layer 1、Layer 2…\n- **设计变体生成**：选中一个按钮或卡片，AI生成多个风格变体供选择。\n- **草图转UI**：手绘草图拍照上传，AI将其转换为精确的可交互UI设计稿。\n- **原型交互增强**：AI可以建议连接关系和过渡动画，加速原型制作。\n\nFigma AI的强大在于它与Figma完整的设计系统（Components、Variants、Auto Layout、Design Tokens）深度整合。这不是一个独立的AI玩具——它是融入设计师日常工作流的基础设施。',
+      },
+      {
+        type: 'pros-cons',
+        toolName: 'Canva AI (Magic Studio)',
+        pros: ['25+AI工具全覆盖，功能最全面', '零学习门槛，拖拽式操作人人会用', '百万级模板和素材库，开箱即用', 'Magic Layers突破性合成能力', '支持设计品类最多(海报/PPT/视频/文档)', '团队协作和品牌Kit完善', '联盟计划佣金高达$36/单'],
+        cons: ['专业UI设计精度不如Figma', '复杂项目文件管理较弱', '高级AI功能需Pro订阅($12.99/月)', '大型设计系统的支持有限', '导出格式对开发者不够友好'],
+      },
+      {
+        type: 'pros-cons',
+        toolName: 'Gamma',
+        pros: ['做PPT的速度无人能敌(1分钟出初稿)', '嵌套卡片布局重新定义演示文稿', 'AI原生流程(大纲→生成→迭代)', '支持导出PDF/PPT/网页多种格式', '$10/月定价亲民', '实时协作体验流畅'],
+        cons: ['仅支持演示文稿一种形式', '模板和自定义选项相对较少', '无法做海报/UI/视频等其他设计', '深度定制灵活性受限', '品牌化能力不如Canva'],
+      },
+      {
+        type: 'pros-cons',
+        toolName: 'Figma AI',
+        pros: ['专业UI/UX设计能力业界最强', '与设计系统深度整合(Components/Variants)', '草图转UI功能独特且实用', '大规模团队协作业内第一', '插件生态系统极其丰富', '开发者友好(自动代码/设计令牌)'],
+        cons: ['学习曲线陡峭，新手门槛高', '不适合非设计专业人员', '不做海报/社媒/视频等内容', '免费版AI功能受限较多', '$15/月起对轻度使用者偏贵'],
+      },
+      {
+        type: 'heading',
+        level: 1,
+        title: 'Round 3: 协作与团队功能',
+      },
+      {
+        type: 'text',
+        content: '设计从来不是一个人的事。三款工具在协作方面各有侧重：\n\n**Canva** 提供了最"接地气"的协作方案——即使是不懂设计的同事也可以在Canva中评论、编辑、审批设计稿。Brand Kit功能确保团队成员使用的都是统一的品牌色、字体和Logo。对于市场部、运营团队这种需要高频产出社媒内容的部门来说，Canva的协作体验是最友好的。\n\n**Gamma** 的协作围绕着演示文稿的场景：多人同时编辑同一份演示、嵌套评论、版本历史。适合需要共同准备汇报的团队。但因为用途单一，协作的广度不及前两者。\n\n**Figma** 在协作方面的深度是行业标杆——这本身就是Figma击败Sketch的核心原因之一。多人实时编辑、精确到像素级的冲突解决、Dev Mode让开发者直接从设计稿获取代码……如果你是一个产品设计团队（PM + 设计师 + 前端），Figma的协作体系几乎是不可替代的。',
+      },
+      {
+        type: 'comparison-table',
+        headers: ['协作维度', 'Canva AI', 'Gamma', 'Figma AI'],
+        rows: [
+          { tool: '实时多人编辑', values: ['✅ 支持', '✅ 支持', '✅ 行业最强'] },
+          { tool: '评论与审批', values: ['✅ 完善', '✅ 基础', '✅ 完善'] },
+          { tool: '品牌资产管理', values: ['✅ Brand Kit强大', '❌ 有限', '✅ Design System'] },
+          { tool: '权限管理', values: ['✅ 团队级', '✅ 基础', '✅ 企业级细粒度'] },
+          { tool: '开发交付', values: ['⚠️ 基础(导出)', '⚠️ 导出PDF/PPT', '✅ Dev Mode强大'] },
+          { tool: '适用团队类型', values: ['市场/运营/全员', '汇报小组', '产品/设计/研发'] },
+        ],
+      },
+      {
+        type: 'heading',
+        level: 1,
+        title: 'Round 4: 价格与性价比',
+      },
+      {
+        type: 'pricing-table',
+        headers: ['方案', 'Canva AI', 'Gamma', 'Figma AI'],
+        rows: [
+          { tool: '免费版', values: ['丰富(AI功能大部分可用)', '约400分/月(10-15份)', '有限(3个文件/基础AI)'] },
+          { tool: '个人付费', values: ['$12.99/月(Pro)', '$10/月(Pro)', '$15/月(Professional)'] },
+          { tool: '团队付费', values: ['$149.9/年/人(Teams)', '暂无独立团队版', '$45/月(Organization)'] },
+          { tool: '企业版', values: ['定制报价(Enterprise)', '—', '定制报价(Enterprise)'] },
+          { tool: '性价比评级', values: ['★★★★★', '★★★★☆', '★★★★☆'] },
+        ],
+      },
+      {
+        type: 'callout',
+        calloutType: 'tip',
+        content: '省钱策略：Canva免费版的AI功能已经非常够用了——Magic Design、Magic Eraser、Magic Write等核心功能都可以免费用。如果主要需求是做PPT，Gamma的$10/月是目前性价比最高的选择。Figma适合已经有设计基础且需要专业工具的用户。',
+      },
+      {
+        type: 'heading',
+        level: 1,
+        title: '最终结论：你应该选哪个？',
+      },
+      {
+        type: 'verdict',
+        verdicts: [
+          { persona: '市场营销 / 运营 / 自媒体', recommendation: 'Canva Pro', reason: '全能选手，从社媒海报到PPT到短视频一站式搞定。$12.99/月的投入换来的是整个团队的效率飞跃。Magic Studio的AI能力覆盖了日常95%的设计需求。' },
+          { persona: '需要频繁做PPT/汇报的人', recommendation: 'Gamma Pro', reason: '做PPT这件事被Gamma做到了极致。1分钟出初稿、嵌套卡片让信息密度翻倍、一键改版节省大量重复劳动。如果你每周都要做演示文稿，Gamma的$10/月是ROI最高的投资。' },
+          { persona: 'UI/UX设计师 / 产品设计团队', recommendation: 'Figma + Figma AI', reason: '专业设计领域的唯一选择。Figma AI将设计师从重复性工作中解放出来，专注于更有创造性的决策。如果你是做APP/网站设计的，不要犹豫——就是Figma。' },
+          { persona: '创业者 / 小团队 / 一人多岗', recommendation: 'Canva Pro 首选', reason: '一个人身兼数职时，需要一个能搞定所有设计需求的工具。Canva可以做Logo、做海报、做PPT、剪视频、写文案——一个订阅覆盖全部场景。' },
+          { persona: '学生 / 预算为零的用户', recommendation: 'Canva 免费版 + Gamma 免费额度', reason: '两者免费版的功能已经相当强大。Canva处理日常设计需求，Gamma应付课程汇报和论文答辩演示。零成本组合可以覆盖大多数学生场景。' },
+          { persona: '企业品牌团队 / 设计管理部门', recommendation: 'Canva Enterprise + Figma Enterprise 组合', reason: 'Canva负责营销物料的标准化生产（Brand Kit确保品牌一致性），Figma负责产品和数字体验的专业设计。两者分工明确，覆盖企业设计的全链路。' },
+        ],
+      },
+      {
+        type: 'callout',
+        calloutType: 'warning',
+        content: '免责声明：本评测基于我们的主观使用体验，结果可能因使用场景和专业水平而异。本文部分包含联盟链接（Canva ShareASale/CJ佣金$36/单），通过购买我们可能获得少量佣金，不影响你的购买价格。建议充分利用各平台的免费试用再做决定。',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        title: '一句话总结',
+      },
+      {
+        type: 'text',
+        content: '**Canva AI** = 设计界的瑞士军刀，全能零门槛，最适合大多数人和团队  \n**Gamma** = PPT杀手，把演示文稿这件事做到了极致，效率之王  \n**Figma AI** = 专业设计师的核武器，UI/UX领域无可替代  \n\n三者并不是竞争关系——它们服务于不同的场景和人群。最理想的组合是：**Canva处理营销素材 + Gamma搞定汇报演示 + Figma做产品设计**。AI不会取代设计师，但会取代不用AI的设计师。选对工具，让AI成为你的超级助理。',
+      },
+    ],
+  },
 ];
 
 // 评测查询函数

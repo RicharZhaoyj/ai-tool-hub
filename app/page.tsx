@@ -127,26 +127,26 @@ function HomePageContent() {
             </div>
             {/* Latest reviews - inline preview since page is 'use client' */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Link href="/review/deepseek-vs-kimi-vs-gpt4o-2026" className="group block bg-gradient-to-br from-red-50 to-orange-50 dark:from-red-950/20 dark:to-orange-950/20 rounded-2xl border border-red-200 dark:border-red-800 p-6 hover:border-red-400 transition-all">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="px-2 py-0.5 text-xs font-bold bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 rounded-full">NEW</span>
+                  <span className="text-xs text-gray-400">10 min read</span>
+                </div>
+                <h3 className="font-bold text-gray-900 group-hover:text-red-600 transition-colors mb-2">DeepSeek V4 vs Kimi K2.6 vs GPT-4o：2026国产AI崛起 vs OpenAI王座</h3>
+                <p className="text-sm text-gray-500 mb-3">DeepSeek V4-Pro全球最低API价格、Kimi K2.6国产开源第一，谁才是2026年最值得投资的AI模型？</p>
+                <div className="flex gap-2">
+                  {['DeepSeek', 'Kimi', 'GPT-4o'].map(t => (<span key={t} className="px-2 py-0.5 text-xs bg-white/80 dark:bg-gray-800/80 text-gray-600 rounded">{t}</span>))}
+                </div>
+              </Link>
               <Link href="/review/canva-ai-vs-gamma-vs-figma-ai-design-tools-2026" className="group block bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/20 dark:to-amber-950/20 rounded-2xl border border-orange-200 dark:border-orange-800 p-6 hover:border-orange-400 transition-all">
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="px-2 py-0.5 text-xs font-bold bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-full">NEW</span>
+                  <span className="px-2 py-0.5 text-xs font-bold bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-full">热门</span>
                   <span className="text-xs text-gray-400">10 min read</span>
                 </div>
                 <h3 className="font-bold text-gray-900 group-hover:text-orange-600 transition-colors mb-2">Canva AI vs Gamma vs Figma AI：2026 AI设计工具终极对决</h3>
                 <p className="text-sm text-gray-500 mb-3">从PPT到海报到UI原型，三款AI设计工具谁能真正解放你的创造力？</p>
                 <div className="flex gap-2">
                   {['Canva', 'Gamma', 'Figma AI'].map(t => (<span key={t} className="px-2 py-0.5 text-xs bg-white/80 dark:bg-gray-800/80 text-gray-600 rounded">{t}</span>))}
-                </div>
-              </Link>
-              <Link href="/review/perplexity-vs-grok-vs-gemini-ai-search-2026" className="group block bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20 rounded-2xl border border-blue-200 dark:border-blue-800 p-6 hover:border-blue-400 transition-all">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="px-2 py-0.5 text-xs font-bold bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full">热门</span>
-                  <span className="text-xs text-gray-400">10 min read</span>
-                </div>
-                <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-2">Perplexity vs Grok vs Gemini：2026 AI搜索引擎终极对决</h3>
-                <p className="text-sm text-gray-500 mb-3">传统搜索已死？三大AI搜索工具实测，谁才是真正的信息获取神器？</p>
-                <div className="flex gap-2">
-                  {['Perplexity', 'Grok', 'Gemini'].map(t => (<span key={t} className="px-2 py-0.5 text-xs bg-white/80 dark:bg-gray-800/80 text-gray-600 rounded">{t}</span>))}
                 </div>
               </Link>
             </div>

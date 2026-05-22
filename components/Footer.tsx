@@ -1,7 +1,14 @@
 import Link from 'next/link';
 import { categories } from '@/data/categories';
+import { tools } from '@/data/tools';
 
 export default function Footer() {
+  // 计算最新工具更新时间
+  const latestUpdate = tools.reduce((max, t) => {
+    const d = new Date(t.updatedAt).getTime();
+    return d > max ? d : max;
+  }, 0);
+  const latestUpdateStr = new Date(latestUpdate).toISOString().slice(0, 10);
   return (
     <footer className="bg-gray-50 dark:bg-gray-900/50 border-t border-gray-200 dark:border-gray-800 mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -71,6 +78,9 @@ export default function Footer() {
             © {new Date().getFullYear()} AI Tool Hub. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
+            <span className="text-xs text-gray-400">
+              数据更新于 {latestUpdateStr}
+            </span>
             <span className="text-xs text-gray-400">
               ⚡ 用 AI 驱动，为效率而生
             </span>

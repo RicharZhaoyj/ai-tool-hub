@@ -16,8 +16,12 @@ export default function AffiliateLink({ tool }: AffiliateLinkProps) {
       // 有效联盟链接：拼接目标网址
       return tool.affiliateUrl + encodeURIComponent(tool.officialUrl);
     }
-    // 无效或未配置联盟链接 → 直接跳官网
-    return tool.officialUrl;
+    // 无效或未配置联盟链接 → 直接跳官网（带 UTM 追踪）
+    const url = new URL(tool.officialUrl);
+    url.searchParams.set('ref', 'aitoolhub');
+    url.searchParams.set('utm_source', 'aitoolhub');
+    url.searchParams.set('utm_medium', 'referral');
+    return url.toString();
   };
 
   const handleClick = () => {

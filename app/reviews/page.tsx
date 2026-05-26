@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { reviews, getFeaturedReviews } from '@/data/reviews';
+import AffiliateDisclosure from '@/components/AffiliateDisclosure';
 
 export const metadata: Metadata = {
   title: '深度评测 — AI工具专业评测与对比分析 | AI Tool Hub',
@@ -158,6 +159,11 @@ export default function ReviewsPage() {
         >
           浏览全部 AI 工具 →
         </Link>
+      </div>
+
+      {/* Affiliate Disclosure */}
+      <div className="mt-6">
+        <AffiliateDisclosure variant="page-top" note="页面中的工具链接可能包含联盟链接。" />
       </div>
     </div>
   );

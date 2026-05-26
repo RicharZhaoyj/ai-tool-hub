@@ -5,6 +5,7 @@ import { getCategoryBySlug } from '@/data/categories';
 import { notFound } from 'next/navigation';
 import ToolGrid from '@/components/ToolGrid';
 import AffiliateLink from '@/components/AffiliateLink';
+import AffiliateDisclosure from '@/components/AffiliateDisclosure';
 
 interface ToolPageProps {
   params: Promise<{ slug: string }>;
@@ -127,6 +128,9 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
 
             {/* CTA */}
             <AffiliateLink tool={tool} />
+            <div className="mt-2 flex justify-center">
+              <AffiliateDisclosure variant="inline" />
+            </div>
 
             {/* Description */}
             <div className="mt-8">
@@ -206,11 +210,20 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
 
           {/* Quick Tips Card */}
           <div className="bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-2xl border border-amber-200 dark:border-amber-800 p-6">
-            <h3 className="font-semibold text-gray-900 dark:text-white mb-2">💡 使用提示</h3>
-            <ul className="space-y-2 text-sm text-amber-800 dark:text-amber-200">
-              <li>• 点击上方按钮通过联盟链接访问，支持本站运营</li>
-              <li>• 大部分工具提供免费额度，可以先试用再决定</li>
-              <li>• 如有问题或建议，欢迎反馈给我们</li>
+            <h3 className="font-semibold text-gray-900 dark:text-white mb-3">🛡️ 使用提示</h3>
+            <ul className="space-y-2.5 text-sm text-amber-800 dark:text-amber-200">
+              <li className="flex items-start gap-2">
+                <span className="shrink-0 mt-0.5">💰</span>
+                <span>上方「访问官网」为联盟链接，通过它注册/购买本站可能获得佣金，价格不变</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="shrink-0 mt-0.5">🎁</span>
+                <span>大部分工具提供免费额度，可以先试用再决定</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="shrink-0 mt-0.5">📝</span>
+                <span>评测内容独立，不受商业合作影响</span>
+              </li>
             </ul>
           </div>
         </div>

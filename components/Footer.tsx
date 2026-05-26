@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { categories } from '@/data/categories';
 import { tools } from '@/data/tools';
+import AffiliateDisclosure from '@/components/AffiliateDisclosure';
 
 export default function Footer() {
   // 计算最新工具更新时间
@@ -86,6 +87,9 @@ export default function Footer() {
             </span>
           </div>
         </div>
+
+        {/* Affiliate Disclosure */}
+        <AffiliateDisclosure variant="footer" note="本站内容为独立评测，联盟合作不影响推荐排序。" />
       </div>
     </footer>
   );

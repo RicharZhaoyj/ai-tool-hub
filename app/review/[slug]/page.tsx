@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { reviews, getReviewBySlug } from '@/data/reviews';
 import { getToolBySlug } from '@/data/tools';
 import { notFound } from 'next/navigation';
+import AffiliateDisclosure from '@/components/AffiliateDisclosure';
 
 interface ReviewPageProps {
   params: Promise<{ slug: string }>;
@@ -308,6 +309,9 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
             </div>
           </div>
         </header>
+
+        {/* Affiliate Disclosure */}
+        <AffiliateDisclosure variant="page-top" />
 
         {/* Article Body */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

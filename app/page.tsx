@@ -127,26 +127,26 @@ function HomePageContent() {
             </div>
             {/* Latest reviews - inline preview since page is 'use client' */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Link href="/review/bolt-vs-lovable-ai-app-builder-2026" className="group block bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950/20 dark:to-teal-950/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 hover:border-emerald-400 transition-all">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="px-2 py-0.5 text-xs font-bold bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-full">NEW</span>
+                  <span className="text-xs text-gray-400">10 min read</span>
+                </div>
+                <h3 className="font-bold text-gray-900 group-hover:text-emerald-600 transition-colors mb-2">Bolt vs Lovable：2026 AI全栈应用构建器终极对决</h3>
+                <p className="text-sm text-gray-500 mb-3">Vibe Coding时代，一个为开发者而生，一个让创始人一夜成为全栈工程师</p>
+                <div className="flex gap-2">
+                  {['Bolt', 'Lovable'].map(t => (<span key={t} className="px-2 py-0.5 text-xs bg-white/80 dark:bg-gray-800/80 text-gray-600 rounded">{t}</span>))}
+                </div>
+              </Link>
               <Link href="/review/google-veo-vs-hailuo-vs-seedance-2026" className="group block bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20 rounded-2xl border border-blue-200 dark:border-blue-800 p-6 hover:border-blue-400 transition-all">
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="px-2 py-0.5 text-xs font-bold bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full">NEW</span>
+                  <span className="px-2 py-0.5 text-xs font-bold bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full">热门</span>
                   <span className="text-xs text-gray-400">10 min read</span>
                 </div>
                 <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-2">Google Veo 3 vs Hailuo vs Seedance 2：2026 AI视频生成新三国</h3>
                 <p className="text-sm text-gray-500 mb-3">Sora关停后AI视频生成格局大洗牌，三大新势力谁能接棒？</p>
                 <div className="flex gap-2">
                   {['Google Veo 3', 'Hailuo AI', 'Seedance 2'].map(t => (<span key={t} className="px-2 py-0.5 text-xs bg-white/80 dark:bg-gray-800/80 text-gray-600 rounded">{t}</span>))}
-                </div>
-              </Link>
-              <Link href="/review/notion-ai-vs-jasper-ai-productivity-tools-2026" className="group block bg-gradient-to-br from-violet-50 to-purple-50 dark:from-violet-950/20 dark:to-purple-950/20 rounded-2xl border border-violet-200 dark:border-violet-800 p-6 hover:border-violet-400 transition-all">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="px-2 py-0.5 text-xs font-bold bg-violet-100 dark:bg-violet-900/30 text-violet-600 dark:text-violet-400 rounded-full">热门</span>
-                  <span className="text-xs text-gray-400">9 min read</span>
-                </div>
-                <h3 className="font-bold text-gray-900 group-hover:text-violet-600 transition-colors mb-2">Notion AI vs Jasper AI：2026 AI写作工具终极对决</h3>
-                <p className="text-sm text-gray-500 mb-3">同为内容创作者和营销人的效率神器，谁才是工作流中的真正刚需？</p>
-                <div className="flex gap-2">
-                  {['Notion AI', 'Jasper AI'].map(t => (<span key={t} className="px-2 py-0.5 text-xs bg-white/80 dark:bg-gray-800/80 text-gray-600 rounded">{t}</span>))}
                 </div>
               </Link>
             </div>

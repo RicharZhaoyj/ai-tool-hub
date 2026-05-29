@@ -4,6 +4,8 @@ import { reviews, getReviewBySlug } from '@/data/reviews';
 import { getToolBySlug } from '@/data/tools';
 import { notFound } from 'next/navigation';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
+import Breadcrumb from '@/components/Breadcrumb';
+import { ArticleJsonLd } from '@/components/JsonLd';
 
 interface ReviewPageProps {
   params: Promise<{ slug: string }>;
@@ -247,16 +249,21 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-sm text-gray-500 mb-6">
-        <Link href="/" className="hover:text-violet-600 transition-colors">首页</Link>
-        <span>/</span>
-        <Link href="/reviews" className="hover:text-violet-600 transition-colors">深度评测</Link>
-        <span>/</span>
-        <span className="text-gray-900 dark:text-white font-medium truncate max-w-xs">
-          {review.title.slice(0, 30)}...
-        </span>
-      </nav>
+      <ArticleJsonLd
+        title={review.title}
+        description={review.description}
+        url={`https://tools.link.cn/review/${review.slug}`}
+        author={review.author}
+        publishedAt={review.publishedAt}
+        updatedAt={review.updatedAt}
+      />
+
+      <Breadcrumb
+        items={[
+          { name: '深度评测', url: '/reviews' },
+          { name: review.title.slice(0, 30) + (review.title.length > 30 ? '...' : ''), url: `/review/${review.slug}` },
+        ]}
+      />
 
       {/* Article Header */}
       <article>

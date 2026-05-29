@@ -4,6 +4,7 @@ import { categories, getCategoryBySlug } from '@/data/categories';
 import { notFound } from 'next/navigation';
 import CategoryNav from '@/components/CategoryNav';
 import ToolGrid from '@/components/ToolGrid';
+import Breadcrumb from '@/components/Breadcrumb';
 
 interface CategoryPageProps {
   params: Promise<{ slug: string }>;
@@ -40,6 +41,10 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <Breadcrumb
+        items={[{ name: `${category.icon} ${category.nameZh}`, url: `/category/${category.slug}` }]}
+      />
+
       {/* Category Header */}
       <div className={`relative overflow-hidden rounded-3xl bg-gradient-to-r ${category.color} px-8 py-12 mb-8`}>
         <div className="relative z-10">

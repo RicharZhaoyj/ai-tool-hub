@@ -1,0 +1,19 @@
+{
+  "name": "AI Tool Hub",
+  "short_name": "ToolHub",
+  "description": "发现最好的AI工具 — 精选全球AI工具，涵盖文字、图像、视频、编程等全场景",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f9fafb",
+  "theme_color": "#7c3aed",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    }
+  ],
+  "lang": "zh-CN",
+  "categories": ["productivity", "education", "utilities"]
+}

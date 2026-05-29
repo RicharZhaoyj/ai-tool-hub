@@ -1,7 +1,9 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { reviews, getFeaturedReviews } from '@/data/reviews';
+import { getToolBySlug } from '@/data/tools';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata: Metadata = {
   title: '深度评测 — AI工具专业评测与对比分析 | AI Tool Hub',
@@ -21,11 +23,9 @@ export default function ReviewsPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Header */}
       <div className="mb-10">
-        <nav className="flex items-center gap-2 text-sm text-gray-500 mb-4">
-          <Link href="/" className="hover:text-violet-600 transition-colors">首页</Link>
-          <span>/</span>
-          <span className="text-gray-900 dark:text-white font-medium">深度评测</span>
-        </nav>
+        <Breadcrumb
+          items={[{ name: '深度评测', url: '/reviews' }]}
+        />
 
         <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-3">
           深度评测
@@ -84,11 +84,18 @@ export default function ReviewsPage() {
 
                   {/* Tools mentioned */}
                   <div className="flex flex-wrap gap-2">
-                    {review.tools.slice(0, 4).map(toolSlug => (
-                      <span key={toolSlug} className="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded-md">
-                        {toolSlug}
-                      </span>
-                    ))}
+                    {review.tools.slice(0, 4).map(toolSlug => {
+                      const tool = getToolBySlug(toolSlug);
+                      return tool ? (
+                        <Link key={toolSlug} href={`/tool/${tool.slug}`} className="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-violet-600 dark:text-violet-400 rounded-md hover:bg-violet-100 dark:hover:bg-violet-900/30 transition-colors">
+                          {tool.name}
+                        </Link>
+                      ) : (
+                        <span key={toolSlug} className="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 rounded-md">
+                          {toolSlug}
+                        </span>
+                      );
+                    })}
                     {review.tools.length > 4 && (
                       <span className="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-gray-400 rounded-md">
                         +{review.tools.length - 4}
@@ -132,9 +139,16 @@ export default function ReviewsPage() {
                   </p>
                 </div>
                 <div className="flex items-center gap-2 shrink-0">
-                  {review.tools.slice(0, 3).map(t => (
-                    <span key={t} className="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-gray-500 rounded">{t}</span>
-                  ))}
+                  {review.tools.slice(0, 3).map(t => {
+                    const tool = getToolBySlug(t);
+                    return tool ? (
+                      <Link key={t} href={`/tool/${tool.slug}`} className="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-violet-600 dark:text-violet-400 rounded hover:bg-violet-100 transition-colors">
+                        {tool.name}
+                      </Link>
+                    ) : (
+                      <span key={t} className="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-gray-500 rounded">{t}</span>
+                    );
+                  })}
                   <svg className="w-4 h-4 text-gray-400 group-hover:text-violet-600 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                   </svg>

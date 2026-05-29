@@ -6,6 +6,8 @@ import { notFound } from 'next/navigation';
 import ToolGrid from '@/components/ToolGrid';
 import AffiliateLink from '@/components/AffiliateLink';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
+import Breadcrumb from '@/components/Breadcrumb';
+import { SoftwareAppJsonLd } from '@/components/JsonLd';
 
 interface ToolPageProps {
   params: Promise<{ slug: string }>;
@@ -65,20 +67,22 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-      {/* Breadcrumb */}
-      <nav className="flex items-center gap-2 text-sm text-gray-500 mb-6">
-        <Link href="/" className="hover:text-violet-600 transition-colors">首页</Link>
-        <span>/</span>
-        {category && (
-          <>
-            <Link href={`/category/${category.slug}`} className="hover:text-violet-600 transition-colors">
-              {category.icon} {category.nameZh}
-            </Link>
-            <span>/</span>
-          </>
-        )}
-        <span className="text-gray-900 dark:text-white font-medium">{tool.name}</span>
-      </nav>
+      <SoftwareAppJsonLd
+        name={tool.name}
+        description={tool.description}
+        url={`https://tools.link.cn/tool/${tool.slug}`}
+        logoUrl={tool.logoUrl}
+        priceFrom={tool.priceFrom}
+        rating={tool.rating}
+        pricingType={tool.pricingType}
+      />
+
+      <Breadcrumb
+        items={[
+          ...(category ? [{ name: `${category.icon} ${category.nameZh}`, url: `/category/${category.slug}` }] : []),
+          { name: tool.name, url: `/tool/${tool.slug}` },
+        ]}
+      />
 
       {/* Main Content */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

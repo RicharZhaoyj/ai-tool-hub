@@ -9,7 +9,7 @@ export default function HeroSection() {
 
       <div className="relative z-10 max-w-3xl mx-auto text-center">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-white/15 backdrop-blur-sm rounded-full text-white/90 text-sm font-medium mb-6">
-          ✨ 已收录 26+ 款顶级 AI 工具
+          ✨ 已收录 36+ 款顶级 AI 工具
         </div>
 
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-5 leading-tight tracking-tight">
@@ -28,7 +28,7 @@ export default function HeroSection() {
         {/* Stats */}
         <div className="flex items-center justify-center gap-8 text-white/70">
           <div className="text-center">
-            <div className="text-2xl font-bold text-white">26+</div>
+            <div className="text-2xl font-bold text-white">36+</div>
             <div className="text-xs">精选工具</div>
           </div>
           <div className="w-px h-8 bg-white/20" />
@@ -38,8 +38,8 @@ export default function HeroSection() {
           </div>
           <div className="w-px h-8 bg-white/20" />
           <div className="text-center">
-            <div className="text-2xl font-bold text-white">100%</div>
-            <div className="text-xs">人工筛选</div>
+            <div className="text-2xl font-bold text-white">12+</div>
+            <div className="text-xs">深度评测</div>
           </div>
         </div>
       </div>

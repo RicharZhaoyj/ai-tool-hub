@@ -8,6 +8,7 @@ import CategoryNav from '@/components/CategoryNav';
 import ToolGrid from '@/components/ToolGrid';
 import { tools, getFeaturedTools, getHotTools, searchTools, getToolsByCategory } from '@/data/tools';
 import { categories } from '@/data/categories';
+import { blogPosts } from '@/data/blog';
 import Link from 'next/link';
 
 type SortType = 'default' | 'rating' | 'newest' | 'hot';
@@ -149,6 +150,34 @@ function HomePageContent() {
                   {['Runway Gen-4', 'Kling 3.0', 'Vidu'].map(t => (<span key={t} className="px-2 py-0.5 text-xs bg-white/80 dark:bg-gray-800/80 text-gray-600 rounded">{t}</span>))}
                 </div>
               </Link>
+            </div>
+          </section>
+          {/* Blog / News Section */}
+          <section className="mt-16" id="blog">
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-2">
+                <h2 className="text-xl font-bold text-gray-900 dark:text-white">📰 AI 资讯</h2>
+                <span className="text-sm text-gray-400">行业动态</span>
+              </div>
+              <Link href="/blog" className="text-sm font-medium text-violet-600 hover:text-violet-700 transition-colors flex items-center gap-1">
+                查看全部
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {blogPosts.slice(0, 3).map((post) => (
+                <Link key={post.id} href={`/blog/${post.slug}`} className="group block bg-white dark:bg-gray-800/80 rounded-2xl border border-gray-200 dark:border-gray-700 overflow-hidden hover:shadow-lg hover:border-violet-200 dark:hover:border-violet-800 transition-all">
+                  <div className="h-1.5 bg-gradient-to-r from-violet-500 to-purple-600" />
+                  <div className="p-5">
+                    <div className="flex items-center gap-2 mb-2">
+                      <time className="text-xs text-gray-400">{post.publishedAt}</time>
+                      <span className="text-xs text-gray-400">{post.readingTime} min</span>
+                    </div>
+                    <h3 className="font-bold text-gray-900 group-hover:text-violet-600 transition-colors mb-2 line-clamp-2 text-sm">{post.title}</h3>
+                    <p className="text-xs text-gray-500 line-clamp-2">{post.summary}</p>
+                  </div>
+                </Link>
+              ))}
             </div>
           </section>
         </>

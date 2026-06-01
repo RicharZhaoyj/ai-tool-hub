@@ -44,7 +44,7 @@ export default function SearchBar() {
       {/* Hot Keywords */}
       <div className="flex flex-wrap items-center justify-center gap-2 mt-3">
         <span className="text-xs text-gray-400">热门：</span>
-        {['ChatGPT', 'Cursor', 'Midjourney', 'Suno', 'Canva', 'Perplexity'].map((kw) => (
+        {['ChatGPT', 'Claude', 'Cursor', 'DeepSeek', 'Grok', 'Kling', 'Suno', 'Perplexity'].map((kw) => (
           <button
             key={kw}
             type="button"

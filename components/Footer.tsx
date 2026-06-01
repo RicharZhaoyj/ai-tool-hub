@@ -66,7 +66,7 @@ export default function Footer() {
               关于
             </h3>
             <ul className="space-y-2.5">
-              <li><span className="text-sm text-gray-500">提交工具</span></li>
+              <li><Link href="/submit-tool" className="text-sm text-gray-500 hover:text-violet-600 transition-colors">提交工具</Link></li>
               <li><span className="text-sm text-gray-500">广告合作</span></li>
               <li><span className="text-sm text-gray-500">关于我们</span></li>
             </ul>

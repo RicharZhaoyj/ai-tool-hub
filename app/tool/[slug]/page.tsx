@@ -8,6 +8,7 @@ import AffiliateLink from '@/components/AffiliateLink';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
 import Breadcrumb from '@/components/Breadcrumb';
 import { SoftwareAppJsonLd } from '@/components/JsonLd';
+import ShareButtons from '@/components/ShareButtons';
 
 interface ToolPageProps {
   params: Promise<{ slug: string }>;
@@ -102,6 +103,9 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
                 <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-1">{tool.name}</h1>
                 {tool.nameEn && <p className="text-sm text-gray-400 mb-2">{tool.nameEn}</p>}
                 <p className="text-base text-gray-600 dark:text-gray-300">{tool.tagline}</p>
+              </div>
+              <div className="mt-3">
+                <ShareButtons title={`${tool.name} — ${tool.tagline}`} url={`https://tools.link.cn/tool/${tool.slug}`} />
               </div>
             </div>
 

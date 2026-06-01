@@ -35,6 +35,12 @@ export default function Header() {
             >
               评测
             </Link>
+            <Link
+              href="/blog"
+              className="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            >
+              资讯
+            </Link>
             <div className="relative group">
               <button className="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-violet-600 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors flex items-center gap-1">
                 分类
@@ -86,6 +92,9 @@ export default function Header() {
             </Link>
             <Link href="/reviews" className="block px-4 py-2.5 text-sm font-medium text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
               深度评测
+            </Link>
+            <Link href="/blog" className="block px-4 py-2.5 text-sm font-medium text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+              AI 资讯
             </Link>
             <div className="mt-2 space-y-1 px-2">
               {categories.map((cat) => (

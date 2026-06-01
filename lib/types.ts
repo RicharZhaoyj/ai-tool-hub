@@ -63,3 +63,18 @@ export interface ReviewSection {
   verdicts?: { persona: string; recommendation: string; reason: string }[];
   calloutType?: 'tip' | 'warning' | 'info';
 }
+
+// 博客文章类型定义
+export interface BlogPost {
+  id: string;
+  slug: string;
+  title: string;
+  summary: string;
+  content: string; // HTML或Markdown内容
+  tags: string[];
+  author: string;
+  publishedAt: string;
+  updatedAt: string;
+  readingTime: number;
+  featured: boolean;
+}

@@ -128,26 +128,26 @@ function HomePageContent() {
             </div>
             {/* Latest reviews - inline preview since page is 'use client' */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Link href="/review/deepseek-vs-qwen-vs-kimi-2026" className="group block bg-gradient-to-br from-emerald-50 to-teal-50 dark:from-emerald-950/20 dark:to-teal-950/20 rounded-2xl border border-emerald-200 dark:border-emerald-800 p-6 hover:border-emerald-400 transition-all">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="px-2 py-0.5 text-xs font-bold bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 rounded-full">NEW</span>
+                  <span className="text-xs text-gray-400">10 min read</span>
+                </div>
+                <h3 className="font-bold text-gray-900 group-hover:text-emerald-600 transition-colors mb-2">DeepSeek V4 vs Qwen 3.7-Max vs Kimi K2.6：2026国产开源AI大模型终极对决</h3>
+                <p className="text-sm text-gray-500 mb-3">全球最低价API、Code Arena编程第一、Agent Swarm并行革命——谁才是中国AI的扛旗者？</p>
+                <div className="flex gap-2">
+                  {['DeepSeek V4', 'Qwen 3.7-Max', 'Kimi K2.6'].map(t => (<span key={t} className="px-2 py-0.5 text-xs bg-white/80 dark:bg-gray-800/80 text-gray-600 rounded">{t}</span>))}
+                </div>
+              </Link>
               <Link href="/review/cursor-vs-windsurf-vs-github-copilot-2026" className="group block bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950/20 dark:to-cyan-950/20 rounded-2xl border border-blue-200 dark:border-blue-800 p-6 hover:border-blue-400 transition-all">
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="px-2 py-0.5 text-xs font-bold bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full">NEW</span>
+                  <span className="px-2 py-0.5 text-xs font-bold bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full">热门</span>
                   <span className="text-xs text-gray-400">10 min read</span>
                 </div>
                 <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors mb-2">Cursor vs Windsurf vs GitHub Copilot：2026 AI编程IDE终极对决</h3>
                 <p className="text-sm text-gray-500 mb-3">Composer 2.5、Cascade Agent、Token计费变革——三巨头谁能统治开发者的编辑器？</p>
                 <div className="flex gap-2">
                   {['Cursor', 'Windsurf', 'GitHub Copilot'].map(t => (<span key={t} className="px-2 py-0.5 text-xs bg-white/80 dark:bg-gray-800/80 text-gray-600 rounded">{t}</span>))}
-                </div>
-              </Link>
-              <Link href="/review/runway-gen4-vs-kling-30-vs-vidu-2026" className="group block bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20 rounded-2xl border border-orange-200 dark:border-orange-800 p-6 hover:border-orange-400 transition-all">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="px-2 py-0.5 text-xs font-bold bg-orange-100 dark:bg-orange-900/30 text-orange-600 dark:text-orange-400 rounded-full">热门</span>
-                  <span className="text-xs text-gray-400">10 min read</span>
-                </div>
-                <h3 className="font-bold text-gray-900 group-hover:text-orange-600 transition-colors mb-2">Runway Gen-4 vs Kling 3.0 vs Vidu：2026专业级AI视频生成工具终极对决</h3>
-                <p className="text-sm text-gray-500 mb-3">好莱坞级画质、物理引擎模拟、全球Top2模型——谁能进入你的生产工作流？</p>
-                <div className="flex gap-2">
-                  {['Runway Gen-4', 'Kling 3.0', 'Vidu'].map(t => (<span key={t} className="px-2 py-0.5 text-xs bg-white/80 dark:bg-gray-800/80 text-gray-600 rounded">{t}</span>))}
                 </div>
               </Link>
             </div>

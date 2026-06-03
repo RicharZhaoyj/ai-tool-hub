@@ -20,6 +20,7 @@ export default function ToolCard({ tool }: ToolCardProps) {
             {/* Logo */}
             <div className="w-12 h-12 rounded-xl bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden shrink-0 group-hover:scale-105 transition-transform">
               {tool.logoUrl ? (
+                // eslint-disable-next-line @next/next/no-img-element
                 <img
                   src={tool.logoUrl}
                   alt={tool.name}

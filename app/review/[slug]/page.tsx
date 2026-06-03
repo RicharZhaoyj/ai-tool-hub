@@ -297,6 +297,7 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
                 className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-violet-300 transition-colors"
               >
                 {tool!.logoUrl && (
+                  // eslint-disable-next-line @next/next/no-img-element
                   <img src={tool!.logoUrl} alt={tool!.name} className="w-5 h-5 object-contain" />
                 )}
                 <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{tool!.name}</span>
@@ -377,7 +378,8 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
                     href={`/tool/${tool!.slug}`}
                     className="flex items-center gap-2 w-full px-3 py-2.5 text-sm font-medium text-violet-600 bg-white dark:bg-gray-800 rounded-lg hover:bg-violet-50 dark:hover:bg-violet-900/20 transition-colors"
                   >
-                    {tool!.logoUrl && <img src={tool!.logoUrl} alt="" className="w-4 h-4 object-contain" />}
+                    {tool!.logoUrl && // eslint-disable-next-line @next/next/no-img-element
+                    <img src={tool!.logoUrl} alt="" className="w-4 h-4 object-contain" />}
                     查看 {tool!.name} 详细信息 →
                   </a>
                 ))}

@@ -94,6 +94,7 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
             <div className="flex items-start gap-5 mb-6">
               <div className="w-16 h-16 rounded-2xl bg-gray-100 dark:bg-gray-700 flex items-center justify-center overflow-hidden shrink-0">
                 {tool.logoUrl ? (
+                  // eslint-disable-next-line @next/next/no-img-element
                   <img src={tool.logoUrl} alt={tool.name} className="w-10 h-10 object-contain" />
                 ) : (
                   <span className="text-3xl">{tool.name[0]}</span>

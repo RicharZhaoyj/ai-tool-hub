@@ -58,6 +58,7 @@ export const tools: Tool[] = [
     hot: true,
     createdAt: '2023-12-13',
     updatedAt: '2026-06-02',
+    recommendationReason: '多模态任务和 Google 生态集成场景首选',
   },
   {
     id: 't4',
@@ -76,6 +77,7 @@ export const tools: Tool[] = [
     hot: true,
     createdAt: '2022-12-07',
     updatedAt: '2026-06-02',
+    recommendationReason: '需要实时信息和深度研究的场景最佳选择',
   },
   {
     id: 't28',
@@ -94,6 +96,7 @@ export const tools: Tool[] = [
     hot: true,
     createdAt: '2025-02-18',
     updatedAt: '2026-06-02',
+    recommendationReason: '需要实时信息和幽默风格的对话场景',
   },
   {
     id: 't30',

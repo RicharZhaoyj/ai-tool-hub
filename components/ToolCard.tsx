@@ -64,7 +64,7 @@ export default function ToolCard({ tool }: ToolCardProps) {
         </p>
 
         {tool.recommendationReason && (
-          <p className="text-xs text-violet-600 dark:text-violet-400 mb-2 font-medium">
+          <p className="text-sm text-violet-700 dark:text-violet-300 mb-3 font-medium bg-violet-50 dark:bg-violet-900/20 px-3 py-1.5 rounded-lg">
             💡 {tool.recommendationReason}
           </p>
         )}

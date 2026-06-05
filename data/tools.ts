@@ -115,6 +115,7 @@ export const tools: Tool[] = [
     hot: true,
     createdAt: '2024-12-20',
     updatedAt: '2026-06-02',
+    recommendationReason: '开源模型和极致性价比场景首选',
   },
   {
     id: 't32',
@@ -134,6 +135,7 @@ export const tools: Tool[] = [
     hot: true,
     createdAt: '2026-04-20',
     updatedAt: '2026-05-20',
+    recommendationReason: '长文本处理和国产开源替代首选',
   },
   {
     id: 't36',
@@ -577,6 +579,7 @@ export const tools: Tool[] = [
     hot: true,
     createdAt: '2023-01-01',
     updatedAt: '2026-05-20',
+    recommendationReason: 'Agent 编程和企业级工作流场景',
   },
   {
     id: 't21',

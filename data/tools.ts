@@ -175,6 +175,7 @@ export const tools: Tool[] = [
     hot: true,
     createdAt: '2026-06-01',
     updatedAt: '2026-06-02',
+    recommendationReason: '专业编程和代码编辑场景首选',
   },
   // ===== 图片生成 =====
   {

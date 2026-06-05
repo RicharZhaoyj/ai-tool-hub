@@ -63,6 +63,12 @@ export default function ToolCard({ tool }: ToolCardProps) {
           {tool.tagline}
         </p>
 
+        {tool.recommendationReason && (
+          <p className="text-xs text-violet-600 dark:text-violet-400 mb-2 font-medium">
+            💡 {tool.recommendationReason}
+          </p>
+        )}
+
         {/* Tags */}
         <div className="flex flex-wrap gap-1.5 mb-4">
           {tool.tags.slice(0, 4).map((tag) => (

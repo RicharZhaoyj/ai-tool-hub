@@ -20,6 +20,7 @@ export interface Tool {
   hot: boolean;
   createdAt: string;
   updatedAt: string;
+  recommendationReason?: string; // 推荐理由 / 使用场景
 }
 
 export interface Category {
@@ -46,6 +47,7 @@ export interface Review {
   author: string;
   publishedAt: string;
   updatedAt: string;
+  recommendationReason?: string; // 推荐理由 / 使用场景
   readingTime: number; // 阅读时间(分钟)
   featured: boolean;
 }
@@ -75,6 +77,7 @@ export interface BlogPost {
   author: string;
   publishedAt: string;
   updatedAt: string;
+  recommendationReason?: string; // 推荐理由 / 使用场景
   readingTime: number;
   featured: boolean;
 }

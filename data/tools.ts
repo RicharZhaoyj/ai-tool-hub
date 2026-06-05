@@ -20,6 +20,7 @@ export const tools: Tool[] = [
     hot: true,
     createdAt: '2022-11-30',
     updatedAt: '2026-06-03',
+    recommendationReason: '最适合日常对话、编程辅助和长文本创作',
   },
   {
     id: 't2',
@@ -38,6 +39,7 @@ export const tools: Tool[] = [
     hot: true,
     createdAt: '2023-03-01',
     updatedAt: '2026-06-02',
+    recommendationReason: '长文本分析和代码可靠性要求高的场景首选',
   },
   {
     id: 't3',

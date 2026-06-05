@@ -80,7 +80,7 @@ function HomePageContent() {
           >
             <option value="default">默认排序</option>
             <option value="rating">评分最高</option>
-            <option value="newest">最新更新</option>
+            <option value="newest">最新收录</option>
             <option value="hot">热门优先</option>
           </select>
         </div>
@@ -99,7 +99,7 @@ function HomePageContent() {
                 <h2 className="text-xl font-bold text-gray-900 dark:text-white">🔥 热门工具</h2>
                 <span className="text-sm text-gray-400">大家都在用</span>
               </div>
-              <ToolGrid tools={hotTools.slice(0, 6)} />
+              <ToolGrid tools={hotTools.slice(0, 8)} />
             </section>
           )}
 
@@ -107,7 +107,7 @@ function HomePageContent() {
           {featuredTools.length > 0 && (
             <section className="mt-16" id="featured-tools">
               <div className="flex items-center gap-2 mb-6">
-                <h2 className="text-xl font-bold text-gray-900 dark:text-white">⭐ 精选推荐</h2>
+                <h2 className="text-xl font-bold text-gray-900 dark:text-white">⭐ 分类精选</h2>
                 <span className="text-sm text-gray-400">编辑严选</span>
               </div>
               <ToolGrid tools={featuredTools} />

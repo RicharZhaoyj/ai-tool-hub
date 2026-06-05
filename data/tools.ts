@@ -155,6 +155,7 @@ export const tools: Tool[] = [
     hot: true,
     createdAt: '2026-05-20',
     updatedAt: '2026-06-02',
+    recommendationReason: '开源多模态和长上下文编程场景',
   },
   {
     id: 't37',
@@ -193,6 +194,7 @@ export const tools: Tool[] = [
     hot: true,
     createdAt: '2022-08-01',
     updatedAt: '2026-05-22',
+    recommendationReason: '高质量艺术创作和商业设计场景',
   },
   {
     id: 't6',
@@ -211,6 +213,7 @@ export const tools: Tool[] = [
     hot: true,
     createdAt: '2023-10-01',
     updatedAt: '2026-05-18',
+    recommendationReason: 'ChatGPT 用户和文字渲染需求场景',
   },
   {
     id: 't7',
@@ -247,6 +250,7 @@ export const tools: Tool[] = [
     hot: true,
     createdAt: '2024-08-01',
     updatedAt: '2026-05-18',
+    recommendationReason: '本地部署和完全免费使用场景',
   },
   // ===== 视频生成 =====
   {

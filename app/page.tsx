@@ -103,6 +103,17 @@ function HomePageContent() {
             </section>
           )}
 
+          {/* News Recommended Tools */}
+          {!query && !categoryParam && (
+            <section className="mt-16" id="news-recommended">
+              <div className="flex items-center gap-2 mb-6">
+                <h2 className="text-xl font-bold text-gray-900 dark:text-white">📰 新闻热推工具</h2>
+                <span className="text-sm text-gray-400">适合从 AI 新闻了解</span>
+              </div>
+              <ToolGrid tools={hotTools.slice(0, 6)} />
+            </section>
+          )}
+
           {/* Featured Tools */}
           {featuredTools.length > 0 && (
             <section className="mt-16" id="featured-tools">

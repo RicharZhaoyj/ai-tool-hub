@@ -35,7 +35,6 @@ export default function Header() {
             >
               评测
             </Link>
-            <Link
             <a
               href="https://ai.link.cn"
               target="_blank"

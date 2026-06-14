@@ -238,6 +238,25 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
         </div>
       </div>
 
+      {/* 推荐提示词（内容联动） */}
+      <section className="mt-12 border-t pt-8">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+            推荐提示词
+          </h2>
+          <a 
+            href="https://prompts.link.cn" 
+            target="_blank"
+            className="text-sm text-violet-600 hover:text-violet-700 flex items-center gap-1"
+          >
+            在 PromptMarket 查看更多 →
+          </a>
+        </div>
+        <div className="text-sm text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl border border-gray-200 dark:border-gray-700">
+          该工具的配套提示词正在整理中，敬请期待。
+        </div>
+      </section>
+
       {/* Related Tools */}
       {relatedTools.length > 0 && (
         <section className="mt-16">

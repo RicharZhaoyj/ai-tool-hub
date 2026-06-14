@@ -239,6 +239,25 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
       </div>
 
       {/* 推荐提示词（内容联动） */}
+      {/* 相关 AI 新闻（内容联动） */}
+      <section className="mt-8 border-t pt-8">
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-xl font-bold text-gray-900 dark:text-white">
+            相关资讯
+          </h2>
+          <a 
+            href="https://ai.link.cn" 
+            target="_blank"
+            className="text-sm text-violet-600 hover:text-violet-700 flex items-center gap-1"
+          >
+            查看更多 AI 新闻 →
+          </a>
+        </div>
+        <div className="text-sm text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-xl border border-gray-200 dark:border-gray-700">
+          相关 AI 新闻正在整理中，敬请期待。
+        </div>
+      </section>
+
       <section className="mt-12 border-t pt-8">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">

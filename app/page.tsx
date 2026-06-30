@@ -11,6 +11,57 @@ import { categories } from '@/data/categories';
 import { blogPosts } from '@/data/blog';
 import Link from 'next/link';
 
+const sisterSitesCards = [
+  {
+    name: 'AI资讯新闻',
+    url: 'https://ai.link.cn',
+    icon: '📰',
+    description: '每日精选全球AI行业动态、前沿技术解读、深度产业分析，让你第一时间掌握AI脉搏。',
+    gradient: 'from-purple-500 to-violet-600',
+    bgLight: 'from-purple-50 to-violet-50',
+    bgDark: 'dark:from-purple-950/30 dark:to-violet-950/30',
+    border: 'border-purple-200 dark:border-purple-800',
+    hoverBorder: 'hover:border-purple-400 dark:hover:border-purple-600',
+    buttonBg: 'bg-purple-500 hover:bg-purple-600',
+  },
+  {
+    name: 'AI工具LTD',
+    url: 'https://tool.link.cn',
+    icon: '⚡',
+    description: '汇聚AI工具终身特惠套餐，买断制工具精选推荐，一次付费永久使用，省钱省心。',
+    gradient: 'from-cyan-500 to-teal-600',
+    bgLight: 'from-cyan-50 to-teal-50',
+    bgDark: 'dark:from-cyan-950/30 dark:to-teal-950/30',
+    border: 'border-cyan-200 dark:border-cyan-800',
+    hoverBorder: 'hover:border-cyan-400 dark:hover:border-cyan-600',
+    buttonBg: 'bg-cyan-500 hover:bg-cyan-600',
+  },
+  {
+    name: 'AI提示词市场',
+    url: 'https://prompts.link.cn',
+    icon: '✍️',
+    description: '海量优质Prompt模板，覆盖写作、编程、设计、营销等场景，一键复制即用，提升AI产出质量。',
+    gradient: 'from-emerald-500 to-green-600',
+    bgLight: 'from-emerald-50 to-green-50',
+    bgDark: 'dark:from-emerald-950/30 dark:to-green-950/30',
+    border: 'border-emerald-200 dark:border-emerald-800',
+    hoverBorder: 'hover:border-emerald-400 dark:hover:border-emerald-600',
+    buttonBg: 'bg-emerald-500 hover:bg-emerald-600',
+  },
+  {
+    name: '加密货币分析',
+    url: 'https://signal.link.cn',
+    icon: '₿',
+    description: '专业加密货币行情分析、链上数据追踪、交易信号参考，洞察市场趋势，把握投资机会。',
+    gradient: 'from-orange-500 to-amber-600',
+    bgLight: 'from-orange-50 to-amber-50',
+    bgDark: 'dark:from-orange-950/30 dark:to-amber-950/30',
+    border: 'border-orange-200 dark:border-orange-800',
+    hoverBorder: 'hover:border-orange-400 dark:hover:border-orange-600',
+    buttonBg: 'bg-orange-500 hover:bg-orange-600',
+  },
+];
+
 type SortType = 'default' | 'rating' | 'newest' | 'hot';
 
 function HomePageContent() {
@@ -102,6 +153,44 @@ function HomePageContent() {
               <ToolGrid tools={hotTools.slice(0, 8)} />
             </section>
           )}
+
+          {/* Sister Sites */}
+          <section className="mt-16" id="sister-sites">
+            <div className="flex items-center gap-2 mb-6">
+              <h2 className="text-xl font-bold text-gray-900 dark:text-white">🔗 探索更多资源</h2>
+              <span className="text-sm text-gray-400">姊妹站点，同样精彩</span>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+              {sisterSitesCards.map((site) => (
+                <a
+                  key={site.url}
+                  href={site.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group block bg-gradient-to-br ${site.bgLight} ${site.bgDark} rounded-2xl border ${site.border} ${site.hoverBorder} p-6 transition-all hover:shadow-lg`}
+                >
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${site.gradient} flex items-center justify-center text-2xl mb-4 shadow-lg`}>
+                    {site.icon}
+                  </div>
+                  <h3 className="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
+                    {site.name}
+                    <svg className="w-4 h-4 text-gray-400 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </h3>
+                  <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-3 leading-relaxed">
+                    {site.description}
+                  </p>
+                  <span className={`inline-flex items-center gap-1 px-4 py-2 text-sm font-medium text-white rounded-lg ${site.buttonBg} transition-colors`}>
+                    立即访问
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </span>
+                </a>
+              ))}
+            </div>
+          </section>
 
           {/* News Recommended Tools */}
           {!query && !categoryParam && (

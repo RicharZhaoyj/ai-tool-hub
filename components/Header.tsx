@@ -4,6 +4,13 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { categories } from '@/data/categories';
 
+const sisterSites = [
+  { name: '资讯', url: 'https://ai.link.cn', icon: '📰', bg: 'bg-purple-500 hover:bg-purple-600', text: 'text-white' },
+  { name: 'LTD', url: 'https://tool.link.cn', icon: '⚡', bg: 'bg-cyan-500 hover:bg-cyan-600', text: 'text-white' },
+  { name: '提示词', url: 'https://prompts.link.cn', icon: '✍️', bg: 'bg-emerald-500 hover:bg-emerald-600', text: 'text-white' },
+  { name: '加密', url: 'https://signal.link.cn', icon: '₿', bg: 'bg-orange-500 hover:bg-orange-600', text: 'text-white' },
+];
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -69,6 +76,23 @@ export default function Header() {
                 </div>
               </div>
             </div>
+
+            {/* Sister Sites - Pills */}
+            <div className="hidden lg:flex items-center gap-1.5 ml-2 pl-2 border-l border-gray-200 dark:border-gray-700">
+              {sisterSites.map((site) => (
+                <a
+                  key={site.url}
+                  href={site.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium rounded-full transition-colors ${site.bg} ${site.text}`}
+                  title={site.name}
+                >
+                  <span>{site.icon}</span>
+                  <span>{site.name}</span>
+                </a>
+              ))}
+            </div>
           </nav>
 
           {/* Mobile menu button */}
@@ -103,6 +127,26 @@ export default function Header() {
             >
               资讯 ↗
             </a>
+
+            {/* Sister Sites - Mobile */}
+            <div className="px-4 pt-3 mt-3 border-t border-gray-100 dark:border-gray-800">
+              <p className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-2">姊妹站点</p>
+              <div className="flex flex-wrap gap-2">
+                {sisterSites.map((site) => (
+                <a
+                  key={site.url}
+                  href={site.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`inline-flex items-center gap-1 px-3 py-1.5 text-xs font-medium rounded-full ${site.bg} ${site.text}`}
+                >
+                  <span>{site.icon}</span>
+                  <span>{site.name}</span>
+                </a>
+              ))}
+              </div>
+            </div>
+
             <div className="mt-2 space-y-1 px-2">
               {categories.map((cat) => (
                 <Link

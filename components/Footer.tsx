@@ -3,6 +3,14 @@ import { categories } from '@/data/categories';
 import { tools } from '@/data/tools';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
 
+const allSisterSites = [
+  { name: 'AI资讯新闻', url: 'https://ai.link.cn', icon: '📰', hoverColor: 'hover:text-purple-600 dark:hover:text-purple-400' },
+  { name: 'AI工具推荐', url: 'https://tools.link.cn', icon: '🛠️', hoverColor: 'hover:text-blue-600 dark:hover:text-blue-400' },
+  { name: 'AI工具LTD', url: 'https://tool.link.cn', icon: '⚡', hoverColor: 'hover:text-cyan-600 dark:hover:text-cyan-400' },
+  { name: 'AI提示词市场', url: 'https://prompts.link.cn', icon: '✍️', hoverColor: 'hover:text-emerald-600 dark:hover:text-emerald-400' },
+  { name: '加密货币分析', url: 'https://signal.link.cn', icon: '₿', hoverColor: 'hover:text-orange-600 dark:hover:text-orange-400' },
+];
+
 export default function Footer() {
   // 计算最新工具更新时间
   const latestUpdate = tools.reduce((max, t) => {
@@ -13,9 +21,9 @@ export default function Footer() {
   return (
     <footer className="bg-gray-50 dark:bg-gray-900/50 border-t border-gray-200 dark:border-gray-800 mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand */}
-          <div className="md:col-span-1">
+          <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center">
                 <span className="text-white font-bold text-lg">AI</span>
@@ -57,6 +65,28 @@ export default function Footer() {
               <li><Link href="/" className="text-sm text-gray-500 hover:text-violet-600 transition-colors">热门工具</Link></li>
               <li><Link href="/?sort=featured" className="text-sm text-gray-500 hover:text-violet-600 transition-colors">精选推荐</Link></li>
               <li><Link href="/?pricing=free" className="text-sm text-gray-500 hover:text-violet-600 transition-colors">免费工具</Link></li>
+            </ul>
+          </div>
+
+          {/* Sister Sites */}
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900 dark:text-white mb-4 uppercase tracking-wider">
+              姊妹站点
+            </h3>
+            <ul className="space-y-2.5">
+              {allSisterSites.map((site) => (
+                <li key={site.url}>
+                  <a
+                    href={site.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`text-sm text-gray-500 ${site.hoverColor} transition-colors flex items-center gap-2`}
+                  >
+                    <span>{site.icon}</span>
+                    <span>{site.name}</span>
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 

@@ -62,7 +62,7 @@ export default function RootLayout({
         <WebSiteJsonLd />
         <Analytics />
         <SpeedInsights />
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ''} />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || 'G-2F2V94W35E'} />
       </body>
     </html>
   );

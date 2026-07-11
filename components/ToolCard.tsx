@@ -82,28 +82,41 @@ export default function ToolCard({ tool }: ToolCardProps) {
         </div>
 
         {/* Footer Info */}
-        <div className="flex items-center justify-between pt-3 border-t border-gray-100 dark:border-gray-700/50">
-          <div className="flex items-center gap-2.5">
-            {/* Rating */}
-            <div className="flex items-center gap-1">
-              <svg className={cn('w-4 h-4', getRatingColor(tool.rating))} fill="currentColor" viewBox="0 0 20 20">
-                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-              </svg>
-              <span className={cn('text-sm font-medium', getRatingColor(tool.rating))}>
-                {tool.rating.toFixed(1)}
+        <div className="pt-3 border-t border-gray-100 dark:border-gray-700/50 space-y-3">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2.5">
+              {/* Rating */}
+              <div className="flex items-center gap-1">
+                <svg className={cn('w-4 h-4', getRatingColor(tool.rating))} fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                <span className={cn('text-sm font-medium', getRatingColor(tool.rating))}>
+                  {tool.rating.toFixed(1)}
+                </span>
+              </div>
+
+              {/* Pricing Badge */}
+              <span className={cn('px-2 py-0.5 text-[11px] font-medium rounded-md', pricingBadge.bg, pricingBadge.text)}>
+                {getPricingLabel(tool.pricingType)}
               </span>
             </div>
 
-            {/* Pricing Badge */}
-            <span className={cn('px-2 py-0.5 text-[11px] font-medium rounded-md', pricingBadge.bg, pricingBadge.text)}>
-              {getPricingLabel(tool.pricingType)}
+            {/* Price */}
+            <span className="text-xs text-gray-400 font-medium">
+              {formatPrice(tool.priceFrom || '')}
             </span>
           </div>
 
-          {/* Price */}
-          <span className="text-xs text-gray-400 font-medium">
-            {formatPrice(tool.priceFrom || '')}
-          </span>
+          {/* Visit Button */}
+          <a
+            href={`${tool.officialUrl}?ref=aitoolhub&utm_source=aitoolhub&utm_medium=card&utm_campaign=toolcard`}
+            target="_blank"
+            rel="noopener noreferrer sponsored"
+            onClick={(e) => e.stopPropagation()}
+            className="block w-full text-center py-2 text-sm font-medium bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white rounded-lg transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
+          >
+            🚀 立即试用 · 免费开始
+          </a>
         </div>
       </div>
     </Link>

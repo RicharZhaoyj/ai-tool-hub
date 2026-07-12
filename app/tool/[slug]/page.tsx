@@ -7,7 +7,7 @@ import ToolGrid from '@/components/ToolGrid';
 import AffiliateLink from '@/components/AffiliateLink';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
 import Breadcrumb from '@/components/Breadcrumb';
-import { SoftwareAppJsonLd } from '@/components/JsonLd';
+import { SoftwareAppJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
 
 interface ToolPageProps {
@@ -31,27 +31,6 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
       description: tool.tagline,
       type: 'article',
       images: [tool.logoUrl],
-    },
-    // Structured data
-    other: {
-      'script:ld+json': JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'SoftwareApplication',
-        name: tool.name,
-        applicationCategory: 'BusinessApplication',
-        operatingSystem: 'Web',
-        description: tool.description,
-        offers: {
-          '@type': 'Offer',
-          price: tool.priceFrom || '0',
-          priceCurrency: 'USD',
-        },
-        aggregateRating: {
-          '@type': 'AggregateRating',
-          ratingValue: tool.rating,
-          bestRating: 5,
-        },
-      }),
     },
   };
 }
@@ -82,6 +61,13 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
         items={[
           ...(category ? [{ name: `${category.icon} ${category.nameZh}`, url: `/category/${category.slug}` }] : []),
           { name: tool.name, url: `/tool/${tool.slug}` },
+        ]}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: '首页', url: 'https://tools.link.cn' },
+          ...(category ? [{ name: category.nameZh, url: `https://tools.link.cn/category/${category.slug}` }] : []),
+          { name: tool.name, url: `https://tools.link.cn/tool/${tool.slug}` },
         ]}
       />
 

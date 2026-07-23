@@ -1,11 +1,8 @@
-'use client';
-
-import { Suspense, useState, useMemo } from 'react';
-import { useSearchParams } from 'next/navigation';
 import HeroSection from '@/components/HeroSection';
 import SearchBar from '@/components/SearchBar';
 import CategoryNav from '@/components/CategoryNav';
 import ToolGrid from '@/components/ToolGrid';
+import SortDropdown from '@/components/SortDropdown';
 import { tools, getFeaturedTools, getHotTools, searchTools, getToolsByCategory } from '@/data/tools';
 import { categories } from '@/data/categories';
 import { blogPosts } from '@/data/blog';
@@ -62,40 +59,42 @@ const sisterSitesCards = [
   },
 ];
 
-type SortType = 'default' | 'rating' | 'newest' | 'hot';
+export default async function HomePage({
+  searchParams,
+}: {
+  searchParams: Promise<{ q?: string; category?: string; sort?: string }>;
+}) {
+  const params = await searchParams;
+  const query = params.q || '';
+  const categoryParam = params.category;
+  const sort = params.sort || 'default';
 
-function HomePageContent() {
-  const searchParams = useSearchParams();
-  const query = searchParams.get('q') || '';
-  const categoryParam = searchParams.get('category');
-  const [sort, setSort] = useState<SortType>('default');
+  let filteredTools;
+  if (query) {
+    filteredTools = searchTools(query);
+  } else if (categoryParam) {
+    filteredTools = getToolsByCategory(categoryParam);
+  } else {
+    filteredTools = tools;
+  }
 
-  const filteredTools = useMemo(() => {
-    let result: typeof tools;
+  switch (sort) {
+    case 'rating':
+      filteredTools = [...filteredTools].sort((a, b) => b.rating - a.rating);
+      break;
+    case 'newest':
+      filteredTools = [...filteredTools].sort(
+        (a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime()
+      );
+      break;
+    case 'hot':
+      filteredTools = [...filteredTools].filter((t) => t.hot || t.featured);
+      break;
+  }
 
-    if (query) {
-      result = searchTools(query);
-    } else if (categoryParam) {
-      result = getToolsByCategory(categoryParam);
-    } else {
-      result = tools;
-    }
-
-    // Sort
-    switch (sort) {
-      case 'rating':
-        return [...result].sort((a, b) => b.rating - a.rating);
-      case 'newest':
-        return [...result].sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
-      case 'hot':
-        return [...result].filter(t => t.hot || t.featured);
-      default:
-        return result;
-    }
-  }, [query, categoryParam, sort]);
-
-  const featuredTools = useMemo(() => getFeaturedTools(), []);
-  const hotTools = useMemo(() => getHotTools(), []);
+  const featuredTools = getFeaturedTools();
+  const hotTools = getHotTools();
+  const showDefault = !query && !categoryParam && sort === 'default';
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
@@ -117,23 +116,14 @@ function HomePageContent() {
             ? `搜索结果：${query}（${filteredTools.length}个）`
             : categoryParam
             ? (() => {
-                const cat = categories.find(c => c.slug === categoryParam);
+                const cat = categories.find((c) => c.slug === categoryParam);
                 return cat ? `${cat.icon} ${cat.nameZh}（${filteredTools.length}个）` : '所有工具';
               })()
             : '所有工具'}
         </h2>
 
         <div className="flex items-center gap-2">
-          <select
-            value={sort}
-            onChange={(e) => setSort(e.target.value as SortType)}
-            className="text-sm bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg px-3 py-2 text-gray-600 dark:text-gray-400 focus:outline-none focus:border-violet-500 cursor-pointer"
-          >
-            <option value="default">默认排序</option>
-            <option value="rating">评分最高</option>
-            <option value="newest">最新收录</option>
-            <option value="hot">热门优先</option>
-          </select>
+          <SortDropdown currentQuery={query} currentCategory={categoryParam || ''} />
         </div>
       </div>
 
@@ -141,7 +131,7 @@ function HomePageContent() {
       <ToolGrid tools={filteredTools} emptyMessage={`未找到与"${query}"相关的工具`} />
 
       {/* Featured Section (when no query) */}
-      {!query && !categoryParam && sort === 'default' && (
+      {showDefault && (
         <>
           {/* Hot Tools */}
           {hotTools.length > 0 && (
@@ -193,15 +183,13 @@ function HomePageContent() {
           </section>
 
           {/* News Recommended Tools */}
-          {!query && !categoryParam && (
-            <section className="mt-16" id="news-recommended">
-              <div className="flex items-center gap-2 mb-6">
-                <h2 className="text-xl font-bold text-gray-900 dark:text-white">📰 新闻热推工具</h2>
-                <span className="text-sm text-gray-400">适合从 AI 新闻了解</span>
-              </div>
-              <ToolGrid tools={hotTools.slice(0, 6)} />
-            </section>
-          )}
+          <section className="mt-16" id="news-recommended">
+            <div className="flex items-center gap-2 mb-6">
+              <h2 className="text-xl font-bold text-gray-900 dark:text-white">📰 新闻热推工具</h2>
+              <span className="text-sm text-gray-400">适合从 AI 新闻了解</span>
+            </div>
+            <ToolGrid tools={hotTools.slice(0, 6)} />
+          </section>
 
           {/* Featured Tools */}
           {featuredTools.length > 0 && (
@@ -226,7 +214,6 @@ function HomePageContent() {
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7"/></svg>
               </Link>
             </div>
-            {/* Latest reviews - inline preview since page is 'use client' */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <Link href="/review/minimax-m3-vs-claude-opus-vs-gpt55-2026" className="group block bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-950/20 dark:to-red-950/20 rounded-2xl border border-orange-200 dark:border-orange-800 p-6 hover:border-orange-400 transition-all">
                 <div className="flex items-center gap-2 mb-3">
@@ -252,6 +239,7 @@ function HomePageContent() {
               </Link>
             </div>
           </section>
+
           {/* Blog / News Section */}
           <section className="mt-16" id="blog">
             <div className="flex items-center justify-between mb-6">
@@ -283,18 +271,5 @@ function HomePageContent() {
         </>
       )}
     </div>
-  );
-}
-
-export default function HomePage() {
-  return (
-    <Suspense fallback={
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-        <div className="inline-block w-8 h-8 border-3 border-violet-500 border-t-transparent rounded-full animate-spin"></div>
-        <p className="mt-4 text-gray-500">加载中...</p>
-      </div>
-    }>
-      <HomePageContent />
-    </Suspense>
   );
 }

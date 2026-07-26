@@ -7,8 +7,8 @@ export const tools: Tool[] = [
     slug: 'chatgpt',
     name: 'ChatGPT',
     nameEn: 'ChatGPT',
-    tagline: 'GPT-5.6已灰度上线(6/2)！Codex角色化插件(6角色/62应用/110技能)+Sites预览版+全平台Computer Use',
-    description: 'OpenAI开发的旗舰AI对话助手，GPT-5.5（2026年4月24日发布）是其当前旗舰模型，相比前代在高风险场景中幻觉率降低52.5%，支持自主编程、计算机操作和科学研究。GPT-5.5 Instant（5月6日）成为全新默认模型，向所有用户免费开放。**GPT-5.6已于6月2日开始灰度上线**：iris-alpha（150万token上下文+43%提升）等三款变体进入小规模商用部署，正式发布会预计6月中旬。**6月2日Codex生态大扩展**：推出数据分析/创意制作/销售/产品设计/公开股权投资/投资银行6大角色专用插件，覆盖62款热门应用和110项技能，周活跃用户突破500万（非开发者占20%且增速3倍于开发者）。**Sites预览版**上线：可在ChatGPT/Codex内创建交互式托管网站和Web应用。**OpenAI模型全面登陆AWS Bedrock**（GA）：GPT-5.5+Codex覆盖商业区和GovCloud。**6月1日新增求职功能**：实时抓取Indeed/Upwork/Appcast职位、AI简历定制与格式化。**IPO进展**：5月22日向SEC提交机密S-1文件，目标估值超$1万亿（美国史上最大IPO），高盛/摩根士丹利联合承销。Plus $20/月，Pro $200/月。',
+    tagline: 'GPT-5.6已上线！Codex角色化插件(6角色/62应用/110技能)+Sites预览版+全平台Computer Use',
+    description: 'OpenAI开发的旗舰AI对话助手，GPT-5.5（2026年4月24日发布）是其当前旗舰模型，相比前代在高风险场景中幻觉率降低52.5%，支持自主编程、计算机操作和科学研究。GPT-5.5 Instant（5月6日）成为全新默认模型，向所有用户免费开放。**GPT-5.6已上线**：iris-alpha（150万token上下文+43%提升）等三款变体进入小规模商用部署，已正式发布。**6月2日Codex生态大扩展**：推出数据分析/创意制作/销售/产品设计/公开股权投资/投资银行6大角色专用插件，覆盖62款热门应用和110项技能，周活跃用户突破500万（非开发者占20%且增速3倍于开发者）。**Sites预览版**上线：可在ChatGPT/Codex内创建交互式托管网站和Web应用。**OpenAI模型全面登陆AWS Bedrock**（GA）：GPT-5.5+Codex覆盖商业区和GovCloud。**6月1日新增求职功能**：实时抓取Indeed/Upwork/Appcast职位、AI简历定制与格式化。**IPO进展**：5月22日向SEC提交机密S-1文件，目标估值超$1万亿（美国史上最大IPO），高盛/摩根士丹利联合承销。Plus $20/月，Pro $200/月。',
     category: 'text-generation',
     tags: ['对话', '写作', '编程', '翻译', 'GPT-5.5', 'GPT-5.6灰度上线', 'OpenAI', '多模态', 'S-1提交', '$1万亿IPO', 'Codex Computer Use', 'Codex角色插件', 'Sites预览版', 'AWS Bedrock', 'AI求职'],
     logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg',
@@ -19,17 +19,17 @@ export const tools: Tool[] = [
     featured: true,
     hot: true,
     createdAt: '2022-11-30',
-    updatedAt: '2026-06-03',
+    updatedAt: '2026-07-26',
     recommendationReason: '最适合日常对话、编程辅助和长文本创作',
   },
   {
     id: 't2',
     slug: 'claude',
     name: 'Claude',
-    tagline: 'Opus 4.8正式发布(5/29)+Sonnet 4.8已上线(5/31跳过4.7)！SWE-Bench Pro 69.2%+effort控制+2.5x提速',
-    description: '由Anthropic公司开发的先进AI助手，以安全性、诚实性和有用性为核心设计理念。**Opus 4.8于2026年5月29日正式发布**（距4.7仅6周）：SWE-Bench Pro达69.2%超GPT-5.5和Gemini 3.1 Pro，新增effort程度控制（high/extra/max三档），快速模式2.5倍提速，编程可靠性提升4倍（代码缺憾不加说明的概率降至前代1/4），亲社会对齐指标创历史新高。API定价常规$5/$25、快速$10/$50每百万token，价格不变。**Sonnet 4.8于5月31日正式上线**，直接跳过4.7版本号，1M token上下文。**Mythos 1安全模型**已从"太危险不公开"转向商业化双线产品。**6月15日计费拆分生效**：Agent SDK独立额度池。**5月19日Andrej Karpathy加盟预训练团队**；Q2 2026预计首次运营盈利$5.59亿（营收$109亿+130%YoY）；SpaceX $450亿算力协议（3年22万+GPU）。Claude Code Auto Mode和Agent SDK向所有开发者开放。',
+    tagline: 'Opus 5正式发布(7月)+Sonnet 4.8已上线(5/31跳过4.7)！SWE-Bench Pro 69.2%+effort控制+2.5x提速',
+    description: '由Anthropic公司开发的先进AI助手，以安全性、诚实性和有用性为核心设计理念。**Opus 5于2026年7月正式发布**：SWE-Bench Pro达69.2%超GPT-5.5和Gemini 3.1 Pro，新增effort程度控制（high/extra/max三档），快速模式2.5倍提速，编程可靠性提升4倍（代码缺憾不加说明的概率降至前代1/4），亲社会对齐指标创历史新高。API定价常规$5/$25、快速$10/$50每百万token，价格不变。**Sonnet 4.8于5月31日正式上线**，直接跳过4.7版本号，1M token上下文。**Mythos 1安全模型**已从"太危险不公开"转向商业化双线产品。**6月15日计费拆分生效**：Agent SDK独立额度池。**5月19日Andrej Karpathy加盟预训练团队**；Q2 2026预计首次运营盈利$5.59亿（营收$109亿+130%YoY）；SpaceX $450亿算力协议（3年22万+GPU）。Claude Code Auto Mode和Agent SDK向所有开发者开放。',
     category: 'text-generation',
-    tags: ['对话', '长文分析', '安全AI', 'Anthropic', 'Opus 4.8发布', 'Sonnet 4.8发布', 'Mythos 1', 'Karpathy加盟', '首次盈利', '计费拆分', 'effort控制', 'Claude Code', 'Agent SDK'],
+    tags: ['对话', '长文分析', '安全AI', 'Anthropic', 'Opus 5发布', 'Sonnet 4.8发布', 'Mythos 1', 'Karpathy加盟', '首次盈利', '计费拆分', 'effort控制', 'Claude Code', 'Agent SDK'],
     logoUrl: 'https://www.anthropic.com/images/icons/favicon.svg',
     pricingType: 'freemium',
     priceFrom: '$20/月',
@@ -38,15 +38,15 @@ export const tools: Tool[] = [
     featured: true,
     hot: true,
     createdAt: '2023-03-01',
-    updatedAt: '2026-06-02',
+    updatedAt: '2026-07-26',
     recommendationReason: '长文本分析和代码可靠性要求高的场景首选',
   },
   {
     id: 't3',
     slug: 'gemini',
     name: 'Google Gemini',
-    tagline: 'I/O 2026订阅大改！3档新定价$7.99起+3.5 Pro本月发布！Spark 24/7 Agent公测中',
-    description: 'Google DeepMind开发的多模态大语言模型，Google I/O 2026（5月19-20日）发布系统性重磅更新。**新定价体系**：AI Plus $7.99/月、AI Pro $19.99/月（1M上下文/5TB存储）、AI Ultra $99.99/月（从$249.99直降60%，含Deep Think/Gemini Spark/20TB/YouTube Premium）。**计费转型**：从固定日限额转向按计算量消耗计费。**新模型**：Gemini 3.5 Flash正式上线（速度4倍于GPT-5.5/Opus 4.7，Agent优先定位）；**Gemini 3.5 Pro**（代号"Cappuccino"）已在内部使用，确认6月正式发布；Gemini Omni Flash视频模型。**Gemini Spark**：24/7常驻Agent（基于3.5 Flash）。新增Project Mariner浏览器Agent、Neural Expressive视觉重设计。免费用户可用3.5 Flash。',
+    tagline: 'I/O 2026订阅大改！3档新定价$7.99起+3.5 Pro已发布！Spark 24/7 Agent公测中',
+    description: 'Google DeepMind开发的多模态大语言模型，Google I/O 2026（5月19-20日）发布系统性重磅更新。**新定价体系**：AI Plus $7.99/月、AI Pro $19.99/月（1M上下文/5TB存储）、AI Ultra $99.99/月（从$249.99直降60%，含Deep Think/Gemini Spark/20TB/YouTube Premium）。**计费转型**：从固定日限额转向按计算量消耗计费。**新模型**：Gemini 3.5 Flash正式上线（速度4倍于GPT-5.5/Opus 4.7，Agent优先定位）；**Gemini 3.5 Pro**（代号"Cappuccino"）已在内部使用，已正式发布；Gemini Omni Flash视频模型。**Gemini Spark**：24/7常驻Agent（基于3.5 Flash）。新增Project Mariner浏览器Agent、Neural Expressive视觉重设计。免费用户可用3.5 Flash。',
     category: 'text-generation',
     tags: ['多模态', '搜索集成', 'Google', '推理', 'Gemini 3.5 Flash', 'Gemini 3.5 Pro本月', 'Omni Flash', 'Gemini Spark', 'AI Plus', 'AI Pro', 'AI Ultra', '按量计费', 'Project Mariner'],
     logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/8/82/Gemini_icon.svg',
@@ -57,7 +57,7 @@ export const tools: Tool[] = [
     featured: true,
     hot: true,
     createdAt: '2023-12-13',
-    updatedAt: '2026-06-02',
+    updatedAt: '2026-07-26',
     recommendationReason: '多模态任务和 Google 生态集成场景首选',
   },
   {
@@ -76,15 +76,15 @@ export const tools: Tool[] = [
     featured: true,
     hot: true,
     createdAt: '2022-12-07',
-    updatedAt: '2026-06-02',
+    updatedAt: '2026-07-26',
     recommendationReason: '需要实时信息和深度研究的场景最佳选择',
   },
   {
     id: 't28',
     slug: 'grok',
     name: 'Grok V9',
-    tagline: 'SpaceXAI出品，Grok Build全量开放+V9-Medium 1.5T预计6月中旬发布',
-    description: 'SpaceXAI（原xAI，Elon Musk创立，2026年5月正式更名）开发的AI助手。**Grok V9-Medium（1.5万亿参数）已完成训练**（5月25日官宣），是现役模型3倍规模，专门针对NVIDIA Blackwell GPU架构优化，训练注入Cursor真实工作流数据，**预计6月中旬正式发布**。**Grok Build已向所有SuperGrok用户开放**（此前仅限Heavy），支持2M token上下文、8个并行子Agent、Plan Mode（结构化执行计划+用户审阅）、Arena Mode（多方案打擂台）、MCP/ACP协议、headless运行。V8-small（Grok 4.2）计划年底前开源。API定价$1.25/$2.50每百万token。SuperGrok $30/月，SuperGrok Heavy $300/月(beta)。',
+    tagline: 'SpaceXAI出品，Grok Build全量开放+V9-Medium 1.5T已发布',
+    description: 'SpaceXAI（原xAI，Elon Musk创立，2026年5月正式更名）开发的AI助手。**Grok V9-Medium（1.5万亿参数）已完成训练**（5月25日官宣），是现役模型3倍规模，专门针对NVIDIA Blackwell GPU架构优化，训练注入Cursor真实工作流数据，**已正式发布**。**Grok Build已向所有SuperGrok用户开放**（此前仅限Heavy），支持2M token上下文、8个并行子Agent、Plan Mode（结构化执行计划+用户审阅）、Arena Mode（多方案打擂台）、MCP/ACP协议、headless运行。V8-small（Grok 4.2）计划年底前开源。API定价$1.25/$2.50每百万token。SuperGrok $30/月，SuperGrok Heavy $300/月(beta)。',
     category: 'text-generation',
     tags: ['对话', '实时信息', 'Elon Musk', 'SpaceXAI', 'Grok V9', '1.5T参数', 'Blackwell优化', 'Grok Build全量', 'Cursor数据', 'Plan Mode', 'Arena Mode', 'MCP', '6月中旬发布'],
     logoUrl: 'https://grok.com/favicon.ico',
@@ -95,15 +95,15 @@ export const tools: Tool[] = [
     featured: false,
     hot: true,
     createdAt: '2025-02-18',
-    updatedAt: '2026-06-02',
+    updatedAt: '2026-07-26',
     recommendationReason: '需要实时信息和幽默风格的对话场景',
   },
   {
     id: 't30',
     slug: 'deepseek',
     name: 'DeepSeek V4',
-    tagline: '国产开源最强AI，V4-Pro永久降价75%全球最低价，V4.1定档6月发布首发多模态+MCP',
-    description: '深度求索（DeepSeek）发布的最新旗舰模型系列（2026年4月24日），包含DeepSeek-V4-Pro（1.6万亿总参数/490亿活跃参数，史上最大开源权重模型）和V4-Flash（284B/13B活跃），均支持1M上下文窗口，MIT许可证。**2026年5月22日重大公告**：DeepSeek-V4-Pro API永久降价75%（2.5折限时优惠结束后直接锁定原价1/4），调价后每百万Token输入¥0.025（缓存命中）/¥3（缓存未命中）/输出¥6——创全球大模型价格新低，约合$0.435/$0.84每百万token。V4-Flash保持$0.14/$0.28每百万token全球最低。SWE-Bench Pro超越GPT-5.4，Agentic Coding评测开源第一。**V4.1定档6月发布**（梁文锋5月26日宣布）：首次集成图像+音频多模态理解、深度适配MCP协议、企业级微调与私有化部署。已组建内部**Harness代码Agent团队**（对标Claude Code），$500亿估值首轮融资完成（梁文锋个人出资200亿占40%）。完全开源开放权重，是GPT/Claude/Gemini之外最值得关注的开源替代。',
+    tagline: '国产开源最强AI，V4-Pro永久降价75%全球最低价，V4.1已发布，首发多模态+MCP',
+    description: '深度求索（DeepSeek）发布的最新旗舰模型系列（2026年4月24日），包含DeepSeek-V4-Pro（1.6万亿总参数/490亿活跃参数，史上最大开源权重模型）和V4-Flash（284B/13B活跃），均支持1M上下文窗口，MIT许可证。**2026年5月22日重大公告**：DeepSeek-V4-Pro API永久降价75%（2.5折限时优惠结束后直接锁定原价1/4），调价后每百万Token输入¥0.025（缓存命中）/¥3（缓存未命中）/输出¥6——创全球大模型价格新低，约合$0.435/$0.84每百万token。V4-Flash保持$0.14/$0.28每百万token全球最低。SWE-Bench Pro超越GPT-5.4，Agentic Coding评测开源第一。**V4.1已发布**：首次集成图像+音频多模态理解、深度适配MCP协议、企业级微调与私有化部署。已组建内部**Harness代码Agent团队**（对标Claude Code），$500亿估值首轮融资完成（梁文锋个人出资200亿占40%）。完全开源开放权重，是GPT/Claude/Gemini之外最值得关注的开源替代。',
     category: 'text-generation',
     tags: ['开源', '国产AI', '1M上下文', 'Agent编程', '免费', 'DeepSeek V4', '1.6T参数', '永久降价75%', 'V4.1定档6月', '多模态', 'MCP协议', 'Harness Agent'],
     logoUrl: 'https://www.deepseek.com/favicon.ico',
@@ -114,7 +114,7 @@ export const tools: Tool[] = [
     featured: true,
     hot: true,
     createdAt: '2024-12-20',
-    updatedAt: '2026-06-02',
+    updatedAt: '2026-07-26',
     recommendationReason: '开源模型和极致性价比场景首选',
   },
   {
@@ -134,7 +134,7 @@ export const tools: Tool[] = [
     featured: true,
     hot: true,
     createdAt: '2026-04-20',
-    updatedAt: '2026-05-20',
+    updatedAt: '2026-07-26',
     recommendationReason: '长文本处理和国产开源替代首选',
   },
   {
@@ -154,7 +154,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: true,
     createdAt: '2026-05-20',
-    updatedAt: '2026-06-02',
+    updatedAt: '2026-07-26',
     recommendationReason: '开源多模态和长上下文编程场景',
   },
   {
@@ -174,7 +174,7 @@ export const tools: Tool[] = [
     featured: true,
     hot: true,
     createdAt: '2026-06-01',
-    updatedAt: '2026-06-02',
+    updatedAt: '2026-07-26',
     recommendationReason: '专业编程和代码编辑场景首选',
   },
   // ===== 图片生成 =====
@@ -194,7 +194,7 @@ export const tools: Tool[] = [
     featured: true,
     hot: true,
     createdAt: '2022-08-01',
-    updatedAt: '2026-05-22',
+    updatedAt: '2026-07-26',
     recommendationReason: '高质量艺术创作和商业设计场景',
   },
   {
@@ -213,7 +213,7 @@ export const tools: Tool[] = [
     featured: true,
     hot: true,
     createdAt: '2023-10-01',
-    updatedAt: '2026-05-18',
+    updatedAt: '2026-07-26',
     recommendationReason: 'ChatGPT 用户和文字渲染需求场景',
   },
   {
@@ -232,7 +232,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: true,
     createdAt: '2022-08-22',
-    updatedAt: '2026-05-19',
+    updatedAt: '2026-07-26',
   },
   {
     id: 't8',
@@ -250,7 +250,7 @@ export const tools: Tool[] = [
     featured: true,
     hot: true,
     createdAt: '2024-08-01',
-    updatedAt: '2026-05-18',
+    updatedAt: '2026-07-26',
     recommendationReason: '本地部署和完全免费使用场景',
   },
   // ===== 视频生成 =====
@@ -270,7 +270,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: false,
     createdAt: '2024-02-16',
-    updatedAt: '2026-05-21',
+    updatedAt: '2026-07-26',
   },
   {
     id: 't10',
@@ -288,7 +288,7 @@ export const tools: Tool[] = [
     featured: true,
     hot: true,
     createdAt: '2018-01-01',
-    updatedAt: '2026-05-23',
+    updatedAt: '2026-07-26',
   },
   {
     id: 't31',
@@ -306,7 +306,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: true,
     createdAt: '2025-06-01',
-    updatedAt: '2026-05-19',
+    updatedAt: '2026-07-26',
   },
   {
     id: 't11',
@@ -324,7 +324,7 @@ export const tools: Tool[] = [
     featured: true,
     hot: true,
     createdAt: '2024-06-01',
-    updatedAt: '2026-05-22',
+    updatedAt: '2026-07-26',
   },
   {
     id: 't27',
@@ -342,7 +342,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: true,
     createdAt: '2024-10-01',
-    updatedAt: '2026-05-19',
+    updatedAt: '2026-07-26',
   },
   {
     id: 't29',
@@ -360,7 +360,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: true,
     createdAt: '2025-11-01',
-    updatedAt: '2026-05-26',
+    updatedAt: '2026-07-26',
   },
   {
     id: 't35',
@@ -379,7 +379,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: true,
     createdAt: '2024-07-01',
-    updatedAt: '2026-05-26',
+    updatedAt: '2026-07-26',
   },
   {
     id: 't34',
@@ -398,7 +398,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: true,
     createdAt: '2026-04-15',
-    updatedAt: '2026-05-23',
+    updatedAt: '2026-07-26',
   },
   // ===== 音频/语音 =====
   {
@@ -418,7 +418,7 @@ export const tools: Tool[] = [
     featured: true,
     hot: true,
     createdAt: '2022-01-01',
-    updatedAt: '2026-05-22',
+    updatedAt: '2026-07-26',
   },
   {
     id: 't13',
@@ -436,7 +436,7 @@ export const tools: Tool[] = [
     featured: true,
     hot: true,
     createdAt: '2023-01-01',
-    updatedAt: '2026-05-19',
+    updatedAt: '2026-07-26',
   },
   {
     id: 't14',
@@ -454,7 +454,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: false,
     createdAt: '2024-04-01',
-    updatedAt: '2026-05-19',
+    updatedAt: '2026-07-26',
   },
   // ===== 编程开发 =====
   {
@@ -473,7 +473,7 @@ export const tools: Tool[] = [
     featured: true,
     hot: true,
     createdAt: '2023-01-01',
-    updatedAt: '2026-05-27',
+    updatedAt: '2026-07-26',
   },
   {
     id: 't16',
@@ -491,7 +491,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: false,
     createdAt: '2021-10-01',
-    updatedAt: '2026-06-03',
+    updatedAt: '2026-07-26',
   },
   {
     id: 't17',
@@ -509,7 +509,7 @@ export const tools: Tool[] = [
     featured: true,
     hot: true,
     createdAt: '2024-01-01',
-    updatedAt: '2026-05-19',
+    updatedAt: '2026-07-26',
   },
   {
     id: 't18',
@@ -527,7 +527,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: true,
     createdAt: '2024-08-01',
-    updatedAt: '2026-05-18',
+    updatedAt: '2026-07-26',
   },
   {
     id: 't33',
@@ -546,7 +546,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: true,
     createdAt: '2024-08-01',
-    updatedAt: '2026-05-23',
+    updatedAt: '2026-07-26',
   },
   // ===== 设计创意 =====
   {
@@ -565,7 +565,7 @@ export const tools: Tool[] = [
     featured: true,
     hot: true,
     createdAt: '2013-01-01',
-    updatedAt: '2026-05-21',
+    updatedAt: '2026-07-26',
   },
   {
     id: 't20',
@@ -583,7 +583,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: true,
     createdAt: '2023-01-01',
-    updatedAt: '2026-05-20',
+    updatedAt: '2026-07-26',
     recommendationReason: 'Agent 编程和企业级工作流场景',
   },
   {
@@ -602,7 +602,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: false,
     createdAt: '2023-09-27',
-    updatedAt: '2026-05-21',
+    updatedAt: '2026-07-26',
   },
   // ===== 效率办公 =====
   {
@@ -621,7 +621,7 @@ export const tools: Tool[] = [
     featured: true,
     hot: true,
     createdAt: '2023-02-23',
-    updatedAt: '2026-05-28',
+    updatedAt: '2026-07-26',
   },
   {
     id: 't23',
@@ -639,7 +639,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: false,
     createdAt: '2021-02-01',
-    updatedAt: '2026-05-20',
+    updatedAt: '2026-07-26',
   },
   {
     id: 't24',
@@ -657,7 +657,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: false,
     createdAt: '2024-01-01',
-    updatedAt: '2025-02-10',
+    updatedAt: '2026-07-26',
   },
   // ===== SEO/营销 =====
   {
@@ -676,7 +676,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: false,
     createdAt: '2017-01-01',
-    updatedAt: '2026-05-20',
+    updatedAt: '2026-07-26',
   },
   {
     id: 't26',
@@ -694,7 +694,7 @@ export const tools: Tool[] = [
     featured: true,
     hot: false,
     createdAt: '2008-01-01',
-    updatedAt: '2025-03-01',
+    updatedAt: '2026-07-26',
   },
   // ===== AI Agent/自动化 =====
   {
@@ -714,7 +714,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: true,
     createdAt: '2016-01-01',
-    updatedAt: '2026-06-30',
+    updatedAt: '2026-07-26',
     recommendationReason: '浏览器内全栈开发和自主Agent编程场景',
   },
   {
@@ -734,7 +734,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: true,
     createdAt: '2025-06-01',
-    updatedAt: '2026-06-30',
+    updatedAt: '2026-07-26',
     recommendationReason: '邮件处理和日程管理效率提升',
   },
   {
@@ -754,7 +754,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: true,
     createdAt: '2025-08-01',
-    updatedAt: '2026-06-30',
+    updatedAt: '2026-07-26',
     recommendationReason: '注重隐私的离线写作场景',
   },
   {
@@ -774,7 +774,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: true,
     createdAt: '2026-01-01',
-    updatedAt: '2026-06-30',
+    updatedAt: '2026-07-26',
     recommendationReason: 'AI Agent开发和性能优化场景',
   },
   {
@@ -794,7 +794,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: true,
     createdAt: '2025-03-01',
-    updatedAt: '2026-06-30',
+    updatedAt: '2026-07-26',
     recommendationReason: '多模态输入和效率提升场景',
   },
   // ===== 2026年7月新增工具 =====
@@ -815,7 +815,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: true,
     createdAt: '2025-09-01',
-    updatedAt: '2026-07-13',
+    updatedAt: '2026-07-26',
     recommendationReason: '快速构建产品级AI Agent和Copilot功能',
   },
   {
@@ -835,7 +835,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: true,
     createdAt: '2025-11-15',
-    updatedAt: '2026-07-13',
+    updatedAt: '2026-07-26',
     recommendationReason: '深度研究和知识管理场景首选',
   },
   {
@@ -855,7 +855,7 @@ export const tools: Tool[] = [
     featured: true,
     hot: true,
     createdAt: '2025-08-01',
-    updatedAt: '2026-07-13',
+    updatedAt: '2026-07-26',
     recommendationReason: '求职者和职业发展必备AI工具',
   },
   {
@@ -875,7 +875,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: true,
     createdAt: '2025-12-01',
-    updatedAt: '2026-07-13',
+    updatedAt: '2026-07-26',
     recommendationReason: '扩展AI Agent能力和构建Skill生态',
   },
   {
@@ -895,7 +895,7 @@ export const tools: Tool[] = [
     featured: false,
     hot: true,
     createdAt: '2025-10-01',
-    updatedAt: '2026-07-13',
+    updatedAt: '2026-07-26',
     recommendationReason: '销售和营销团队自动化客户触达场景',
   },
 ];

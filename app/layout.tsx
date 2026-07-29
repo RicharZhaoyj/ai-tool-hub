@@ -26,6 +26,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'zh_CN',
     siteName: 'AI Tool Hub',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'AI Tool Hub - tools.link.cn' }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -62,7 +63,7 @@ export default function RootLayout({
         <WebSiteJsonLd />
         <Analytics />
         <SpeedInsights />
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || 'G-2F2V94W35E'} />
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || 'G-9GQB6S45PY'} />
       </body>
     </html>
   );

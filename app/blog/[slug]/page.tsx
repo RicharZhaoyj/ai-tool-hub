@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { blogPosts, getBlogPostBySlug } from '@/data/blog';
 import { notFound } from 'next/navigation';
 import Breadcrumb from '@/components/Breadcrumb';
+import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -35,6 +36,21 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <ArticleJsonLd
+        title={post.title}
+        description={post.summary}
+        url={`https://tools.link.cn/blog/${post.slug}`}
+        author={post.author}
+        publishedAt={post.publishedAt}
+        updatedAt={post.publishedAt}
+      />
+      <BreadcrumbJsonLd
+        items={[
+          { name: '首页', url: 'https://tools.link.cn' },
+          { name: 'AI 资讯', url: 'https://tools.link.cn/blog' },
+          { name: post.title, url: `https://tools.link.cn/blog/${post.slug}` },
+        ]}
+      />
       <Breadcrumb
         items={[
           { name: '首页', url: '/' },

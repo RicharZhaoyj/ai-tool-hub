@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { reviews, getReviewBySlug } from '@/data/reviews';
+import { reviews, getReviewBySlug, getRelatedReviews } from '@/data/reviews';
 import { getToolBySlug } from '@/data/tools';
 import { notFound } from 'next/navigation';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
@@ -247,6 +247,9 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
     .map(slug => getToolBySlug(slug))
     .filter(Boolean);
 
+  // 获取相关评测
+  const relatedReviews = getRelatedReviews(slug, 4);
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <ArticleJsonLd
@@ -387,6 +390,68 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
             </div>
           </aside>
         </div>
+
+        {/* Related Reviews Section */}
+        {relatedReviews.length > 0 && (
+          <section className="mt-16 pt-10 border-t border-gray-200 dark:border-gray-700">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
+                <span>📚</span> 你可能还想看这些评测
+              </h2>
+              <Link
+                href="/reviews"
+                className="text-sm font-medium text-violet-600 dark:text-violet-400 hover:text-violet-700 dark:hover:text-violet-300 transition-colors"
+              >
+                查看全部评测 →
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              {relatedReviews.map(related => (
+                <Link
+                  key={related.id}
+                  href={`/review/${related.slug}`}
+                  className="group bg-white dark:bg-gray-800/60 rounded-2xl border border-gray-200 dark:border-gray-700 p-5 hover:border-violet-300 dark:hover:border-violet-700 hover:shadow-lg hover:shadow-violet-100/50 dark:hover:shadow-violet-900/20 transition-all duration-300"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center text-white text-xl font-bold">
+                      {related.tools.length > 0
+                        ? related.tools.length >= 3 ? '⚔️' : 'VS'
+                        : '📖'}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-2">
+                        {related.featured && (
+                          <span className="shrink-0 px-2 py-0.5 text-xs font-bold bg-amber-100 dark:bg-amber-900/30 text-amber-700 dark:text-amber-400 rounded-full">
+                            🔥 热门
+                          </span>
+                        )}
+                        <span className="shrink-0 px-2 py-0.5 text-xs font-medium bg-violet-100 dark:bg-violet-900/30 text-violet-700 dark:text-violet-400 rounded-full">
+                          {related.readingTime} 分钟
+                        </span>
+                      </div>
+                      <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors line-clamp-2 mb-2">
+                        {related.title}
+                      </h3>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2 mb-3">
+                        {related.subtitle}
+                      </p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {related.tags.slice(0, 3).map(tag => (
+                          <span
+                            key={tag}
+                            className="px-2 py-0.5 text-xs bg-gray-100 dark:bg-gray-700/50 text-gray-500 dark:text-gray-400 rounded-md"
+                          >
+                            #{tag}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </section>
+        )}
       </article>
     </div>
   );

@@ -2533,3 +2533,37 @@ export function getFeaturedReviews(): Review[] {
 export function getReviewsForTool(toolSlug: string): Review[] {
   return reviews.filter(r => r.tools.includes(toolSlug));
 }
+
+export function getRelatedReviews(slug: string, limit = 4): Review[] {
+  const current = reviews.find(r => r.slug === slug);
+  if (!current) return [];
+
+  const scored = reviews
+    .filter(r => r.slug !== slug)
+    .map(r => {
+      let score = 0;
+      // 同分类加3分
+      if (r.category === current.category) score += 3;
+      // 共享标签每个加1分
+      const sharedTags = r.tags.filter(t => current.tags.includes(t));
+      score += sharedTags.length;
+      // 共享涉及工具每个加2分
+      const sharedTools = r.tools.filter(t => current.tools.includes(t));
+      score += sharedTools.length * 2;
+      return { review: r, score };
+    })
+    .filter(item => item.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .slice(0, limit);
+
+  const result = scored.map(s => s.review);
+  // 如果不足，用精选或最新评测补足
+  if (result.length < limit) {
+    const featured = reviews
+      .filter(r => r.slug !== slug && !result.find(rr => rr.slug === r.slug))
+      .sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0))
+      .slice(0, limit - result.length);
+    result.push(...featured);
+  }
+  return result;
+}

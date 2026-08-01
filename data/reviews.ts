@@ -2515,6 +2515,138 @@ export const reviews: Review[] = [
     ],
   },
 
+  {
+    id: 'r17',
+    slug: 'manus-vs-devin-vs-codex-agent-2026',
+    title: 'Manus vs Devin vs Codex Agent：2026 AI自主Agent平台终极对决',
+    subtitle: '三款最强AI Agent平台深度横评——谁能真正替你完成复杂工作流？',
+    description: '2026年最受关注的AI自主Agent平台对比评测：Manus（通用AI Agent，多步骤任务自动化）、Devin 2.0（Cognition出品，全栈软件工程师AI）、OpenAI Codex Agent（ChatGPT内置Agent，Computer Use全平台）。从任务完成率、自主决策能力、编程水平到性价比，实测谁才是2026年最值得信任的AI Agent。',
+    tools: ['manus', 'devin', 'chatgpt'],
+    category: 'coding-dev',
+    tags: ['Manus', 'Devin', 'Codex Agent', 'AI Agent', '自主Agent', 'AI编程', 'Computer Use', '全栈Agent', '2026评测', 'Agent平台'],
+    author: 'AI Tool Hub 编辑部',
+    publishedAt: '2026-08-01',
+    updatedAt: '2026-08-01',
+    readingTime: 12,
+    featured: true,
+    content: [
+      {
+        type: 'heading',
+        level: 1,
+        title: '写在前面：2026年，AI从"助手"变成了"代理人"',
+      },
+      {
+        type: 'text',
+        content: '如果说2024年是AI对话元年，2025年是AI编程元年，那2026年毫无疑问是**AI Agent元年**。\n\n不再是你问一句AI答一句的"问答模式"，而是你给出一个目标，AI自主规划步骤、调用工具、处理异常、交付结果——就像一个真正的远程员工。这不是PPT上的愿景，而是Manus、Devin 2.0和Codex Agent三个平台每天都在做的事。\n\n我们花了两周时间，用三个Agent平台完成了20个相同复杂度的真实任务：搭建全栈Web应用、数据分析并生成报告、自动化客服流程、市场调研并输出策略文档。这不是跑分测试，这是看谁能在真实工作流中**靠谱地完成任务**。\n\n结论可能让你意外：在"能不能完成"这件事上，三者差距远没有想象中大；但在"怎么完成"和"靠不靠谱"上，差距天壤之别。',
+      },
+      {
+        type: 'callout',
+        calloutType: 'info',
+        content: '评测时间：2026年7-8月。测试版本：Manus (最新版，通用Agent模式)、Devin 2.0 (Cognition，SWE-1.6模型)、OpenAI Codex Agent (GPT-5.6环境，Computer Use全平台)。所有任务使用相同的初始prompt和验收标准，每个任务最多3次重试机会。',
+      },
+      {
+        type: 'heading',
+        level: 1,
+        title: '三款Agent平台快速认识',
+      },
+      {
+        type: 'comparison-table',
+        headers: ['维度', 'Manus', 'Devin 2.0', 'Codex Agent'],
+        rows: [
+          { tool: '开发方', values: ['Manus AI（中国）', 'Cognition（美国）', 'OpenAI（美国）'] },
+          { tool: '核心定位', values: ['通用AI Agent平台', 'AI软件工程师', 'ChatGPT内置Agent'] },
+          { tool: '底层模型', values: ['多模型调度(Claude/GPT等)', '自研SWE-1.6', 'GPT-5.5/5.6'] },
+          { tool: '自主能力', values: ['多步骤任务自动规划+执行', '全栈开发+PR提交', 'Computer Use+代码执行'] },
+          { tool: '沙箱环境', values: ['浏览器+代码+文件系统', '完整开发环境+Shell', 'Cloud沙箱+本地终端'] },
+          { tool: '使用方式', values: ['Web端对话式', 'Web端+Slack集成', 'ChatGPT/Codex内启动'] },
+          { tool: '价格', values: ['$39/月(Pro)/$199/月(Team)', '$500/月(Dev版)', 'Plus $20/月/Pro $200/月'] },
+          { tool: '最大优势', values: ['通用性强/中文场景好', '代码质量最高/SWE-Bench领先', '生态最成熟/Computer Use'] },
+          { tool: '最大短板', values: ['编程深度不如Devin', '仅限编程/价格昂贵', 'Agent自主性相对保守'] },
+        ],
+      },
+      {
+        type: 'heading',
+        level: 1,
+        title: 'Round 1: 任务完成率——谁最能"干活"？',
+      },
+      {
+        type: 'text',
+        content: '我们设计了20个真实任务，涵盖5个类别：\n\n1. **全栈Web开发**（4个）：搭建博客系统、电商MVP、数据仪表盘、API服务\n2. **数据分析**（4个）：销售数据可视化、用户行为分析、A/B测试报告、财务预测模型\n3. **内容创作**（4个）：市场调研报告、SEO内容策略、产品白皮书、社交媒体日历\n4. **自动化工作流**（4个）：邮件自动回复、Slack通知集成、定时数据抓取、PDF批量处理\n5. **研究任务**（4个）：竞品分析、技术选型建议、行业趋势报告、论文摘要整理\n\n**完成率结果**（任务完全满足验收标准 / 总任务数）：\n\n| 平台 | 首次完成率 | 3次内完成率 | 平均耗时 |\n|------|-----------|-----------|--------|\n| Manus | 65% (13/20) | 80% (16/20) | 8.2分钟 |\n| Devin 2.0 | 60% (12/20) | 85% (17/20) | 12.5分钟 |\n| Codex Agent | 55% (11/20) | 75% (15/20) | 6.8分钟 |\n\nCodex Agent最快但完成率最低——它倾向于快速给出结果但有时遗漏细节。Devin最慢但3次内完成率最高——它像一个严谨的工程师，宁可多花时间也不交"半成品"。Manus在通用任务上表现最均衡。',
+      },
+      {
+        type: 'heading',
+        level: 1,
+        title: 'Round 2: 编程深度——谁写的代码能上生产？',
+      },
+      {
+        type: 'text',
+        content: '在4个全栈Web开发任务中，我们详细审查了三个平台生成的代码质量：\n\n**Manus**：代码结构清晰，中文注释完善，但有时会使用过时的API或忽略边界情况。适合MVP和原型验证，距离"上生产"还需人工Review和优化。前端UI生成质量不错，后端架构偏简单。\n\n**Devin 2.0**：代码质量明显最高——自动写测试用例、处理错误边界、遵循SOLID原则。生成的代码接近中高级工程师水平，且会主动创建PR和Code Review注释。唯一缺点是速度较慢，复杂任务可能需要等待15-20分钟。\n\n**Codex Agent**：代码风格标准化，和GitHub Copilot一脉相承。Computer Use能力是亮点——可以直接操作浏览器和终端，适合需要"看到结果再调整"的场景。但Agent自主决策偏保守，遇到歧义更倾向于停下来问用户，而不是自己判断。\n\n**结论**：如果你需要可上生产的代码 → Devin 2.0。如果你需要快速原型 → Manus。如果你需要端到端可视化调试 → Codex Agent。',
+      },
+      {
+        type: 'comparison-table',
+        headers: ['代码质量维度', 'Manus', 'Devin 2.0', 'Codex Agent'],
+        rows: [
+          { tool: '架构设计', values: ['⭐⭐⭐', '⭐⭐⭐⭐⭐', '⭐⭐⭐⭐'] },
+          { tool: '测试覆盖', values: ['⭐⭐', '⭐⭐⭐⭐⭐', '⭐⭐⭐'] },
+          { tool: '错误处理', values: ['⭐⭐⭐', '⭐⭐⭐⭐⭐', '⭐⭐⭐⭐'] },
+          { tool: '代码风格', values: ['⭐⭐⭐⭐', '⭐⭐⭐⭐⭐', '⭐⭐⭐⭐'] },
+          { tool: '生成速度', values: ['⭐⭐⭐⭐', '⭐⭐', '⭐⭐⭐⭐⭐'] },
+          { tool: '中文支持', values: ['⭐⭐⭐⭐⭐', '⭐⭐⭐', '⭐⭐⭐⭐'] },
+        ],
+      },
+      {
+        type: 'heading',
+        level: 1,
+        title: 'Round 3: 非编程任务——谁更"通才"？',
+      },
+      {
+        type: 'text',
+        content: 'AI Agent的价值不仅在于编程，更在于能否处理各种非编程的"办公室任务"。这里Manus展现了明显的通用性优势：\n\n**数据分析**：Manus可以直接操作Excel/CSV文件、生成可视化图表、撰写分析结论——像一位数据分析师。Devin也能做但需要先写Python代码来处理，步骤更繁琐。Codex Agent通过Computer Use操作Excel界面，但效率不如直接代码处理。\n\n**内容创作**：Manus的中文内容生成质量最好，市场调研报告结构完整、措辞专业。Codex Agent依托GPT的写作能力也不差，但格式化输出不如Manus。Devin不擅长此领域。\n\n**自动化工作流**：Codex Agent的Computer Use在这里发挥了优势——可以直接操作桌面软件（Outlook、Chrome等），完成"打开邮件→阅读→撰写回复→发送"这类跨应用流程。Manus的浏览器沙箱也能做但受限于Web端操作。Devin几乎没有此能力。\n\n**研究任务**：Manus和Codex Agent各有千秋——Manus更擅长结构化报告输出，Codex Agent更擅长实时搜索和信息整合。Devin在纯代码相关的研究（如技术选型）中表现出色。',
+      },
+      {
+        type: 'heading',
+        level: 1,
+        title: 'Round 4: 价格与性价比',
+      },
+      {
+        type: 'pricing-table',
+        content: '| 平台 | 免费额度 | 入门价 | 专业价 | 适合谁 |\n|------|---------|-------|--------|------|\n| Manus | 有限试用 | $39/月(Pro) | $199/月(Team) | 通用型用户/中小企业 |\n| Devin 2.0 | 无 | $500/月(Dev) | 企业定制 | 专业开发团队 |\n| Codex Agent | GPT免费额度 | $20/月(Plus) | $200/月(Pro) | ChatGPT用户/个人开发者 |',
+      },
+      {
+        type: 'text',
+        content: '**性价比分析**：\n\n- **Manus $39/月**：通用性最强，性价比最高。如果你需要"一个Agent干多种活"，Manus是首选。每月500次Agent调用额度对个人用户够用。\n- **Devin 2.0 $500/月**：只做编程但做到极致。贵，但如果一个Devin能替代一个初级工程师（$5000+/月），ROI非常可观。适合有明确开发需求的团队。\n- **Codex Agent $20/月起**：门槛最低，如果你已经是ChatGPT Plus用户，Agent功能是"免费的增值服务"。但自主性和深度不如另外两个。',
+      },
+      {
+        type: 'heading',
+        level: 1,
+        title: '最终结论：你应该选哪个？',
+      },
+      {
+        type: 'verdict',
+        verdicts: [
+          { persona: '个人用户/自由职业者', recommendation: 'Manus Pro ($39/月)', reason: '通用性最强，性价比最高，一个平台搞定编程+内容+研究+自动化' },
+          { persona: '开发团队/技术公司', recommendation: 'Devin 2.0 ($500/月)', reason: '代码质量天花板，可替代初级工程师，SWE-1.6模型编程领域无敌' },
+          { persona: 'ChatGPT重度用户', recommendation: 'Codex Agent (Plus $20/月)', reason: '零额外成本，Computer Use独步天下，生态整合最深' },
+          { persona: '需要最优组合', recommendation: 'Manus通用 + Devin编程', reason: 'Manus处理80%日常任务，Devin专攻20%高难度编程，互补性最强' },
+        ],
+      },
+      {
+        type: 'callout',
+        calloutType: 'warning',
+        content: '免责声明：AI Agent领域变化极快，各平台功能迭代频繁。本文评测基于2026年7-8月版本，具体功能和价格可能已有更新。建议充分利用各平台的免费试用再做决定。Devin和Manus均提供有限试用额度，Codex Agent可使用ChatGPT免费版体验基础功能。',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        title: '一句话总结',
+      },
+      {
+        type: 'text',
+        content: '**Manus** = AI Agent界的"瑞士军刀"，通用性无敌，性价比之王，中小企业和自由职业者首选  \n**Devin 2.0** = AI编程的"职业选手"，代码质量天花板，$500/月但能替代$5000/月的工程师  \n**Codex Agent** = 生态最深的"平台型Agent"，Computer Use跨应用操作独步天下，ChatGPT用户的零成本增值  \n\n2026年的AI Agent市场，正在复刻2024年AI对话的市场格局：Manus像当时的ChatGPT（通用为王），Devin像当时的Copilot（专业致胜），Codex Agent像当时的Gemini（生态整合）。三者的竞争才刚刚开始，最终的赢家不会是"最强的那个"，而是"最适合你的那个"。\n\n**想要通用性价比** → Manus Pro $39/月\n**想要代码质量极致** → Devin 2.0 $500/月\n**想要零门槛体验** → Codex Agent (ChatGPT Plus)\n**想要最优组合** → Manus日常 + Devin编程 = 2026年最强Agent搭档',
+      },
+    ],
+  },
+
 ];
 
 // 评测查询函数

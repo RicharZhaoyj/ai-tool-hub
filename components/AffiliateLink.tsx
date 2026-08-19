@@ -26,6 +26,21 @@ export default function AffiliateLink({ tool }: AffiliateLinkProps) {
 
   const handleClick = () => {
     setClicked(true);
+    const hasAffiliate = Boolean(
+      tool.affiliateUrl &&
+      !tool.affiliateUrl.includes('YOUR_ID') &&
+      !tool.affiliateUrl.includes('XXXXX')
+    );
+    if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+      window.gtag('event', 'affiliate_click', {
+        event_category: 'monetization',
+        tool_id: tool.id,
+        tool_name: tool.name,
+        tool_category: tool.category,
+        has_affiliate: hasAffiliate,
+        destination: tool.officialUrl,
+      });
+    }
   };
 
   return (

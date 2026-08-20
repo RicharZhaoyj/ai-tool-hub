@@ -22,15 +22,24 @@ export async function generateMetadata({ params }: ToolPageProps): Promise<Metad
   const { slug } = await params;
   const tool = getToolBySlug(slug);
   if (!tool) return {};
+  const canonical = `https://tools.link.cn/tool/${tool.slug}`;
 
   return {
     title: `${tool.name} — ${tool.tagline}`,
     description: `${tool.description.slice(0, 160)}...`,
+    alternates: { canonical },
     openGraph: {
       title: `${tool.name} | AI Tool Hub`,
       description: tool.tagline,
+      url: canonical,
       type: 'article',
-      images: [tool.logoUrl],
+      images: tool.logoUrl ? [{ url: tool.logoUrl, alt: tool.name }] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${tool.name} | AI Tool Hub`,
+      description: tool.tagline,
+      images: tool.logoUrl ? [tool.logoUrl] : [],
     },
   };
 }

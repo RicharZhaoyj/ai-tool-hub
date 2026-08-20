@@ -20,13 +20,23 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
   if (!category) return {};
 
   const categoryTools = getToolsByCategory(slug);
+  const canonical = `https://tools.link.cn/category/${category.slug}`;
 
   return {
     title: `${category.nameZh}（${category.nameEn}）AI工具推荐`,
     description: `发现最好的${category.nameZh}AI工具，已收录${categoryTools.length}款精选产品。${category.description}`,
+    alternates: { canonical },
     openGraph: {
       title: `${category.nameZh}AI工具推荐 | AI Tool Hub`,
       description: category.description,
+      url: canonical,
+      images: [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${category.nameZh}AI工具推荐 | AI Tool Hub`,
+      description: category.description,
+      images: [],
     },
   };
 }

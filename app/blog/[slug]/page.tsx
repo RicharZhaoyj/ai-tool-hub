@@ -17,14 +17,24 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   const { slug } = await params;
   const post = getBlogPostBySlug(slug);
   if (!post) return {};
+  const canonical = `https://tools.link.cn/blog/${post.slug}`;
 
   return {
     title: post.title,
     description: post.summary.slice(0, 160),
+    alternates: { canonical },
     openGraph: {
       title: `${post.title} | AI Tool Hub`,
       description: post.summary,
+      url: canonical,
       type: 'article',
+      images: [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${post.title} | AI Tool Hub`,
+      description: post.summary,
+      images: [],
     },
   };
 }

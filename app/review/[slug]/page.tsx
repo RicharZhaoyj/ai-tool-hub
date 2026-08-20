@@ -24,24 +24,29 @@ export async function generateMetadata({ params }: ReviewPageProps): Promise<Met
     .slice(0, 3)
     .map(t => t)
     .join(' vs ');
+  const canonical = `https://tools.link.cn/review/${review.slug}`;
 
   return {
-    title: `${review.title} | AI Tool Hub 深度评测`,
+    title: `${review.title}：深度评测`,
     description: review.description,
     keywords: [...review.tags, 'AI工具评测', 'AI对比', 'AI工具推荐', toolNamesStr],
+    alternates: { canonical },
     openGraph: {
       title: review.title,
       description: review.subtitle,
+      url: canonical,
       type: 'article',
       publishedTime: review.publishedAt,
       modifiedTime: review.updatedAt,
       authors: [review.author],
       tags: review.tags,
+      images: [],
     },
     twitter: {
       card: 'summary_large_image',
       title: review.title,
       description: review.subtitle,
+      images: [],
     },
   };
 }

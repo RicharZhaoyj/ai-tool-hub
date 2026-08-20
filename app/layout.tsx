@@ -10,18 +10,18 @@ import { WebSiteJsonLd } from '@/components/JsonLd';
 export const metadata: Metadata = {
   metadataBase: new URL('https://tools.link.cn'),
   title: {
-    default: 'AI Tool Hub — 发现最好的AI工具',
+    default: 'AI工具推荐与评测 2026 | ChatGPT、Midjourney、编程与办公工具',
     template: '%s | AI Tool Hub',
   },
-  description: '精选全球最优秀的AI工具，涵盖文字生成、图片创作、视频制作、编程开发、效率办公等全场景。找到最适合你的AI助手。',
-  keywords: ['AI工具', '人工智能', 'ChatGPT', 'Midjourney', 'AI导航', 'AI工具推荐', 'AI tool directory', 'AI tools 2026'],
+  description: '精选AI工具推荐与真实使用场景，覆盖ChatGPT、Midjourney、编程、设计、视频和办公效率。比较免费与付费方案、价格和适用人群，快速找到合适的AI助手。',
+  keywords: ['AI工具', '人工智能', 'ChatGPT', 'Midjourney', 'AI导航', 'AI工具推荐', 'AI工具评测', 'AI工具价格', 'AI工具免费', 'AI tool directory', 'AI tools 2026'],
   manifest: '/manifest.json',
   alternates: {
     canonical: 'https://tools.link.cn',
   },
   openGraph: {
-    title: 'AI Tool Hub — 发现最好的AI工具',
-    description: '精选全球最优秀的AI工具，涵盖文字、图像、视频、编程等全场景。',
+    title: 'AI工具推荐与评测 2026 | ChatGPT、Midjourney、编程与办公工具',
+    description: '按场景比较精选AI工具的功能、价格和免费方案，快速找到适合你的AI助手。',
     url: 'https://tools.link.cn',
     type: 'website',
     locale: 'zh_CN',
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AI Tool Hub — 发现最好的AI工具',
-    description: '精选全球最优秀的AI工具，涵盖文字、图像、视频、编程等全场景。',
+    title: 'AI工具推荐与评测 2026 | ChatGPT、Midjourney、编程与办公工具',
+    description: '按场景比较精选AI工具的功能、价格和免费方案，快速找到适合你的AI助手。',
   },
   robots: {
     index: true,

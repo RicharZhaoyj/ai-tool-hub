@@ -6,6 +6,7 @@ import './globals.css';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { WebSiteJsonLd } from '@/components/JsonLd';
+import GrowthAnalytics from '@/components/GrowthAnalytics';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://tools.link.cn'),
@@ -61,6 +62,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <WebSiteJsonLd />
+        <GrowthAnalytics />
         <Analytics />
         <SpeedInsights />
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || 'G-9GQB6S45PY'} />

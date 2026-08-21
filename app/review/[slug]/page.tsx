@@ -393,6 +393,23 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
                 ))}
               </div>
             </div>
+
+            {/* High-intent LTD path */}
+            <div className="bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-950/20 dark:to-blue-950/20 rounded-2xl border border-cyan-200 dark:border-cyan-800 p-6">
+              <p className="text-xs font-semibold tracking-wide text-cyan-700 dark:text-cyan-300 uppercase mb-2">想长期使用？</p>
+              <h3 className="font-semibold text-gray-900 dark:text-white mb-2">看看买断制 AI 工具方案</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                如果你更在意一次购买、长期使用，可以继续查看独立开发者和团队常用的 LTD 方案。
+              </p>
+              <a
+                href="https://tool.link.cn/?utm_source=aitoolhub&utm_medium=review&utm_campaign=ltd_funnel"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center w-full px-3 py-2.5 text-sm font-semibold text-white bg-cyan-600 hover:bg-cyan-700 rounded-lg transition-colors"
+              >
+                查看 LTD 方案 →
+              </a>
+            </div>
           </aside>
         </div>
 
@@ -461,3 +478,4 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
     </div>
   );
 }
+

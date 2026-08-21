@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Tool } from '@/lib/types';
 import { cn, getPricingBadgeColor, getPricingLabel, getRatingColor, formatPrice } from '@/lib/utils';
+import { getToolOutboundUrl, hasValidAffiliateUrl } from '@/lib/affiliate';
 
 interface ToolCardProps {
   tool: Tool;
@@ -109,7 +110,7 @@ export default function ToolCard({ tool }: ToolCardProps) {
 
           {/* Visit Button */}
           <a
-            href={`${tool.officialUrl}?ref=aitoolhub&utm_source=aitoolhub&utm_medium=card&utm_campaign=toolcard`}
+            href={getToolOutboundUrl(tool)}
             target="_blank"
             rel="noopener noreferrer sponsored"
             onClick={(e) => {
@@ -120,17 +121,19 @@ export default function ToolCard({ tool }: ToolCardProps) {
                   tool_id: tool.id,
                   tool_name: tool.name,
                   tool_category: tool.category,
-                  destination: tool.officialUrl,
+                  has_affiliate: hasValidAffiliateUrl(tool),
+                  destination: getToolOutboundUrl(tool),
                   placement: 'tool_card',
                 });
               }
             }}
             className="block w-full text-center py-2 text-sm font-medium bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white rounded-lg transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5"
           >
-            🚀 立即试用 · 免费开始
+            {hasValidAffiliateUrl(tool) ? '🚀 试用 / 查看优惠' : '↗ 访问官网'}
           </a>
         </div>
       </div>
     </Link>
   );
 }
+

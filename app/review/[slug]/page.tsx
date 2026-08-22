@@ -355,6 +355,21 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
                 ))}
               </div>
             )}
+            <div className="mt-4 flex flex-col gap-3 rounded-xl border border-emerald-200 bg-emerald-50/70 p-4 dark:border-emerald-800 dark:bg-emerald-950/20 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-sm font-semibold text-gray-900 dark:text-white">已经选好模型？直接拿现成模板开始</p>
+                <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">按写作、编程、营销和设计场景浏览可复制 Prompt。</p>
+              </div>
+              <a
+                href="https://prompts.link.cn/?utm_source=aitoolhub&utm_medium=review&utm_campaign=prompt_funnel&utm_content=review_quick_decision_prompt_cta"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-growth-placement="review_quick_decision_prompt_cta"
+                className="inline-flex shrink-0 items-center justify-center rounded-lg bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-700"
+              >
+                浏览 Prompt 模板 →
+              </a>
+            </div>
           </section>
         )}
 

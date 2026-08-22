@@ -353,6 +353,24 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
           <div className="lg:col-span-2">
             <ReviewContent sections={review.content} />
 
+            {/* Contextual prompt funnel */}
+            <div className="mt-10 rounded-2xl border border-emerald-200 bg-gradient-to-r from-emerald-50 to-teal-50 p-6 dark:border-emerald-800 dark:from-emerald-950/30 dark:to-teal-950/30">
+              <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">从评测到实战</p>
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">用现成提示词把结论落到工作流里</h2>
+              <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+                如果你已经选好了模型，可以直接浏览按写作、编程、营销和设计场景整理的 Prompt 模板，减少从零试错。
+              </p>
+              <a
+                href="https://prompts.link.cn/?utm_source=aitoolhub&utm_medium=review&utm_campaign=prompt_funnel&utm_content=review_prompt_cta"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-growth-placement="review_prompt_cta"
+                className="mt-4 inline-flex items-center rounded-lg bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-700"
+              >
+                浏览 Prompt 模板 →
+              </a>
+            </div>
+
             {/* Tags */}
             <div className="mt-10 pt-6 border-t border-gray-200 dark:border-gray-700">
               <h3 className="text-sm font-medium text-gray-900 dark:text-white mb-3">相关标签</h3>

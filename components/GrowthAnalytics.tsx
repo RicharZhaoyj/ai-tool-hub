@@ -35,7 +35,8 @@ export default function GrowthAnalytics() {
             event_category: 'cross_site_growth',
             site: 'tools',
             destination,
-            placement: 'sister_sites',
+            placement: link.getAttribute('data-growth-placement') || 'sister_sites',
+            content_path: window.location.pathname,
           });
         }
       } catch {
@@ -49,3 +50,4 @@ export default function GrowthAnalytics() {
 
   return null;
 }
+

@@ -254,6 +254,8 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
 
   // 获取相关评测
   const relatedReviews = getRelatedReviews(slug, 4);
+  const verdictSection = review.content.find(section => section.type === 'verdict');
+  const quickVerdicts = verdictSection?.verdicts?.slice(0, 3) || [];
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -328,6 +330,33 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
 
         {/* Affiliate Disclosure */}
         <AffiliateDisclosure variant="page-top" />
+
+        {/* Search-intent answer: keep comparison visitors engaged before the monetization path */}
+        {(review.recommendationReason || quickVerdicts.length > 0) && (
+          <section className="mt-5 mb-8 rounded-2xl border border-violet-200 bg-gradient-to-r from-violet-50 via-white to-fuchsia-50 p-5 dark:border-violet-800 dark:from-violet-950/30 dark:via-gray-900 dark:to-fuchsia-950/20 sm:p-6">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+              <div>
+                <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-violet-700 dark:text-violet-300">先看结论</p>
+                <h2 className="text-xl font-semibold text-gray-900 dark:text-white">按你的使用场景，优先考虑哪一个？</h2>
+              </div>
+              <a href="#section-0" className="shrink-0 text-sm font-semibold text-violet-700 hover:text-violet-900 dark:text-violet-300 dark:hover:text-violet-200">查看完整评测 ↓</a>
+            </div>
+            {review.recommendationReason && (
+              <p className="mt-3 text-sm leading-relaxed text-gray-600 dark:text-gray-300">{review.recommendationReason}</p>
+            )}
+            {quickVerdicts.length > 0 && (
+              <div className="mt-4 grid gap-3 md:grid-cols-3">
+                {quickVerdicts.map((verdict, index) => (
+                  <div key={`${verdict.persona}-${index}`} className="rounded-xl border border-violet-100 bg-white/80 p-4 dark:border-violet-900 dark:bg-gray-900/70">
+                    <p className="text-xs font-semibold text-violet-700 dark:text-violet-300">{verdict.persona}</p>
+                    <p className="mt-1 font-semibold text-gray-900 dark:text-white">{verdict.recommendation}</p>
+                    <p className="mt-1 text-xs leading-relaxed text-gray-600 dark:text-gray-400">{verdict.reason}</p>
+                  </div>
+                ))}
+              </div>
+            )}
+          </section>
+        )}
 
         {/* Above-the-fold monetization path */}
         <div className="mt-5 mb-8 flex flex-col gap-4 rounded-2xl border border-cyan-200 bg-gradient-to-r from-cyan-50 via-white to-blue-50 p-5 dark:border-cyan-800 dark:from-cyan-950/30 dark:via-gray-900 dark:to-blue-950/30 sm:flex-row sm:items-center sm:justify-between sm:p-6">

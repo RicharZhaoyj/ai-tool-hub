@@ -329,6 +329,24 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
         {/* Affiliate Disclosure */}
         <AffiliateDisclosure variant="page-top" />
 
+        {/* Above-the-fold monetization path */}
+        <div className="mt-5 mb-8 flex flex-col gap-4 rounded-2xl border border-cyan-200 bg-gradient-to-r from-cyan-50 via-white to-blue-50 p-5 dark:border-cyan-800 dark:from-cyan-950/30 dark:via-gray-900 dark:to-blue-950/30 sm:flex-row sm:items-center sm:justify-between sm:p-6">
+          <div>
+            <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-cyan-700 dark:text-cyan-300">省下长期订阅费</p>
+            <h2 className="text-lg font-semibold text-gray-900 dark:text-white">评测之外，先看看可买断的 AI 工具方案</h2>
+            <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">按写作、设计、视频和营销场景筛选 Lifetime Deal，先试用再决定。</p>
+          </div>
+          <a
+            href="https://tool.link.cn/?utm_source=aitoolhub&utm_medium=review&utm_campaign=ltd_funnel_top&utm_content=review_top_cta"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-growth-placement="review_top_cta"
+            className="inline-flex shrink-0 items-center justify-center rounded-lg bg-cyan-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-cyan-700"
+          >
+            查看可买断方案 →
+          </a>
+        </div>
+
         {/* Article Body */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main Content */}
@@ -402,9 +420,10 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
                 如果你更在意一次购买、长期使用，可以继续查看独立开发者和团队常用的 LTD 方案。
               </p>
               <a
-                href="https://tool.link.cn/?utm_source=aitoolhub&utm_medium=review&utm_campaign=ltd_funnel"
+                href="https://tool.link.cn/?utm_source=aitoolhub&utm_medium=review&utm_campaign=ltd_funnel&utm_content=review_sidebar_cta"
                 target="_blank"
                 rel="noopener noreferrer"
+                data-growth-placement="review_sidebar_cta"
                 className="flex items-center justify-center w-full px-3 py-2.5 text-sm font-semibold text-white bg-cyan-600 hover:bg-cyan-700 rounded-lg transition-colors"
               >
                 查看 LTD 方案 →

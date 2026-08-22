@@ -66,7 +66,7 @@ function ReviewContent({ sections }: { sections: import('@/lib/types').ReviewSec
               ? 'text-xl font-semibold text-gray-900 dark:text-white mt-8 mb-3'
               : 'text-lg font-medium text-gray-800 dark:text-gray-200 mt-6 mb-2';
             return (
-              <HeadingTag key={index} className={headingClass}>
+              <HeadingTag key={index} id={`section-${index}`} className={headingClass}>
                 {section.title}
               </HeadingTag>
             );

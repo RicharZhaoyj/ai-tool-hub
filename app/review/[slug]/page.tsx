@@ -11,6 +11,21 @@ interface ReviewPageProps {
   params: Promise<{ slug: string }>;
 }
 
+const seoOverrides: Record<string, { title: string; description: string }> = {
+  'deepseek-vs-qwen-vs-kimi-2026': {
+    title: 'DeepSeek vs Qwen vs Kimi：2026 哪个更值得选？',
+    description: 'DeepSeek、通义千问 Qwen 与 Kimi 三款国产大模型对比：编程、中文理解、推理、API 价格与 Agent 生态。按开发者、团队和企业场景给出选型结论。',
+  },
+  'suno-vs-udio-ai-music-battle-2026': {
+    title: 'Suno vs Udio：2026 AI 音乐生成哪个好？',
+    description: 'Suno 与 Udio AI 音乐生成对比，覆盖音乐质量、风格控制、Prompt 使用、价格与使用场景，并给出创作者的选型建议。',
+  },
+  'deepseek-vs-kimi-vs-gpt4o-2026': {
+    title: 'DeepSeek vs Kimi vs GPT-4o：2026 大模型怎么选？',
+    description: 'DeepSeek、Kimi 与 GPT-4o 对比，聚焦编程、推理、中文能力、API 价格和生态，帮助开发者与企业按使用场景选择模型。',
+  },
+};
+
 export function generateStaticParams() {
   return reviews.map((review) => ({ slug: review.slug }));
 }
@@ -25,15 +40,19 @@ export async function generateMetadata({ params }: ReviewPageProps): Promise<Met
     .map(t => t)
     .join(' vs ');
   const canonical = `https://tools.link.cn/review/${review.slug}`;
+  const seo = seoOverrides[slug];
+  const title = seo?.title ?? `${review.title}：深度评测`;
+  const description = seo?.description ?? review.description;
+  const socialDescription = seo?.description ?? review.subtitle;
 
   return {
-    title: `${review.title}：深度评测`,
-    description: review.description,
+    title,
+    description,
     keywords: [...review.tags, 'AI工具评测', 'AI对比', 'AI工具推荐', toolNamesStr],
     alternates: { canonical },
     openGraph: {
-      title: review.title,
-      description: review.subtitle,
+      title,
+      description: socialDescription,
       url: canonical,
       type: 'article',
       publishedTime: review.publishedAt,

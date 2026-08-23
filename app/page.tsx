@@ -109,6 +109,36 @@ export default async function HomePage({
         <CategoryNav />
       </div>
 
+      {/* Quick Decision Links: move the highest-intent review paths above the tool grid */}
+      {showDefault && (
+        <section className="mb-10 rounded-2xl border border-violet-200 bg-gradient-to-br from-violet-50 via-white to-cyan-50 p-5 dark:border-violet-900/60 dark:from-violet-950/30 dark:via-gray-900 dark:to-cyan-950/20 sm:p-6" aria-labelledby="quick-decision-title">
+          <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-sm font-medium text-violet-600 dark:text-violet-300">不知道先选哪个？</p>
+              <h2 id="quick-decision-title" className="mt-1 text-xl font-bold text-gray-900 dark:text-white">按场景快速看结论</h2>
+            </div>
+            <p className="max-w-xl text-sm leading-relaxed text-gray-500 dark:text-gray-400">先看横向对比，再进入工具详情，节省试错时间。</p>
+          </div>
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
+            <Link href="/review/deepseek-vs-qwen-vs-kimi-2026" className="group rounded-xl border border-emerald-200 bg-white/80 p-4 transition hover:-translate-y-0.5 hover:border-emerald-400 hover:shadow-md dark:border-emerald-800 dark:bg-gray-800/70">
+              <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-300">中文 / 编程 / API</span>
+              <h3 className="mt-1 font-semibold text-gray-900 group-hover:text-emerald-600 dark:text-white dark:group-hover:text-emerald-300">国产大模型怎么选？</h3>
+              <span className="mt-3 inline-flex items-center text-sm font-medium text-emerald-600 dark:text-emerald-300">看 DeepSeek、Qwen、Kimi 对比 →</span>
+            </Link>
+            <Link href="/review/chatgpt-vs-claude-vs-gemini-2026" className="group rounded-xl border border-violet-200 bg-white/80 p-4 transition hover:-translate-y-0.5 hover:border-violet-400 hover:shadow-md dark:border-violet-800 dark:bg-gray-800/70">
+              <span className="text-xs font-semibold text-violet-600 dark:text-violet-300">写作 / 对话 / 综合能力</span>
+              <h3 className="mt-1 font-semibold text-gray-900 group-hover:text-violet-600 dark:text-white dark:group-hover:text-violet-300">主流模型哪个更适合你？</h3>
+              <span className="mt-3 inline-flex items-center text-sm font-medium text-violet-600 dark:text-violet-300">看 ChatGPT、Claude、Gemini 对比 →</span>
+            </Link>
+            <Link href="/reviews" className="group rounded-xl border border-cyan-200 bg-white/80 p-4 transition hover:-translate-y-0.5 hover:border-cyan-400 hover:shadow-md dark:border-cyan-800 dark:bg-gray-800/70">
+              <span className="text-xs font-semibold text-cyan-600 dark:text-cyan-300">真实体验 / 价格 / 场景</span>
+              <h3 className="mt-1 font-semibold text-gray-900 group-hover:text-cyan-600 dark:text-white dark:group-hover:text-cyan-300">浏览全部深度评测</h3>
+              <span className="mt-3 inline-flex items-center text-sm font-medium text-cyan-600 dark:text-cyan-300">进入评测中心 →</span>
+            </Link>
+          </div>
+        </section>
+      )}
+
       {/* Toolbar */}
       <div className="flex items-center justify-between mb-6">
         <h2 className="text-lg font-semibold text-gray-900 dark:text-white">
@@ -273,3 +303,4 @@ export default async function HomePage({
     </div>
   );
 }
+

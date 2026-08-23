@@ -597,7 +597,7 @@ export const reviews: Review[] = [
     tags: ['Suno', 'Udio', 'AI音乐', 'AI作曲', '音乐生成', 'Suno v3.5', 'AI创作'],
     author: 'AI Tool Hub 编辑部',
     publishedAt: '2026-05-18',
-    updatedAt: '2026-05-18',
+    updatedAt: '2026-08-23',
     readingTime: 9,
     featured: true,
     content: [
@@ -746,7 +746,7 @@ export const reviews: Review[] = [
     tags: ['DeepSeek', 'Kimi', 'GPT-4o', '国产AI', '开源AI', 'API价格', '大模型对比', '2026评测', 'OpenRouter'],
     author: 'AI Tool Hub 编辑部',
     publishedAt: '2026-05-21',
-    updatedAt: '2026-05-21',
+    updatedAt: '2026-08-23',
     readingTime: 10,
     featured: true,
     content: [
@@ -2136,7 +2136,7 @@ export const reviews: Review[] = [
     tags: ['国产AI', 'DeepSeek V4', 'Qwen 3.7-Max', 'Kimi K2.6', '开源大模型', '编程评测', '中文AI', 'API性价比', '大模型对比', '2026评测'],
     author: 'AI Tool Hub 编辑部',
     publishedAt: '2026-06-02',
-    updatedAt: '2026-06-02',
+    updatedAt: '2026-08-23',
     readingTime: 10,
     featured: true,
     content: [

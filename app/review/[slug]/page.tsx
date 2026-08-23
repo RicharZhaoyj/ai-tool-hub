@@ -5,7 +5,7 @@ import { getToolBySlug } from '@/data/tools';
 import { notFound } from 'next/navigation';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
 import Breadcrumb from '@/components/Breadcrumb';
-import { ArticleJsonLd } from '@/components/JsonLd';
+import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 
 interface ReviewPageProps {
   params: Promise<{ slug: string }>;
@@ -287,6 +287,12 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
         updatedAt={review.updatedAt}
       />
 
+      <BreadcrumbJsonLd
+        items={[
+          { name: 'AI工具评测', url: 'https://tools.link.cn/reviews' },
+          { name: review.title, url: `https://tools.link.cn/review/${review.slug}` },
+        ]}
+      />
       <Breadcrumb
         items={[
           { name: '深度评测', url: '/reviews' },

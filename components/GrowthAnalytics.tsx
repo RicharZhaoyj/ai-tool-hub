@@ -31,7 +31,12 @@ export default function GrowthAnalytics() {
         const url = new URL(href, window.location.href);
         const destination = SISTER_SITES[url.hostname];
         if (destination) {
-          window.gtag('event', 'sister_site_click', {
+          const funnelEvent = destination === 'prompts'
+            ? 'prompt_funnel_click'
+            : destination === 'tool'
+              ? 'ltd_funnel_click'
+              : 'sister_site_click';
+          window.gtag('event', funnelEvent, {
             event_category: 'cross_site_growth',
             site: 'tools',
             destination,

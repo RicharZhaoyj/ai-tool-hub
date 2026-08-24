@@ -119,7 +119,7 @@ export default async function HomePage({
             </div>
             <p className="max-w-xl text-sm leading-relaxed text-gray-500 dark:text-gray-400">先看横向对比，再进入工具详情，节省试错时间。</p>
           </div>
-          <div className="grid grid-cols-1 gap-3 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-4">
             <Link href="/review/deepseek-vs-qwen-vs-kimi-2026" className="group rounded-xl border border-emerald-200 bg-white/80 p-4 transition hover:-translate-y-0.5 hover:border-emerald-400 hover:shadow-md dark:border-emerald-800 dark:bg-gray-800/70">
               <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-300">中文 / 编程 / API</span>
               <h3 className="mt-1 font-semibold text-gray-900 group-hover:text-emerald-600 dark:text-white dark:group-hover:text-emerald-300">国产大模型怎么选？</h3>
@@ -135,6 +135,11 @@ export default async function HomePage({
               <h3 className="mt-1 font-semibold text-gray-900 group-hover:text-cyan-600 dark:text-white dark:group-hover:text-cyan-300">浏览全部深度评测</h3>
               <span className="mt-3 inline-flex items-center text-sm font-medium text-cyan-600 dark:text-cyan-300">进入评测中心 →</span>
             </Link>
+            <a href="https://prompts.link.cn/prompts?utm_source=tools&utm_medium=homepage&utm_campaign=prompt_funnel&utm_content=quick_decision_prompts" target="_blank" rel="noopener noreferrer" data-growth-placement="quick_decision_prompts" className="group rounded-xl border border-amber-200 bg-white/80 p-4 transition hover:-translate-y-0.5 hover:border-amber-400 hover:shadow-md dark:border-amber-800 dark:bg-gray-800/70">
+              <span className="text-xs font-semibold text-amber-600 dark:text-amber-300">写作 / 营销 / 办公</span>
+              <h3 className="mt-1 font-semibold text-gray-900 group-hover:text-amber-600 dark:text-white dark:group-hover:text-amber-300">想直接拿模板？</h3>
+              <span className="mt-3 inline-flex items-center text-sm font-medium text-amber-600 dark:text-amber-300">浏览可复制 Prompt →</span>
+            </a>
           </div>
         </section>
       )}

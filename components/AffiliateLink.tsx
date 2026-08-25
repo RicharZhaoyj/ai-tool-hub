@@ -15,13 +15,14 @@ export default function AffiliateLink({ tool }: AffiliateLinkProps) {
     setClicked(true);
     const hasAffiliate = hasValidAffiliateUrl(tool);
     if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-      window.gtag('event', 'affiliate_click', {
-        event_category: 'monetization',
+      window.gtag('event', hasAffiliate ? 'affiliate_click' : 'tool_click', {
+        event_category: hasAffiliate ? 'monetization' : 'outbound',
         tool_id: tool.id,
-      tool_name: tool.name,
-      tool_category: tool.category,
-      has_affiliate: hasAffiliate,
-      destination: getToolOutboundUrl(tool),
+        tool_name: tool.name,
+        tool_category: tool.category,
+        has_affiliate: hasAffiliate,
+        destination: getToolOutboundUrl(tool),
+        placement: 'tool_detail_primary',
       });
     }
   };
@@ -30,7 +31,7 @@ export default function AffiliateLink({ tool }: AffiliateLinkProps) {
     <a
       href={getToolOutboundUrl(tool)}
       target="_blank"
-      rel="noopener noreferrer sponsored"
+      rel={hasValidAffiliateUrl(tool) ? 'noopener noreferrer sponsored' : 'noopener noreferrer'}
       onClick={handleClick}
       className={`inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-semibold text-base transition-all shadow-lg active:scale-[0.98] ${
         clicked

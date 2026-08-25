@@ -116,12 +116,13 @@ export default function ToolCard({ tool }: ToolCardProps) {
             onClick={(e) => {
               e.stopPropagation();
               if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
-                window.gtag('event', 'affiliate_click', {
-                  event_category: 'monetization',
+                const hasAffiliate = hasValidAffiliateUrl(tool);
+                window.gtag('event', hasAffiliate ? 'affiliate_click' : 'tool_click', {
+                  event_category: hasAffiliate ? 'monetization' : 'outbound',
                   tool_id: tool.id,
                   tool_name: tool.name,
                   tool_category: tool.category,
-                  has_affiliate: hasValidAffiliateUrl(tool),
+                  has_affiliate: hasAffiliate,
                   destination: getToolOutboundUrl(tool),
                   placement: 'tool_card',
                 });

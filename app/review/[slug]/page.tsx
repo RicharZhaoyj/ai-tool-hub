@@ -63,8 +63,8 @@ export async function generateMetadata({ params }: ReviewPageProps): Promise<Met
     },
     twitter: {
       card: 'summary_large_image',
-      title,
-      description: socialDescription,
+      title: review.title,
+      description: review.subtitle,
       images: [],
     },
   };
@@ -286,13 +286,13 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
         publishedAt={review.publishedAt}
         updatedAt={review.updatedAt}
       />
+
       <BreadcrumbJsonLd
         items={[
           { name: 'AI工具评测', url: 'https://tools.link.cn/reviews' },
           { name: review.title, url: `https://tools.link.cn/review/${review.slug}` },
         ]}
       />
-
       <Breadcrumb
         items={[
           { name: '深度评测', url: '/reviews' },
@@ -388,7 +388,7 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
             {quickVerdicts.length > 0 && (
               <div className="mt-4 grid gap-3 md:grid-cols-3">
                 {quickVerdicts.map((verdict, index) => (
-                  <div key={`${verdict.persona}-${index}`} className="rounded-xl border border-violet-100 bg-white/80 p-4 dark:border-violet-900 dark:bg-gray-900/70">
+                  <div key={verdict.persona + '-' + index} className="rounded-xl border border-violet-100 bg-white/80 p-4 dark:border-violet-900 dark:bg-gray-900/70">
                     <p className="text-xs font-semibold text-violet-700 dark:text-violet-300">{verdict.persona}</p>
                     <p className="mt-1 font-semibold text-gray-900 dark:text-white">{verdict.recommendation}</p>
                     <p className="mt-1 text-xs leading-relaxed text-gray-600 dark:text-gray-400">{verdict.reason}</p>

@@ -9,6 +9,7 @@ import AffiliateDisclosure from '@/components/AffiliateDisclosure';
 import Breadcrumb from '@/components/Breadcrumb';
 import { SoftwareAppJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
 import ShareButtons from '@/components/ShareButtons';
+import { hasValidAffiliateUrl } from '@/lib/affiliate';
 
 interface ToolPageProps {
   params: Promise<{ slug: string }>;
@@ -48,6 +49,7 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
   const { slug } = await params;
   const tool = getToolBySlug(slug);
   if (!tool) notFound();
+  const hasAffiliate = hasValidAffiliateUrl(tool);
 
   const category = getCategoryBySlug(tool.category);
   const relatedTools = tools
@@ -132,9 +134,11 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
 
             {/* CTA */}
             <AffiliateLink tool={tool} />
-            <div className="mt-2 flex justify-center">
-              <AffiliateDisclosure variant="inline" />
-            </div>
+            {hasAffiliate && (
+              <div className="mt-2 flex justify-center">
+                <AffiliateDisclosure variant="inline" />
+              </div>
+            )}
 
             {/* Description */}
             <div className="mt-8">
@@ -218,7 +222,11 @@ export default async function ToolDetailPage({ params }: ToolPageProps) {
             <ul className="space-y-2.5 text-sm text-amber-800 dark:text-amber-200">
               <li className="flex items-start gap-2">
                 <span className="shrink-0 mt-0.5">💰</span>
-                <span>上方「访问官网」为联盟链接，通过它注册/购买本站可能获得佣金，价格不变</span>
+                <span>
+                  {hasAffiliate
+                    ? '上方「试用 / 查看优惠」为联盟推广链接，通过它注册或购买本站可能获得佣金，价格不变'
+                    : '上方「访问官网」为普通官网链接，当前不计作联盟推广'}
+                </span>
               </li>
               <li className="flex items-start gap-2">
                 <span className="shrink-0 mt-0.5">🎁</span>

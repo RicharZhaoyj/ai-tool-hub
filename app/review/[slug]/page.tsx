@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
 import Breadcrumb from '@/components/Breadcrumb';
 import { ArticleJsonLd, BreadcrumbJsonLd } from '@/components/JsonLd';
+import { hasValidAffiliateUrl } from '@/lib/affiliate';
 
 interface ReviewPageProps {
   params: Promise<{ slug: string }>;
@@ -270,6 +271,7 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
   const toolDetails = review.tools
     .map(slug => getToolBySlug(slug))
     .filter(Boolean);
+  const hasAffiliateLinks = toolDetails.some(tool => Boolean(tool && hasValidAffiliateUrl(tool)));
 
   // 获取相关评测
   const relatedReviews = getRelatedReviews(slug, 4);
@@ -370,7 +372,7 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
         </header>
 
         {/* Affiliate Disclosure */}
-        <AffiliateDisclosure variant="page-top" />
+        {hasAffiliateLinks && <AffiliateDisclosure variant="page-top" />}
 
         {/* Search-intent answer: keep comparison visitors engaged before the monetization path */}
         {(review.recommendationReason || quickVerdicts.length > 0) && (

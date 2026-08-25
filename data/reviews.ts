@@ -841,7 +841,7 @@ export const reviews: Review[] = [
       },
       {
         type: 'text',
-        content: '价格是2026年模型竞争的核心变量之一。我们来算一笔实际的账。\n\n**API成本对比（以100万Token输入计算）**\n- DeepSeek V4-Pro：$0.14（输入）→ 约为GPT-4o的5.6%\n- Kimi K2.6（OpenRouter）：$0.44（输入）→ 约为GPT-4o的17.6%\n- GPT-4o：$2.50（输入）→ OpenAI官方价格\n\n换句话说，同样的API预算：\n- 用DeepSeek可以调用GPT-4o约17倍的Token量\n- 用Kimi可以调用GPT-4o约5.7倍的Token量\n\n**月均使用成本估算（假设每天100K输入+50K输出）**\n- DeepSeek V4-Pro：约$0.39/月\n- Kimi K2.6：约$1.23/月\n- GPT-4o：约$6.88/月\n\n对于个人开发者和小型项目，这个成本差距可能不是决定性因素。但对于日均调用量超过100万Token的企业用户，每年节省的成本可以达到数万美元级别。\n\n**OpenRouter的价值**：通过OpenRouter调用国产模型，可以获得统一接口、统一的账单管理和一定的稳定性保障。OpenRouter对DeepSeek和Kimi都提供了官方接入，且对推荐新用户有联盟佣金。',
+        content: '价格是2026年模型竞争的核心变量之一。我们来算一笔实际的账。\n\n**API成本对比（以100万Token输入计算）**\n- DeepSeek V4-Pro：$0.14（输入）→ 约为GPT-4o的5.6%\n- Kimi K2.6（OpenRouter）：$0.44（输入）→ 约为GPT-4o的17.6%\n- GPT-4o：$2.50（输入）→ OpenAI官方价格\n\n换句话说，同样的API预算：\n- 用DeepSeek可以调用GPT-4o约17倍的Token量\n- 用Kimi可以调用GPT-4o约5.7倍的Token量\n\n**月均使用成本估算（假设每天100K输入+50K输出）**\n- DeepSeek V4-Pro：约$0.39/月\n- Kimi K2.6：约$1.23/月\n- GPT-4o：约$6.88/月\n\n对于个人开发者和小型项目，这个成本差距可能不是决定性因素。但对于日均调用量超过100万Token的企业用户，每年节省的成本可以达到数万美元级别。\n\n**OpenRouter的价值**：通过OpenRouter调用国产模型，可以获得统一接口、统一的账单管理和一定的稳定性保障。OpenRouter对DeepSeek和Kimi都提供了官方接入。',
       },
       {
         type: 'comparison-table',

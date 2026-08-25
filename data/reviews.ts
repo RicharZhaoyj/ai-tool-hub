@@ -930,7 +930,7 @@ export const reviews: Review[] = [
       {
         type: 'callout',
         calloutType: 'info',
-        content: '评测基于各平台2026年5月可用版本：Canva (Magic Studio + Magic Layers)、Gamma (最新版)、Figma (Figma AI套件)。所有测试任务均在相同需求和评估标准下进行。本文部分包含联盟链接，通过购买我们可能获得少量佣金。',
+        content: '评测基于各平台2026年5月可用版本：Canva (Magic Studio + Magic Layers)、Gamma (最新版)、Figma (Figma AI套件)。所有测试任务均在相同需求和评估标准下进行。本文当前未使用 Canva、Gamma 或 Figma 的个性化联盟链接；如未来接入，会在按钮与页面披露中明确标注。',
       },
       {
         type: 'heading',
@@ -1063,7 +1063,7 @@ export const reviews: Review[] = [
       {
         type: 'callout',
         calloutType: 'warning',
-        content: '免责声明：本评测基于我们的主观使用体验，结果可能因使用场景和专业水平而异。本文部分包含联盟链接（Canva ShareASale/CJ佣金$36/单），通过购买我们可能获得少量佣金，不影响你的购买价格。建议充分利用各平台的免费试用再做决定。',
+        content: '免责声明：本评测基于我们的主观使用体验，结果可能因使用场景和专业水平而异。本文当前未使用 Canva 个性化联盟链接；如未来接入，会在按钮与页面披露中明确标注。建议充分利用各平台的免费试用再做决定。',
       },
       {
         type: 'heading',
@@ -1105,7 +1105,7 @@ export const reviews: Review[] = [
       {
         type: 'callout',
         calloutType: 'info',
-        content: '评测基于2026年5月可用版本：Notion AI（内置于Notion，工作空间$10/月+AI附加$10/月）和Jasper AI（Creator $49/月起，含完整AI内容套件）。两者都在快速迭代中，建议以官网最新信息为准。本文含联盟链接（Notion/Jasper佣金20-30%），通过购买我们可能获得少量佣金。',
+        content: '评测基于2026年5月可用版本：Notion AI（内置于Notion，工作空间$10/月+AI附加$10/月）和Jasper AI（Creator $49/月起，含完整AI内容套件）。两者都在快速迭代中，建议以官网最新信息为准。本文当前未使用 Notion 或 Jasper 的个性化联盟链接；如未来接入，会在按钮与页面披露中明确标注。',
       },
       {
         type: 'heading',
@@ -1125,7 +1125,6 @@ export const reviews: Review[] = [
           { tool: '模板数量', values: ['丰富(文档类)', '50+种营销专用模板'] },
           { tool: '品牌语调', values: ['不支持', 'Brand Voice多品牌管理'] },
           { tool: 'API接入', values: ['有(REST API)', '有(Jasper API)'] },
-          { tool: '联盟佣金', values: ['20%(Notion Affiliates)', '30%(Jasper)'] },
           { tool: '最大优势', values: ['生态整合/零切换成本', '品牌内容批量生产'] },
           { tool: '最大短板', values: ['营销功能偏弱', '学习曲线/价格偏高'] },
         ],
@@ -1171,7 +1170,7 @@ export const reviews: Review[] = [
       {
         type: 'pros-cons',
         toolName: 'Jasper AI',
-        pros: ['品牌语调管理独一无二', 'SEO博客和营销内容场景最强', '50+营销模板开箱即用', '批量内容生产效率最高', 'API生态丰富，支持自动化', '联盟佣金高达30%'],
+        pros: ['品牌语调管理独一无二', 'SEO博客和营销内容场景最强', '50+营销模板开箱即用', '批量内容生产效率最高', 'API生态丰富，支持自动化'],
         cons: ['$49/月起步价偏高', '技术文档场景表现差', '没有笔记/知识管理功能', '学习曲线比Notion AI陡', '内容生成偏向"模板化"，需要后期编辑'],
       },
       {
@@ -1230,7 +1229,7 @@ export const reviews: Review[] = [
       {
         type: 'callout',
         calloutType: 'warning',
-        content: '免责声明：本评测基于我们的主观使用体验，结果可能因使用场景和内容类型而异。所有价格基于2026年5月官网定价，可能随时间调整。本文含联盟链接（Notion Affiliates 20% / Jasper 30%），通过购买我们可能获得少量佣金，不影响你的购买价格。建议充分利用各平台的免费试用再做决定。',
+        content: '免责声明：本评测基于我们的主观使用体验，结果可能因使用场景和内容类型而异。所有价格基于2026年5月官网定价，可能随时间调整。本文当前未使用 Notion 或 Jasper 的个性化联盟链接；如未来接入，会在按钮与页面披露中明确标注。建议充分利用各平台的免费试用再做决定。',
       },
       {
         type: 'heading',

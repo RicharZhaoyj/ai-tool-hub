@@ -762,7 +762,7 @@ export const reviews: Review[] = [
       {
         type: 'callout',
         calloutType: 'info',
-        content: '评测基于2026年5月可用版本：DeepSeek V4-Pro（1.6T参数/MoE架构）、Kimi K2.6（1.1T参数/开源/Apache 2.0）、GPT-4o（OpenAI最新旗舰）。所有测试在相同环境下进行。本文含联盟链接（OpenRouter佣金），通过购买我们可能获得少量佣金。',
+        content: '评测基于2026年5月可用版本：DeepSeek V4-Pro（1.6T参数/MoE架构）、Kimi K2.6（1.1T参数/开源/Apache 2.0）、GPT-4o（OpenAI最新旗舰）。所有测试在相同环境下进行。本文当前未使用 OpenRouter 个性化联盟链接；如未来接入，会在按钮与页面披露中明确标注。',
       },
       {
         type: 'heading',
@@ -876,7 +876,7 @@ export const reviews: Review[] = [
           { persona: '国内企业 / 中文场景为主', recommendation: 'Kimi K2.6', reason: 'SWE-Bench Pro超越GPT-5.4证明了国产模型的编程实力，加上Apache 2.0开源许可和MCP支持，是国内开发者工作流的最佳选择之一。' },
           { persona: '需要成熟Agent生态 / 企业用户', recommendation: 'GPT-4o', reason: 'Code Interpreter、Advanced Data Analysis、完善的SLA和企业合规是国产模型短期难以替代的。如果团队已习惯OpenAI生态，不要为了省钱牺牲效率。' },
           { persona: '预算敏感 / 需要本地部署', recommendation: 'DeepSeek V4-Flash（开源）', reason: '完全免费，可以本地部署，数据不出境。13B活跃参数的Flash版本在消费级GPU上也能运行，是隐私敏感场景的首选。' },
-          { persona: '需要高频API调用 / 成本优化', recommendation: 'DeepSeek API + OpenRouter', reason: '通过OpenRouter调用DeepSeek V4-Pro，统一账单+佣金返利，性价比最高。企业用户可申请专属API折扣。' },
+          { persona: '需要高频API调用 / 成本优化', recommendation: 'DeepSeek API + OpenRouter', reason: '通过OpenRouter调用DeepSeek V4-Pro，可以统一接口与账单。企业用户仍应按实际调用量比较官方渠道和聚合平台成本。' },
           { persona: '中国出海企业 / 需要多语言+合规', recommendation: 'Kimi K2.6 + GPT-4o 组合', reason: '中文场景用Kimi，英文/多语言场景用GPT-4o。分工明确，成本可控。两者组合可以覆盖几乎所有企业级AI需求。' },
         ],
       },
@@ -888,7 +888,7 @@ export const reviews: Review[] = [
       {
         type: 'callout',
         calloutType: 'warning',
-        content: '免责声明：本评测基于我们的主观使用体验和公开Benchmark数据，结果可能因使用场景而异。所有价格基于2026年5月OpenRouter和官方API定价，可能随时间调整。本文含联盟链接（OpenRouter），通过购买我们可能获得少量佣金，不影响你的购买价格。',
+        content: '免责声明：本评测基于我们的主观使用体验和公开Benchmark数据，结果可能因使用场景而异。所有价格基于2026年5月OpenRouter和官方API定价，可能随时间调整。本文当前未使用 OpenRouter 个性化联盟链接；如未来接入，会在按钮与页面披露中明确标注。',
       },
       {
         type: 'heading',
@@ -987,7 +987,7 @@ export const reviews: Review[] = [
       {
         type: 'pros-cons',
         toolName: 'Canva AI (Magic Studio)',
-        pros: ['25+AI工具全覆盖，功能最全面', '零学习门槛，拖拽式操作人人会用', '百万级模板和素材库，开箱即用', 'Magic Layers突破性合成能力', '支持设计品类最多(海报/PPT/视频/文档)', '团队协作和品牌Kit完善', '联盟计划佣金高达$36/单'],
+        pros: ['25+AI工具全覆盖，功能最全面', '零学习门槛，拖拽式操作人人会用', '百万级模板和素材库，开箱即用', 'Magic Layers突破性合成能力', '支持设计品类最多(海报/PPT/视频/文档)', '团队协作和品牌Kit完善'],
         cons: ['专业UI设计精度不如Figma', '复杂项目文件管理较弱', '高级AI功能需Pro订阅($12.99/月)', '大型设计系统的支持有限', '导出格式对开发者不够友好'],
       },
       {

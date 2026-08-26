@@ -17,6 +17,17 @@ export default function GrowthAnalytics() {
       if (!link || typeof window.gtag !== 'function') return;
 
       const href = link.getAttribute('href') || '';
+      if (window.location.pathname.startsWith('/review/') && href.startsWith('/tool/')) {
+        window.gtag('event', 'review_decision_click', {
+          event_category: 'review_funnel',
+          site: 'tools',
+          destination: href,
+          placement: link.getAttribute('data-growth-placement') || 'review_tool_choice',
+          content_path: window.location.pathname,
+        });
+        return;
+      }
+
       if (href.startsWith('/review/') || href.startsWith('/blog/') || href.startsWith('/category/')) {
         window.gtag('event', 'content_click', {
           event_category: 'content_growth',

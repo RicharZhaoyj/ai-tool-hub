@@ -325,39 +325,44 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
             {review.subtitle}
           </p>
 
-          <div className="mb-6 flex flex-col gap-3 rounded-xl border border-emerald-200 bg-emerald-50/70 p-4 dark:border-emerald-800 dark:bg-emerald-950/20 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-              <p className="text-sm font-semibold text-gray-900 dark:text-white">已经选好模型？直接拿现成模板开始</p>
-              <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">按写作、编程、营销和设计场景浏览可复制 Prompt。</p>
+          {/* One measurable decision path above the fold */}
+          <section className="mb-6 rounded-2xl border border-violet-200 bg-gradient-to-r from-violet-50 via-white to-cyan-50 p-5 dark:border-violet-800 dark:from-violet-950/30 dark:via-gray-900 dark:to-cyan-950/20">
+            <div className="mb-4">
+              <p className="text-xs font-semibold uppercase tracking-wide text-violet-700 dark:text-violet-300">评测后的下一步</p>
+              <h2 className="mt-1 text-lg font-semibold text-gray-900 dark:text-white">先选工具，再查看试用入口与价格</h2>
+              <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">进入工具详情页核对适用场景；如果不想持续订阅，也可以比较买断制替代方案。</p>
             </div>
-            <a
-              href="https://prompts.link.cn/?utm_source=aitoolhub&utm_medium=review&utm_campaign=prompt_funnel&utm_content=review_header_prompt_cta"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-growth-placement="review_header_prompt_cta"
-              className="inline-flex shrink-0 items-center justify-center rounded-lg bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-700"
-            >
-              浏览 Prompt 模板 →
-            </a>
-          </div>
-
-          {/* Tools being reviewed */}
-          <div className="flex flex-wrap items-center gap-3 mb-6">
-            {toolDetails.map(tool => (
-              <Link
-                key={tool!.id}
-                href={`/tool/${tool!.slug}`}
-                className="flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-violet-300 transition-colors"
+            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+              {toolDetails.map(tool => (
+                <Link
+                  key={tool!.id}
+                  href={`/tool/${tool!.slug}`}
+                  data-growth-placement="review_decision_tool"
+                  className="group flex min-h-24 flex-col justify-between rounded-xl border border-violet-200 bg-white p-4 transition hover:-translate-y-0.5 hover:border-violet-400 hover:shadow-md dark:border-violet-800 dark:bg-gray-900/80"
+                >
+                  <span className="flex items-center gap-2">
+                    {tool!.logoUrl && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={tool!.logoUrl} alt={tool!.name} className="h-6 w-6 object-contain" />
+                    )}
+                    <span className="font-semibold text-gray-900 dark:text-white">{tool!.name}</span>
+                  </span>
+                  <span className="mt-3 text-sm font-semibold text-violet-700 group-hover:text-violet-900 dark:text-violet-300 dark:group-hover:text-violet-200">查看详情与试用入口 →</span>
+                </Link>
+              ))}
+              <a
+                href="https://tool.link.cn/?utm_source=aitoolhub&utm_medium=review&utm_campaign=ltd_funnel_decision&utm_content=review_decision_ltd"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-growth-placement="review_decision_ltd"
+                className="group flex min-h-24 flex-col justify-between rounded-xl border border-cyan-200 bg-cyan-50/80 p-4 transition hover:-translate-y-0.5 hover:border-cyan-400 hover:shadow-md dark:border-cyan-800 dark:bg-cyan-950/20"
               >
-                {tool!.logoUrl && (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={tool!.logoUrl} alt={tool!.name} className="w-5 h-5 object-contain" />
-                )}
-                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{tool!.name}</span>
-                <span className="text-xs text-gray-400">→ 详情</span>
-              </Link>
-            ))}
-          </div>
+                <span className="font-semibold text-gray-900 dark:text-white">不想持续订阅？</span>
+                <span className="mt-3 text-sm font-semibold text-cyan-700 group-hover:text-cyan-900 dark:text-cyan-300 dark:group-hover:text-cyan-200">比较买断制替代方案 →</span>
+              </a>
+            </div>
+            <p className="mt-3 text-xs leading-relaxed text-gray-500 dark:text-gray-400">工具页会明确区分官方链接与联盟链接；本站不把普通官网链接冒充优惠或返佣入口。</p>
+          </section>
 
           {/* Author info */}
           <div className="flex items-center gap-3 pb-6 border-b border-gray-200 dark:border-gray-700">
@@ -398,41 +403,8 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
                 ))}
               </div>
             )}
-            <div className="mt-4 flex flex-col gap-3 rounded-xl border border-emerald-200 bg-emerald-50/70 p-4 dark:border-emerald-800 dark:bg-emerald-950/20 sm:flex-row sm:items-center sm:justify-between">
-              <div>
-                <p className="text-sm font-semibold text-gray-900 dark:text-white">已经选好模型？直接拿现成模板开始</p>
-                <p className="mt-1 text-xs text-gray-600 dark:text-gray-400">按写作、编程、营销和设计场景浏览可复制 Prompt。</p>
-              </div>
-              <a
-                href="https://prompts.link.cn/?utm_source=aitoolhub&utm_medium=review&utm_campaign=prompt_funnel&utm_content=review_quick_decision_prompt_cta"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-growth-placement="review_quick_decision_prompt_cta"
-                className="inline-flex shrink-0 items-center justify-center rounded-lg bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-700"
-              >
-                浏览 Prompt 模板 →
-              </a>
-            </div>
           </section>
         )}
-
-        {/* Above-the-fold monetization path */}
-        <div className="mt-5 mb-8 flex flex-col gap-4 rounded-2xl border border-cyan-200 bg-gradient-to-r from-cyan-50 via-white to-blue-50 p-5 dark:border-cyan-800 dark:from-cyan-950/30 dark:via-gray-900 dark:to-blue-950/30 sm:flex-row sm:items-center sm:justify-between sm:p-6">
-          <div>
-            <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-cyan-700 dark:text-cyan-300">省下长期订阅费</p>
-            <h2 className="text-lg font-semibold text-gray-900 dark:text-white">评测之外，先看看可买断的 AI 工具方案</h2>
-            <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">按写作、设计、视频和营销场景筛选 Lifetime Deal，先试用再决定。</p>
-          </div>
-          <a
-            href="https://tool.link.cn/?utm_source=aitoolhub&utm_medium=review&utm_campaign=ltd_funnel_top&utm_content=review_top_cta"
-            target="_blank"
-            rel="noopener noreferrer"
-            data-growth-placement="review_top_cta"
-            className="inline-flex shrink-0 items-center justify-center rounded-lg bg-cyan-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-cyan-700"
-          >
-            查看可买断方案 →
-          </a>
-        </div>
 
         {/* Article Body */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">

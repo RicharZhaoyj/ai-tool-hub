@@ -17,6 +17,18 @@ export default function GrowthAnalytics() {
       if (!link || typeof window.gtag !== 'function') return;
 
       const href = link.getAttribute('href') || '';
+      const explicitEvent = link.getAttribute('data-growth-event');
+      if (explicitEvent) {
+        window.gtag('event', explicitEvent, {
+          event_category: explicitEvent === 'partner_inquiry' ? 'partner_revenue_funnel' : 'subscription_cost_funnel',
+          site: 'tools',
+          placement: link.getAttribute('data-growth-placement') || 'unspecified',
+          content_path: window.location.pathname,
+          destination: href.startsWith('mailto:') ? 'email' : href,
+        });
+        return;
+      }
+
       if (window.location.pathname.startsWith('/review/') && href.startsWith('/tool/')) {
         window.gtag('event', 'review_decision_click', {
           event_category: 'review_funnel',

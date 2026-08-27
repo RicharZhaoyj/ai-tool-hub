@@ -332,7 +332,16 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
               <h2 className="mt-1 text-lg font-semibold text-gray-900 dark:text-white">先选工具，再查看试用入口与价格</h2>
               <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">进入工具详情页核对适用场景；如果不想持续订阅，也可以比较买断制替代方案。</p>
             </div>
-            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+              <Link
+                href="/ai-subscription-cost-calculator"
+                data-growth-event="calculator_entry_click"
+                data-growth-placement="review_decision_calculator"
+                className="group flex min-h-24 flex-col justify-between rounded-xl border border-blue-200 bg-blue-50/80 p-4 transition hover:-translate-y-0.5 hover:border-blue-400 hover:shadow-md dark:border-blue-800 dark:bg-blue-950/20"
+              >
+                <span className="font-semibold text-gray-900 dark:text-white">先算订阅年成本</span>
+                <span className="mt-3 text-sm font-semibold text-blue-700 group-hover:text-blue-900 dark:text-blue-300 dark:group-hover:text-blue-200">识别重叠和低利用订阅 →</span>
+              </Link>
               {toolDetails.map(tool => (
                 <Link
                   key={tool!.id}

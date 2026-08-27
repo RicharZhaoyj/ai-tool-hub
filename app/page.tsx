@@ -119,7 +119,12 @@ export default async function HomePage({
             </div>
             <p className="max-w-xl text-sm leading-relaxed text-gray-500 dark:text-gray-400">先看横向对比，再进入工具详情，节省试错时间。</p>
           </div>
-          <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid grid-cols-1 gap-3 md:grid-cols-2 xl:grid-cols-5">
+            <Link href="/ai-subscription-cost-calculator" data-growth-event="calculator_entry_click" data-growth-placement="homepage_quick_decision" className="group rounded-xl border border-blue-200 bg-white/80 p-4 transition hover:-translate-y-0.5 hover:border-blue-400 hover:shadow-md dark:border-blue-800 dark:bg-gray-800/70">
+              <span className="text-xs font-semibold text-blue-600 dark:text-blue-300">订阅 / 席位 / 年度预算</span>
+              <h3 className="mt-1 font-semibold text-gray-900 group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-300">AI 工具一年要花多少？</h3>
+              <span className="mt-3 inline-flex items-center text-sm font-medium text-blue-600 dark:text-blue-300">免费计算并找出重叠订阅 →</span>
+            </Link>
             <Link href="/review/deepseek-vs-qwen-vs-kimi-2026" className="group rounded-xl border border-emerald-200 bg-white/80 p-4 transition hover:-translate-y-0.5 hover:border-emerald-400 hover:shadow-md dark:border-emerald-800 dark:bg-gray-800/70">
               <span className="text-xs font-semibold text-emerald-600 dark:text-emerald-300">中文 / 编程 / API</span>
               <h3 className="mt-1 font-semibold text-gray-900 group-hover:text-emerald-600 dark:text-white dark:group-hover:text-emerald-300">国产大模型怎么选？</h3>

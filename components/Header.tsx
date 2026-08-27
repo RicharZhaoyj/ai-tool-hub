@@ -42,6 +42,12 @@ export default function Header() {
             >
               评测
             </Link>
+            <Link
+              href="/ai-subscription-cost-calculator"
+              className="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-violet-600 dark:hover:text-violet-400 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            >
+              成本计算器
+            </Link>
             <a
               href="https://ai.link.cn"
               target="_blank"
@@ -118,6 +124,9 @@ export default function Header() {
             </Link>
             <Link href="/reviews" className="block px-4 py-2.5 text-sm font-medium text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
               深度评测
+            </Link>
+            <Link href="/ai-subscription-cost-calculator" className="block px-4 py-2.5 text-sm font-medium text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
+              AI订阅成本计算器
             </Link>
             <a
               href="https://ai.link.cn"

@@ -22,6 +22,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/ai-subscription-cost-calculator`,
+      lastModified: new Date('2026-08-27'),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/submit-tool`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
@@ -32,6 +38,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'daily',
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/advertise`,
+      lastModified: new Date('2026-08-27'),
+      changeFrequency: 'monthly',
+      priority: 0.6,
     },
   ];
 

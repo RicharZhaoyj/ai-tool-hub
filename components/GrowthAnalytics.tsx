@@ -20,7 +20,11 @@ export default function GrowthAnalytics() {
       const explicitEvent = link.getAttribute('data-growth-event');
       if (explicitEvent) {
         window.gtag('event', explicitEvent, {
-          event_category: explicitEvent === 'partner_inquiry' ? 'partner_revenue_funnel' : 'subscription_cost_funnel',
+          event_category: explicitEvent === 'partner_inquiry'
+            ? 'partner_revenue_funnel'
+            : explicitEvent === 'cost_intent_landing_click'
+              ? 'content_growth'
+              : 'subscription_cost_funnel',
           site: 'tools',
           placement: link.getAttribute('data-growth-placement') || 'unspecified',
           content_path: window.location.pathname,

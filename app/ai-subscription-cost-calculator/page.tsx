@@ -135,6 +135,30 @@ export default function AiSubscriptionCostCalculatorPage() {
         </aside>
       </section>
 
+      <section className="mt-14" aria-labelledby="cost-intent-title">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="text-sm font-semibold text-violet-700 dark:text-violet-300">按搜索意图继续</p>
+            <h2 id="cost-intent-title" className="mt-1 text-2xl font-bold text-gray-950 dark:text-white">价格、对比和团队预算专题</h2>
+          </div>
+          <p className="max-w-xl text-sm leading-6 text-gray-500 dark:text-gray-400">先读对应场景，再回到计算器输入自己的席位和利用率。</p>
+        </div>
+        <div className="mt-5 grid gap-4 md:grid-cols-3">
+          <Link href="/ai-subscription-cost-calculator/chatgpt-vs-claude-vs-gemini-cost" data-growth-event="cost_intent_landing_click" data-growth-placement="calculator_related_landing" className="rounded-2xl border border-gray-200 bg-white p-5 transition hover:-translate-y-0.5 hover:border-violet-400 hover:shadow-md dark:border-gray-800 dark:bg-gray-900">
+            <h3 className="font-semibold text-gray-950 dark:text-white">ChatGPT、Claude、Gemini一年多少钱？</h3>
+            <p className="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-400">通用模型订阅价格、年度预算和主备组合判断。</p>
+          </Link>
+          <Link href="/ai-subscription-cost-calculator/ai-tools-for-small-teams-budget" data-growth-event="cost_intent_landing_click" data-growth-placement="calculator_related_landing" className="rounded-2xl border border-gray-200 bg-white p-5 transition hover:-translate-y-0.5 hover:border-violet-400 hover:shadow-md dark:border-gray-800 dark:bg-gray-900">
+            <h3 className="font-semibold text-gray-950 dark:text-white">5人小团队 AI 预算怎么定？</h3>
+            <p className="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-400">从席位、权限、使用率和试用门槛拆分团队预算。</p>
+          </Link>
+          <Link href="/ai-subscription-cost-calculator/ai-tool-pricing-comparison-2026" data-growth-event="cost_intent_landing_click" data-growth-placement="calculator_related_landing" className="rounded-2xl border border-gray-200 bg-white p-5 transition hover:-translate-y-0.5 hover:border-violet-400 hover:shadow-md dark:border-gray-800 dark:bg-gray-900">
+            <h3 className="font-semibold text-gray-950 dark:text-white">2026 AI 工具价格表</h3>
+            <p className="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-400">快速筛选 ChatGPT、Claude、Cursor、ElevenLabs 等订阅。</p>
+          </Link>
+        </div>
+      </section>
+
       <section className="mt-14" aria-labelledby="faq-title">
         <h2 id="faq-title" className="text-2xl font-bold text-gray-950 dark:text-white">常见问题</h2>
         <div className="mt-5 grid gap-4 md:grid-cols-2">

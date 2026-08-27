@@ -28,6 +28,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/ai-subscription-cost-calculator/chatgpt-vs-claude-vs-gemini-cost`,
+      lastModified: new Date('2026-08-27'),
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/ai-subscription-cost-calculator/ai-tools-for-small-teams-budget`,
+      lastModified: new Date('2026-08-27'),
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: `${baseUrl}/ai-subscription-cost-calculator/ai-tool-pricing-comparison-2026`,
+      lastModified: new Date('2026-08-27'),
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
       url: `${baseUrl}/submit-tool`,
       lastModified: new Date(),
       changeFrequency: 'monthly',

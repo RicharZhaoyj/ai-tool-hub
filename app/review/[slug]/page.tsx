@@ -277,6 +277,10 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
   const relatedReviews = getRelatedReviews(slug, 4);
   const verdictSection = review.content.find(section => section.type === 'verdict');
   const quickVerdicts = verdictSection?.verdicts?.slice(0, 3) || [];
+  const costIntentPath = slug === 'deepseek-vs-qwen-vs-kimi-2026'
+    ? '/ai-subscription-cost-calculator/ai-tool-pricing-comparison-2026'
+    : '/ai-subscription-cost-calculator';
+  const costIntentIsTargeted = costIntentPath !== '/ai-subscription-cost-calculator';
 
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -334,13 +338,13 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
             </div>
             <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
               <Link
-                href="/ai-subscription-cost-calculator"
+                href={`${costIntentPath}?utm_source=tools&utm_medium=review&utm_campaign=cost_intent&utm_content=review_decision_calculator_${slug}`}
                 data-growth-event="calculator_entry_click"
-                data-growth-placement="review_decision_calculator"
+                data-growth-placement={`review_decision_calculator_${slug}`}
                 className="group flex min-h-24 flex-col justify-between rounded-xl border border-blue-200 bg-blue-50/80 p-4 transition hover:-translate-y-0.5 hover:border-blue-400 hover:shadow-md dark:border-blue-800 dark:bg-blue-950/20"
               >
-                <span className="font-semibold text-gray-900 dark:text-white">先算订阅年成本</span>
-                <span className="mt-3 text-sm font-semibold text-blue-700 group-hover:text-blue-900 dark:text-blue-300 dark:group-hover:text-blue-200">识别重叠和低利用订阅 →</span>
+                <span className="font-semibold text-gray-900 dark:text-white">{costIntentIsTargeted ? '先看模型价格对比' : '先算订阅年成本'}</span>
+                <span className="mt-3 text-sm font-semibold text-blue-700 group-hover:text-blue-900 dark:text-blue-300 dark:group-hover:text-blue-200">{costIntentIsTargeted ? '打开对应价格与预算 →' : '识别重叠和低利用订阅 →'}</span>
               </Link>
               {toolDetails.map(tool => (
                 <Link

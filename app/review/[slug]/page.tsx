@@ -333,18 +333,19 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
           <section className="mb-6 rounded-2xl border border-violet-200 bg-gradient-to-r from-violet-50 via-white to-cyan-50 p-5 dark:border-violet-800 dark:from-violet-950/30 dark:via-gray-900 dark:to-cyan-950/20">
             <div className="mb-4">
               <p className="text-xs font-semibold uppercase tracking-wide text-violet-700 dark:text-violet-300">评测后的下一步</p>
-              <h2 className="mt-1 text-lg font-semibold text-gray-900 dark:text-white">先选工具，再查看试用入口与价格</h2>
-              <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">进入工具详情页核对适用场景；如果不想持续订阅，也可以比较买断制替代方案。</p>
+              <h2 className="mt-1 text-lg font-semibold text-gray-900 dark:text-white">先把价格和年成本算清，再决定怎么选</h2>
+              <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">把月费、席位和使用频率带入估算，快速确认个人方案、团队方案或替代方案。</p>
             </div>
             <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
               <Link
                 href={`${costIntentPath}?utm_source=tools&utm_medium=review&utm_campaign=cost_intent&utm_content=review_decision_calculator_${slug}`}
                 data-growth-event="calculator_entry_click"
                 data-growth-placement={`review_decision_calculator_${slug}`}
-                className="group flex min-h-24 flex-col justify-between rounded-xl border border-blue-200 bg-blue-50/80 p-4 transition hover:-translate-y-0.5 hover:border-blue-400 hover:shadow-md dark:border-blue-800 dark:bg-blue-950/20"
+                aria-label={costIntentIsTargeted ? '打开模型价格与年成本对比' : '计算订阅年成本'}
+                className="group flex min-h-24 flex-col justify-between rounded-xl border border-blue-300 bg-blue-50 p-4 shadow-sm ring-2 ring-blue-200/70 transition hover:-translate-y-0.5 hover:border-blue-500 hover:shadow-md dark:border-blue-700 dark:bg-blue-950/30 dark:ring-blue-800/70"
               >
-                <span className="font-semibold text-gray-900 dark:text-white">{costIntentIsTargeted ? '先看模型价格对比' : '先算订阅年成本'}</span>
-                <span className="mt-3 text-sm font-semibold text-blue-700 group-hover:text-blue-900 dark:text-blue-300 dark:group-hover:text-blue-200">{costIntentIsTargeted ? '打开对应价格与预算 →' : '识别重叠和低利用订阅 →'}</span>
+                <span className="font-semibold text-gray-900 dark:text-white">{costIntentIsTargeted ? '对比模型价格与年成本' : '计算订阅年成本'}</span>
+                <span className="mt-3 text-sm font-semibold text-blue-700 group-hover:text-blue-900 dark:text-blue-300 dark:group-hover:text-blue-200">{costIntentIsTargeted ? '打开价格与预算对比 →' : '识别重叠和低利用订阅 →'}</span>
               </Link>
               {toolDetails.map(tool => (
                 <Link

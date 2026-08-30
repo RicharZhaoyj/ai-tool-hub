@@ -101,7 +101,7 @@ export default async function CostIntentPage({
         <p className="mt-4 text-sm leading-6 text-gray-500 dark:text-gray-400">{page.audience}</p>
         <div className="mt-7 flex flex-wrap gap-3">
           <Link href={`/ai-subscription-cost-calculator?utm_source=tools&utm_medium=seo&utm_campaign=cost_intent&utm_content=${page.slug}`} data-growth-event="calculator_entry_click" data-growth-placement={`cost_intent_${page.slug}`} className="inline-flex items-center rounded-xl bg-violet-600 px-5 py-3 font-semibold text-white transition hover:bg-violet-700">按你的席位重新计算 →</Link>
-          <a href="mailto:hello@tools.link.cn?subject=AI工具预算与选型咨询" data-growth-event="consulting_intent" data-growth-placement={`cost_intent_${page.slug}`} className="inline-flex items-center rounded-xl border border-violet-200 bg-white px-5 py-3 font-semibold text-violet-700 transition hover:border-violet-400 dark:border-violet-800 dark:bg-gray-900 dark:text-violet-300">咨询人工选型</a>
+          <Link href={`/consulting?plan=personal&utm_source=tools&utm_medium=seo&utm_campaign=service_revenue&utm_content=cost_intent_${page.slug}`} data-growth-event="consulting_entry_click" data-growth-placement={`cost_intent_${page.slug}`} className="inline-flex items-center rounded-xl border border-violet-200 bg-white px-5 py-3 font-semibold text-violet-700 transition hover:border-violet-400 dark:border-violet-800 dark:bg-gray-900 dark:text-violet-300">咨询人工选型</Link>
         </div>
       </header>
 

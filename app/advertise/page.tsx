@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 import AffiliateDisclosure from '@/components/AffiliateDisclosure';
 
@@ -23,19 +24,19 @@ export default function AdvertisePage() {
             <p className="text-sm font-semibold text-gray-500 dark:text-gray-400">基础收录</p>
             <h2 className="mt-1 text-2xl font-bold text-gray-900 dark:text-white">¥0</h2>
             <p className="mt-3 text-sm text-gray-500 dark:text-gray-400 leading-6">提交官网、功能、价格和适用场景。通过基本真实性与站点质量审核后进入候选库，不保证收录时点和排名。</p>
-            <a href="/submit-tool" className="mt-5 inline-flex text-sm font-semibold text-violet-700 hover:text-violet-900 dark:text-violet-300">提交工具资料 →</a>
+            <Link href="/submit-tool" className="mt-5 inline-flex text-sm font-semibold text-violet-700 hover:text-violet-900 dark:text-violet-300">提交工具资料 →</Link>
           </section>
           <section className="rounded-2xl border border-violet-200 bg-violet-50/60 p-5 dark:border-violet-800 dark:bg-violet-950/20">
             <p className="text-sm font-semibold text-violet-700 dark:text-violet-300">资料核验与产品页增强</p>
             <h2 className="mt-1 text-2xl font-bold text-gray-900 dark:text-white">¥499 / 次</h2>
             <p className="mt-3 text-sm text-gray-500 dark:text-gray-400 leading-6">核对官网信息、价格、适用人群和关键限制，完善现有资料页并提供一次事实性修改。付费不影响评分或推荐顺序。</p>
-            <a href="mailto:hello@tools.link.cn?subject=AI工具资料页增强合作" data-growth-event="partner_inquiry" data-growth-placement="advertise_profile_package" className="mt-5 inline-flex text-sm font-semibold text-violet-700 hover:text-violet-900 dark:text-violet-300">咨询资料页增强 →</a>
+            <Link href="/consulting?plan=partner_profile&utm_source=tools&utm_medium=partner&utm_campaign=partner_revenue&utm_content=advertise_profile_package" data-growth-event="partner_entry_click" data-growth-placement="advertise_profile_package" className="mt-5 inline-flex text-sm font-semibold text-violet-700 hover:text-violet-900 dark:text-violet-300">咨询资料页增强 →</Link>
           </section>
           <section className="rounded-2xl border border-cyan-200 bg-cyan-50/60 p-5 dark:border-cyan-800 dark:bg-cyan-950/20">
             <p className="text-sm font-semibold text-cyan-700 dark:text-cyan-300">场景内容合作</p>
             <h2 className="mt-1 text-2xl font-bold text-gray-900 dark:text-white">¥1,999 起</h2>
             <p className="mt-3 text-sm text-gray-500 dark:text-gray-400 leading-6">围绕真实工作流制作明确标注的合作内容，包含需求访谈、事实核验、独立披露和上线后基础流量报告。</p>
-            <a href="mailto:hello@tools.link.cn?subject=AI工具场景内容合作" data-growth-event="partner_inquiry" data-growth-placement="advertise_content_package" className="mt-5 inline-flex text-sm font-semibold text-cyan-700 hover:text-cyan-900 dark:text-cyan-300">咨询场景合作 →</a>
+            <Link href="/consulting?plan=partner_content&utm_source=tools&utm_medium=partner&utm_campaign=partner_revenue&utm_content=advertise_content_package" data-growth-event="partner_entry_click" data-growth-placement="advertise_content_package" className="mt-5 inline-flex text-sm font-semibold text-cyan-700 hover:text-cyan-900 dark:text-cyan-300">咨询场景合作 →</Link>
           </section>
         </div>
         <section className="rounded-2xl border border-gray-200 p-5 dark:border-gray-700">
@@ -47,10 +48,10 @@ export default function AdvertisePage() {
             <li>• 可拒绝高风险、误导或无法核验的产品</li>
           </ul>
         </section>
-        <a href="mailto:hello@tools.link.cn?subject=AI%20Tool%20Hub%20合作咨询" data-growth-event="partner_inquiry" data-growth-placement="advertise_primary_cta" className="mt-8 inline-flex items-center rounded-xl bg-violet-600 px-5 py-3 font-semibold text-white hover:bg-violet-700 transition-colors">
+        <Link href="/consulting?plan=partner_content&utm_source=tools&utm_medium=partner&utm_campaign=partner_revenue&utm_content=advertise_primary_cta" data-growth-event="partner_entry_click" data-growth-placement="advertise_primary_cta" className="mt-8 inline-flex items-center rounded-xl bg-violet-600 px-5 py-3 font-semibold text-white hover:bg-violet-700 transition-colors">
           联系合作团队 →
-        </a>
-        <p className="mt-3 text-xs leading-5 text-gray-500 dark:text-gray-400">请在邮件中附产品官网、目标用户、希望合作的内容和可核验资料。报价为首批验证价，复杂项目会在执行前单独确认范围。</p>
+        </Link>
+        <p className="mt-3 text-xs leading-5 text-gray-500 dark:text-gray-400">请在表单中附产品官网、目标用户、希望合作的内容和可核验资料。提交不代表付款或接受报价；复杂项目会在执行前单独确认范围。</p>
         <AffiliateDisclosure variant="footer" note="部分工具链接可能包含联盟合作；合作关系不会改变编辑核验标准。" />
       </article>
     </div>

@@ -347,6 +347,15 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
                 <span className="font-semibold text-gray-900 dark:text-white">{costIntentIsTargeted ? '对比模型价格与年成本' : '计算订阅年成本'}</span>
                 <span className="mt-3 text-sm font-semibold text-blue-700 group-hover:text-blue-900 dark:text-blue-300 dark:group-hover:text-blue-200">{costIntentIsTargeted ? '打开价格与预算对比 →' : '识别重叠和低利用订阅 →'}</span>
               </Link>
+              <Link
+                href={`/consulting?plan=personal&utm_source=tools&utm_medium=review&utm_campaign=service_revenue&utm_content=review_decision_consulting_${slug}`}
+                data-growth-event="consulting_entry_click"
+                data-growth-placement={`review_decision_consulting_${slug}`}
+                className="group flex min-h-24 flex-col justify-between rounded-xl border border-emerald-200 bg-emerald-50/80 p-4 transition hover:-translate-y-0.5 hover:border-emerald-400 hover:shadow-md dark:border-emerald-800 dark:bg-emerald-950/20"
+              >
+                <span className="font-semibold text-gray-900 dark:text-white">不想自己做选型？</span>
+                <span className="mt-3 text-sm font-semibold text-emerald-700 group-hover:text-emerald-900 dark:text-emerald-300 dark:group-hover:text-emerald-200">提交需求，先确认服务范围 →</span>
+              </Link>
               {toolDetails.map(tool => (
                 <Link
                   key={tool!.id}

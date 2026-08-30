@@ -32,14 +32,16 @@ export default function SubmitToolPage() {
         </div>
 
         <form
-          action="https://formsubmit.co/hello@tools.link.cn"
+          action="https://formsubmit.co/support@link.cn"
           method="POST"
           className="space-y-6"
         >
           {/* FormSubmit config */}
           <input type="hidden" name="_subject" value="[AI Tool Hub] 新工具提交" />
+          <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_next" value="https://tools.link.cn/submit-tool?success=1" />
+          <input type="text" name="_honey" className="hidden" tabIndex={-1} autoComplete="off" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>

@@ -92,7 +92,7 @@ export default function AiSubscriptionCostCalculatorPage() {
               <li>• 当前订阅、功能重叠与年成本清单</li>
               <li>• 主力工具、替代方案与 30 天验证建议</li>
             </ul>
-            <a href="mailto:hello@tools.link.cn?subject=个人AI工具栈体检咨询" data-growth-event="consulting_intent" data-growth-placement="calculator_personal_offer" className="mt-5 inline-flex rounded-xl bg-violet-600 px-5 py-3 font-semibold text-white transition hover:bg-violet-700">咨询个人方案 →</a>
+            <Link href="/consulting?plan=personal&utm_source=tools&utm_medium=calculator&utm_campaign=service_revenue&utm_content=calculator_personal_offer" data-growth-event="consulting_entry_click" data-growth-placement="calculator_personal_offer" className="mt-5 inline-flex rounded-xl bg-violet-600 px-5 py-3 font-semibold text-white transition hover:bg-violet-700">咨询个人方案 →</Link>
           </article>
           <article className="rounded-2xl border border-cyan-200 bg-gradient-to-br from-cyan-50 to-white p-6 dark:border-cyan-900 dark:from-cyan-950/20 dark:to-gray-900">
             <p className="text-sm font-semibold text-cyan-700 dark:text-cyan-300">2–20 人小团队</p>
@@ -102,7 +102,7 @@ export default function AiSubscriptionCostCalculatorPage() {
               <li>• 年度成本模型与 2–3 套工具组合</li>
               <li>• 实施优先级、试用指标与 7 天答疑</li>
             </ul>
-            <a href="mailto:hello@tools.link.cn?subject=小团队AI选型与成本优化咨询" data-growth-event="consulting_intent" data-growth-placement="calculator_team_offer" className="mt-5 inline-flex rounded-xl bg-cyan-600 px-5 py-3 font-semibold text-white transition hover:bg-cyan-700">咨询团队方案 →</a>
+            <Link href="/consulting?plan=team&utm_source=tools&utm_medium=calculator&utm_campaign=service_revenue&utm_content=calculator_team_offer" data-growth-event="consulting_entry_click" data-growth-placement="calculator_team_offer" className="mt-5 inline-flex rounded-xl bg-cyan-600 px-5 py-3 font-semibold text-white transition hover:bg-cyan-700">咨询团队方案 →</Link>
           </article>
         </div>
       </section>

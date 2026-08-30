@@ -64,6 +64,7 @@ export default function Footer() {
             <ul className="space-y-2.5">
               <li><Link href="/" className="text-sm text-gray-500 hover:text-violet-600 transition-colors">热门工具</Link></li>
               <li><Link href="/ai-subscription-cost-calculator" className="text-sm text-gray-500 hover:text-violet-600 transition-colors">AI订阅成本计算器</Link></li>
+              <li><Link href="/consulting" className="text-sm text-gray-500 hover:text-violet-600 transition-colors">AI工具选型咨询</Link></li>
               <li><Link href="/?sort=featured" className="text-sm text-gray-500 hover:text-violet-600 transition-colors">精选推荐</Link></li>
               <li><Link href="/?pricing=free" className="text-sm text-gray-500 hover:text-violet-600 transition-colors">免费工具</Link></li>
             </ul>

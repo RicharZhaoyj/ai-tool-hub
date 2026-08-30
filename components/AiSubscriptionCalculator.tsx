@@ -169,25 +169,12 @@ export default function AiSubscriptionCalculator() {
     });
   };
 
-  const consultingHref = useMemo(() => {
-    const planNames = summary.selected.map((plan) => plan.name).join('、') || '尚未选择';
-    const subject = 'AI工具选型与成本优化咨询';
-    const body = [
-      '你好，我想咨询 AI 工具选型与成本优化。',
-      '',
-      `当前订阅：${planNames}`,
-      `估算月成本：${usdFormatter.format(summary.monthlyUsd)}`,
-      `估算年成本：${cnyFormatter.format(summary.annualCny)}`,
-      `需要复核的低利用订阅：${summary.lowUsePlans.length} 个`,
-      '',
-      '请回复可提供的服务范围与下一步。',
-    ].join('\n');
-    return `mailto:hello@tools.link.cn?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }, [summary]);
+  const consultingPlan = summary.totalSeats > summary.selected.length ? 'team' : 'personal';
+  const consultingHref = `/consulting?plan=${consultingPlan}&utm_source=tools&utm_medium=calculator&utm_campaign=service_revenue&utm_content=calculator_generated`;
 
-  const handleConsultingIntent = () => {
-    track('consulting_intent', {
-      offer: summary.totalSeats > summary.selected.length ? 'team_audit' : 'personal_audit',
+  const handleConsultingEntry = () => {
+    track('consulting_entry_click', {
+      offer: consultingPlan,
       selected_plan_count: summary.selected.length,
       annual_cost_cny: Math.round(summary.annualCny),
     });
@@ -348,12 +335,12 @@ export default function AiSubscriptionCalculator() {
 
           <a
             href={consultingHref}
-            onClick={handleConsultingIntent}
+            onClick={handleConsultingEntry}
             className="mt-5 flex w-full items-center justify-center rounded-xl border border-cyan-300/40 bg-cyan-300/10 px-4 py-3 text-center font-semibold text-cyan-200 transition hover:bg-cyan-300/20"
           >
             获取人工选型与成本优化方案 →
           </a>
-          <p className="mt-3 text-center text-xs leading-5 text-gray-500">邮件会带上汇总成本，不会自动发送；你可以在邮件客户端中修改后再确认。</p>
+          <p className="mt-3 text-center text-xs leading-5 text-gray-500">进入站内表单确认需求；提交不会自动扣款，请勿填写密码、密钥或支付信息。</p>
         </aside>
       </div>
     </section>

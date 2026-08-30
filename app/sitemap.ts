@@ -28,6 +28,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/consulting`,
+      lastModified: new Date('2026-08-30'),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/ai-subscription-cost-calculator/chatgpt-vs-claude-vs-gemini-cost`,
       lastModified: new Date('2026-08-27'),
       changeFrequency: 'monthly',

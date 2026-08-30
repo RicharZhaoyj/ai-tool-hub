@@ -184,7 +184,16 @@ export default function ConsultingForm({ initialPlan, source = 'consulting_page'
         提交需求，确认服务范围
       </button>
       <p className="text-center text-xs leading-5 text-gray-500 dark:text-gray-400">
-        提交不会自动扣款。需求会通过 FormSubmit 转发至 support@link.cn，确认范围、周期和报价后再决定是否开始。
+        提交不会自动扣款。需求会通过 FormSubmit 转发至 support@link.cn；若未跳转到成功页，可
+        <a
+          href="mailto:support@link.cn?subject=%5BAI%20Tool%20Hub%5D%20%E9%80%89%E5%9E%8B%E5%92%A8%E8%AF%A2"
+          data-growth-event="consulting_fallback_click"
+          data-growth-placement="consulting_form_fallback"
+          className="mx-1 font-semibold text-violet-700 hover:text-violet-900 dark:text-violet-300"
+        >
+          直接发送邮件
+        </a>
+        。确认范围、周期和报价后再决定是否开始。
       </p>
     </form>
   );

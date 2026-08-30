@@ -22,7 +22,7 @@ export default function GrowthAnalytics() {
         window.gtag('event', explicitEvent, {
           event_category: explicitEvent === 'partner_inquiry' || explicitEvent === 'partner_entry_click'
             ? 'partner_revenue_funnel'
-            : explicitEvent === 'consulting_intent' || explicitEvent === 'consulting_entry_click'
+            : explicitEvent.startsWith('consulting_')
               ? 'service_revenue_funnel'
             : explicitEvent === 'cost_intent_landing_click'
               ? 'content_growth'

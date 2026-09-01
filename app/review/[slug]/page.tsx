@@ -383,9 +383,21 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
                 <span className="font-semibold text-gray-900 dark:text-white">不想持续订阅？</span>
                 <span className="mt-3 text-sm font-semibold text-cyan-700 group-hover:text-cyan-900 dark:text-cyan-300 dark:group-hover:text-cyan-200">比较买断制替代方案 →</span>
               </a>
-            </div>
-            <p className="mt-3 text-xs leading-relaxed text-gray-500 dark:text-gray-400">工具页会明确区分官方链接与联盟链接；本站不把普通官网链接冒充优惠或返佣入口。</p>
-          </section>
+             </div>
+             <p className="mt-3 text-xs leading-relaxed text-gray-500 dark:text-gray-400">工具页会明确区分官方链接与联盟链接；本站不把普通官网链接冒充优惠或返佣入口。</p>
+             <div className="mt-3 flex flex-wrap items-center gap-2 rounded-xl border border-emerald-200 bg-emerald-50/70 px-4 py-3 dark:border-emerald-800 dark:bg-emerald-950/20">
+               <span className="text-sm text-gray-700 dark:text-gray-300">已经选好模型，想直接开始使用？</span>
+               <a
+                 href="https://prompts.link.cn/?utm_source=aitoolhub&utm_medium=review&utm_campaign=prompt_funnel&utm_content=review_decision_prompt"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 data-growth-placement="review_decision_prompt"
+                 className="text-sm font-semibold text-emerald-700 hover:text-emerald-900 dark:text-emerald-300 dark:hover:text-emerald-200"
+               >
+                 浏览对应场景的 Prompt 模板 →
+               </a>
+             </div>
+           </section>
 
           {/* Author info */}
           <div className="flex items-center gap-3 pb-6 border-b border-gray-200 dark:border-gray-700">
@@ -434,24 +446,6 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
           {/* Main Content */}
           <div className="lg:col-span-2">
             <ReviewContent sections={review.content} />
-
-            {/* Contextual prompt funnel */}
-            <div className="mt-10 rounded-2xl border border-emerald-200 bg-gradient-to-r from-emerald-50 to-teal-50 p-6 dark:border-emerald-800 dark:from-emerald-950/30 dark:to-teal-950/30">
-              <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-300">从评测到实战</p>
-              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">用现成提示词把结论落到工作流里</h2>
-              <p className="mt-2 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
-                如果你已经选好了模型，可以直接浏览按写作、编程、营销和设计场景整理的 Prompt 模板，减少从零试错。
-              </p>
-              <a
-                href="https://prompts.link.cn/?utm_source=aitoolhub&utm_medium=review&utm_campaign=prompt_funnel&utm_content=review_prompt_cta"
-                target="_blank"
-                rel="noopener noreferrer"
-                data-growth-placement="review_prompt_cta"
-                className="mt-4 inline-flex items-center rounded-lg bg-emerald-600 px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-emerald-700"
-              >
-                浏览 Prompt 模板 →
-              </a>
-            </div>
 
             {/* Tags */}
             <div className="mt-10 pt-6 border-t border-gray-200 dark:border-gray-700">

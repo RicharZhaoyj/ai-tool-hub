@@ -25,6 +25,10 @@ const seoOverrides: Record<string, { title: string; description: string }> = {
     title: 'DeepSeek vs Kimi vs GPT-4o：2026 大模型怎么选？',
     description: 'DeepSeek、Kimi 与 GPT-4o 对比，聚焦编程、推理、中文能力、API 价格和生态，帮助开发者与企业按使用场景选择模型。',
   },
+  'minimax-m3-vs-claude-opus-vs-gpt55-2026': {
+    title: 'MiniMax M3 vs Claude Opus 4.8 vs GPT-5.5：2026 怎么选？',
+    description: 'MiniMax M3、Claude Opus 4.8 与 GPT-5.5 对比，覆盖编程与 Agent 能力、上下文窗口、中文体验和使用成本，按个人开发者与团队场景给出选型建议。',
+  },
 };
 
 export function generateStaticParams() {

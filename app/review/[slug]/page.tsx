@@ -31,6 +31,11 @@ const seoOverrides: Record<string, { title: string; description: string }> = {
   },
 };
 
+const targetedCostIntentPaths: Record<string, string> = {
+  'deepseek-vs-qwen-vs-kimi-2026': '/ai-subscription-cost-calculator/ai-tool-pricing-comparison-2026',
+  'chatgpt-vs-claude-vs-gemini-2026': '/ai-subscription-cost-calculator/chatgpt-vs-claude-vs-gemini-cost',
+};
+
 export function generateStaticParams() {
   return reviews.map((review) => ({ slug: review.slug }));
 }
@@ -281,9 +286,7 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
   const relatedReviews = getRelatedReviews(slug, 4);
   const verdictSection = review.content.find(section => section.type === 'verdict');
   const quickVerdicts = verdictSection?.verdicts?.slice(0, 3) || [];
-  const costIntentPath = slug === 'deepseek-vs-qwen-vs-kimi-2026'
-    ? '/ai-subscription-cost-calculator/ai-tool-pricing-comparison-2026'
-    : '/ai-subscription-cost-calculator';
+  const costIntentPath = targetedCostIntentPaths[slug] ?? '/ai-subscription-cost-calculator';
   const costIntentIsTargeted = costIntentPath !== '/ai-subscription-cost-calculator';
 
   return (

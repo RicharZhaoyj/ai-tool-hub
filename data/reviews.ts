@@ -2129,13 +2129,13 @@ export const reviews: Review[] = [
     slug: 'deepseek-vs-qwen-vs-kimi-2026',
     title: 'DeepSeek V4 vs 通义千问 Qwen 3.7-Max vs Kimi K2.6：2026国产开源AI大模型终极对决',
     subtitle: '三大国产旗舰大模型全面横评，从编程、推理、中文能力到性价比，谁才是中国AI的扛旗者？',
-    description: '2026年国产AI大模型赛道迎来史诗级对决：DeepSeek V4-Pro API永久降价75%创全球最低价、通义千问Qwen 3.7-Max以Code Arena 1541分排名国产第一全球第二、Kimi K2.6以1.1T参数成为开源旗舰。本评测从编程能力、中文理解、API性价比、Agent生态四个维度，实测三大模型实力差异与适用场景。',
+    description: 'DeepSeek V4、通义千问 Qwen 3.7-Max 与 Kimi K2.6 的国产大模型横评，比较编程、中文理解、API成本与 Agent 生态。模型版本、能力和价格会持续变化，本文将官方价格页作为核验入口，帮助你按实际场景选型。',
     tools: ['deepseek', 'qwen-3-7-max', 'kimi-k26'],
     category: 'text-generation',
     tags: ['国产AI', 'DeepSeek V4', 'Qwen 3.7-Max', 'Kimi K2.6', '开源大模型', '编程评测', '中文AI', 'API性价比', '大模型对比', '2026评测'],
     author: 'AI Tool Hub 编辑部',
     publishedAt: '2026-06-02',
-    updatedAt: '2026-08-23',
+    updatedAt: '2026-09-07',
     readingTime: 10,
     featured: true,
     content: [
@@ -2151,7 +2151,7 @@ export const reviews: Review[] = [
       {
         type: 'callout',
         calloutType: 'info',
-        content: '评测时间：2026年6月初。本文基于各平台最新公开信息、Artificial Analysis评测数据、Code Arena排行榜、SWE-Bench Pro基准测试以及我们的主观使用体验。所有API定价截至撰稿时。',
+        content: '评测基准：2026年6月初。页面于 2026-09-07 复核 DeepSeek 官方模型与价格入口；Qwen、Kimi 的价格和能力仍应以各自官方页面为准。本文的横评结果不是实时榜单，也不构成采购报价。',
       },
       {
         type: 'heading',
@@ -2168,9 +2168,9 @@ export const reviews: Review[] = [
           { tool: '上下文窗口', values: ['1M token', '百万级(1M+)', '262K token'] },
           { tool: '许可证', values: ['MIT 开源', 'Apache 2.0 开源', 'Apache 2.0 开源'] },
           { tool: '编程评测(SWE-Bench Pro)', values: ['超越GPT-5.4', 'Code Arena 1541分 国产第一', '58.6% 超越GPT-5.4'] },
-          { tool: 'API价格(每百万token)', values: ['输入 ¥3 / 输出 ¥6', '输入 ¥12 / 输出 ¥36', '$0.44 / $2.00 (OpenRouter)'] },
-          { tool: '最大亮点', values: ['全球最低价+最大参数', 'Code Arena国产第一+35h Agent', 'SWE-Bench第一+300并行Agent'] },
-          { tool: '最大短板', values: ['暂无原生多模态(6月V4.1)', 'API价格相对更高', '上下文窗口262K偏短'] },
+          { tool: 'API价格(每百万token)', values: ['以官方价格页为准（美元计价，含峰/非峰时段）', '以阿里云百炼官方价格页为准', '以 Moonshot/OpenRouter 官方价格页为准'] },
+          { tool: '最大亮点', values: ['1M上下文+官方 API 与 Agent 工具接入', 'Code Arena国产第一+全链路Agent', '开放权重与开发者生态'] },
+          { tool: '最大短板', values: ['版本与价格政策变化较快，需复核官方文档', 'API价格相对更高', '上下文窗口与可用能力需按版本核验'] },
         ],
       },
       {
@@ -2185,8 +2185,8 @@ export const reviews: Review[] = [
       {
         type: 'pros-cons',
         toolName: 'DeepSeek V4-Pro 编程',
-        pros: ['全球最低API价格(输出¥6/百万token) — 重度编程用户的成本优势巨大', 'Agentic Coding开源第一，自主编程能力强', '1M超长上下文+1.6T最大参数体量', '内部Harness Agent团队对标Claude Code，6月V4.1首发多模态', 'MIT许可证 — 最自由的商用/二次开发授权'],
-        cons: ['当前版本无原生多模态(6月V4.1才补上)', '首次调用需预热，延迟略高于Qwen Flash', '模型体量最大，本地部署要求最高(2.3TB显存)'],
+        pros: ['官方 API 提供 V4-Pro、V4-Flash 与 Agent 工具接入', 'Agentic Coding 与开放生态是主要优势', '1M超长上下文+1.6T最大参数体量', '版本更新较快，适合持续跟踪官方能力变化', 'MIT许可证 — 适合商用与二次开发核验'],
+        cons: ['版本与多模态能力需以当前官方模型列表核验', '首次调用需预热，延迟略高于Qwen Flash', '模型体量最大，本地部署要求最高(2.3TB显存)'],
       },
       {
         type: 'pros-cons',
@@ -2228,24 +2228,24 @@ export const reviews: Review[] = [
       },
       {
         type: 'text',
-        content: '对于企业和开发者来说，模型能力强是一回事，用得起是另一回事。2026年国产模型的API价格战已经白热化——DeepSeek的永久降价75%直接把价格打到了地板，Qwen定位中高端定价，Kimi走国际路线。\n\n**一个真实的对比场景**：如果你每天调用100万token输出（大约相当于AI帮你生成5-10篇长文章或调试50-100个代码片段），三者的月花费差异有多大？DeepSeek每天¥6 × 30天 = ¥180/月；Qwen每天¥36 × 30天 = ¥1080/月；Kimi通过OpenRouter日均$2.00 × 30天 = $60/月（约¥430）。\n\nDeepSeek的价格是对手1/6到1/20——这是一个几乎不可能被忽视的差距。但价格不是唯一因素：Qwen的Code Arena排名和全链路Agent能力、Kimi的超低海外部署成本和Agent Swarm模式，分别构成了自己的定价溢价理由。',
+        content: '对于企业和开发者来说，模型能力强是一回事，用得起是另一回事。API价格会随版本、时段、缓存命中和地区而变化，不能继续把旧文章中的单一数字当成当前预算。DeepSeek 官方 V4 价格页目前按美元/百万 token 展示，并区分峰时与非峰时；Qwen 与 Kimi 也应以各自官方价格页为准。\n\n**一个可复用的对比方法**：先记录每天输入、缓存命中和输出 token，再分别套入三个官方价格页，最后把延迟、上下文、工具调用和人工复核成本一起纳入。这样得到的月成本，才比“每百万 token 谁更便宜”更接近真实采购决策。',
       },
       {
         type: 'pricing-table',
         headers: ['方案', 'DeepSeek V4', 'Qwen 3.7-Max', 'Kimi K2.6'],
         rows: [
           { tool: '免费额度', values: ['DeepSeek Chat 完全免费', '千问App 免费(基础功能)', 'Kimi App 免费(基础功能)'] },
-          { tool: 'API 价格(输入)', values: ['缓存 ¥0.025 / 未命中 ¥3 / 百万token', '输入 ¥12/百万token', '$0.44/百万token (OpenRouter)'] },
-          { tool: 'API 价格(输出)', values: ['输出 ¥6/百万token', '输出 ¥36/百万token', '$2.00/百万token (OpenRouter)'] },
+          { tool: 'API 价格(输入)', values: ['官方价格页：$0.003625/缓存命中、$0.435/未命中（每百万token）', '以阿里云百炼官方价格页为准', '以 Moonshot/OpenRouter 官方价格页为准'] },
+          { tool: 'API 价格(输出)', values: ['官方价格页：$0.87/百万token（峰时价，非峰时另计）', '以阿里云百炼官方价格页为准', '以 Moonshot/OpenRouter 官方价格页为准'] },
           { tool: '本地部署要求', values: ['~2.3TB显存(全量)', '未公开(预估类似级别)', '~1.1TB显存(全量)'] },
-          { tool: '每日百万token月花费', values: ['~¥180/月', '~¥1080/月', '~$60/月(约¥430)'] },
-          { tool: '性价比评级', values: ['★★★★★ 全球最低价', '★★★☆☆ 偏高', '★★★★☆ 海外部署最优'] },
+          { tool: '每日百万token月花费', values: ['按官方峰/非峰时段与实际输入输出比例计算', '按官方价格页与实际 token 量计算', '按官方价格页与实际 token 量计算'] },
+          { tool: '性价比评级', values: ['★★★★★ 价格透明，需按时段核算', '★★★☆☆ 需结合编程质量核算', '★★★★☆ 需结合地区与渠道核算'] },
         ],
       },
       {
         type: 'callout',
         calloutType: 'tip',
-        content: '💡 API选型建议：如果你是高频率调用者（日均百万token以上），DeepSeek V4是目前成本最优解，年省API费用可达数万甚至数十万元。如果你是追求编程性能的开发者，Qwen 3.7-Max的Code Arena成绩值得溢价——但建议先用百炼平台的免费额度测试效果。如果你面向海外用户或团队有国际部署需求，Kimi K2.6通过OpenRouter接入的成本和便利性是最好的。',
+        content: '💡 API选型建议：先用官方价格页和真实 token 日志做一周测算，不要沿用旧文章中的固定价格。如果你重视编程性能，先用百炼平台的可用额度测试 Qwen；如果你面向海外用户，再比较 Kimi 的渠道、地区和部署成本。DeepSeek 的当前模型与价格入口见官方文档：https://api-docs.deepseek.com/quick_start/pricing。',
       },
       {
         type: 'heading',
@@ -2647,6 +2647,70 @@ export const reviews: Review[] = [
   },
 
 ];
+
+// Keep the highest-traffic comparison page honest when model versions and prices move.
+// The source entry is intentionally preserved for historical context; this runtime
+// normalization makes the published page use the current official-verification rule.
+const currentR15 = reviews.find(review => review.slug === 'deepseek-vs-qwen-vs-kimi-2026');
+if (currentR15) {
+  currentR15.description = 'DeepSeek V4、通义千问 Qwen 3.7-Max 与 Kimi K2.6 的国产大模型横评，比较编程、中文理解、API成本与 Agent 生态。模型版本、能力和价格会持续变化，本文将官方价格页作为核验入口，帮助你按实际场景选型。';
+  currentR15.updatedAt = '2026-09-07';
+  currentR15.content = currentR15.content.map(section => {
+    if (section.type === 'callout' && section.content?.startsWith('评测时间：')) {
+      return { ...section, content: '评测基准：2026年6月初。页面于 2026-09-07 复核 DeepSeek 官方模型与价格入口；Qwen、Kimi 的价格和能力仍应以各自官方页面为准。本文的横评结果不是实时榜单，也不构成采购报价。' };
+    }
+    if (section.type === 'comparison-table' && section.rows) {
+      return {
+        ...section,
+        rows: section.rows.map(row => {
+          if (row.tool === 'API价格(每百万token)') return { ...row, values: ['以官方价格页为准（美元计价，含峰/非峰时段）', '以阿里云百炼官方价格页为准', '以 Moonshot/OpenRouter 官方价格页为准'] };
+          if (row.tool === '最大亮点') return { ...row, values: ['1M上下文+官方 API 与 Agent 工具接入', 'Code Arena国产第一+全链路Agent', '开放权重与开发者生态'] };
+          if (row.tool === '最大短板') return { ...row, values: ['版本与价格政策变化较快，需复核官方文档', 'API价格相对更高', '上下文窗口与可用能力需按版本核验'] };
+          if (row.tool === 'API 价格(输入)') return { ...row, values: ['官方价格页：$0.003625/缓存命中、$0.435/未命中（每百万token）', '以阿里云百炼官方价格页为准', '以 Moonshot/OpenRouter 官方价格页为准'] };
+          if (row.tool === 'API 价格(输出)') return { ...row, values: ['官方价格页：$0.87/百万token（峰时价，非峰时另计）', '以阿里云百炼官方价格页为准', '以 Moonshot/OpenRouter 官方价格页为准'] };
+          if (row.tool === '每日百万token月花费') return { ...row, values: ['按官方峰/非峰时段与实际输入输出比例计算', '按官方价格页与实际 token 量计算', '按官方价格页与实际 token 量计算'] };
+          if (row.tool === '性价比评级') return { ...row, values: ['★★★★★ 价格透明，需按时段核算', '★★★☆☆ 需结合编程质量核算', '★★★★☆ 需结合地区与渠道核算'] };
+          if (row.tool === 'MCP协议支持') return { ...row, values: ['以当前官方 API 与 Agent 文档为准', '以百炼官方文档为准', '以 Moonshot 官方文档为准'] };
+          if (row.tool === '多模态') return { ...row, values: ['以当前官方模型列表为准', '以千问官方模型列表为准', '以 Kimi 官方模型列表为准'] };
+          return row;
+        }),
+      };
+    }
+    if (section.type === 'pros-cons' && section.toolName === 'DeepSeek V4-Pro 编程') {
+      return {
+        ...section,
+        pros: ['官方 API 提供 V4-Pro、V4-Flash 与 Agent 工具接入', 'Agentic Coding 与开放生态是主要优势', '1M超长上下文+1.6T最大参数体量', '版本更新较快，适合持续跟踪官方能力变化', 'MIT许可证 — 适合商用与二次开发核验'],
+        cons: ['版本与多模态能力需以当前官方模型列表核验', '首次调用需预热，延迟略高于Qwen Flash', '模型体量最大，本地部署要求最高(2.3TB显存)'],
+      };
+    }
+    if (section.type === 'verdict' && section.verdicts) {
+      return {
+        ...section,
+        verdicts: section.verdicts.map(verdict => verdict.persona === '高频率API调用/预算敏感'
+          ? { ...verdict, reason: '官方 API 提供 1M 上下文和明确的美元价格入口，适合把真实 token 日志带入预算模型。不要把旧价格或未来版本承诺直接写入采购结论，适合：需要自主核算成本的产品团队和开发者。' }
+          : verdict),
+      };
+    }
+    if (section.type === 'text' && section.content) {
+      let content = section.content;
+      if (content.startsWith('**DeepSeek V4-Pro** =')) {
+        content = '**DeepSeek V4-Pro** = 适合先核验官方 API、上下文和 Agent 工具接入，再用真实 token 日志做成本测算。\n**通义千问 Qwen 3.7-Max** = 适合把编程质量、阿里云生态和实际调用成本一起评估。\n**Kimi K2.6** = 适合重视开放生态、开发者工具和海外渠道的用户。\n\n不要用一张静态排名替代真实任务测试：先选 3–5 个代表性任务，记录质量、延迟、token 和人工复核时间，再决定主力模型。';
+      } else {
+        content = content
+          .replace('6月即将发布的V4.1将首发多模态能力+mcp协议深度支持。', '后续版本与工具协议支持以官方文档为准。')
+          .replace('结合其全球最低的API定价（输出¥6/百万token），这是开发者从闭源模型迁移到国产开源的最佳理由。', '其官方价格、版本和 Agent 能力应按官方文档与真实 token 日志核算。')
+          .replace('DeepSeek的永久降价75%直接把价格打到了地板，Qwen定位中高端定价，Kimi走国际路线。', 'DeepSeek、Qwen 与 Kimi 的价格会随版本、时段和渠道变化，应以各自官方价格页为准。')
+          .replace('**一个真实的对比场景**：如果你每天调用100万token输出（大约相当于AI帮你生成5-10篇长文章或调试50-100个代码片段），三者的月花费差异有多大？DeepSeek每天¥6 × 30天 = ¥180/月；Qwen每天¥36 × 30天 = ¥1080/月；Kimi通过OpenRouter日均$2.00 × 30天 = $60/月（约¥430）。', '**一个可复用的对比场景**：记录每天输入、缓存命中和输出 token，再分别套入三家官方价格页，最后把延迟、上下文、工具调用和人工复核成本一起纳入。')
+          .replace('全球最低的API定价（输出¥6/百万token）', '当前官方价格页与实际 token 日志');
+      }
+      if (content.startsWith('免责声明：本评测基于公开数据')) {
+        content = '免责声明：本评测基于公开数据和主观使用体验，模型能力和定价可能随时变化。DeepSeek 官方模型与价格入口已于 2026-09-07 复核，价格可能受峰/非峰时段、缓存命中和版本调整影响；Qwen 和 Kimi 的价格以各自官方平台为准。本文当前未使用个性化联盟链接；如未来接入，会在按钮与页面披露中明确标注。建议充分利用免费额度和小样本任务测试后再做选择。';
+      }
+      return { ...section, content };
+    }
+    return section;
+  });
+}
 
 // 评测查询函数
 export function getReviewsByCategory(categorySlug: string): Review[] {

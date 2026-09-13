@@ -5,15 +5,15 @@ export const reviews: Review[] = [
   {
     id: 'r1',
     slug: 'chatgpt-vs-claude-vs-gemini-2026',
-    title: 'ChatGPT vs Claude vs Gemini：2026年AI助手终极对决',
-    subtitle: '三大AI巨头全面横评，帮你找到最适合的那一个',
-    description: '2026年最全面的ChatGPT、Claude、Gemini对比评测。从推理能力、编程效率、写作质量到价格性价比，实测数据告诉你该为谁买单。含最新GPT-4o、Claude 4、Gemini 2.5 Pro详细对比。',
+    title: 'ChatGPT vs Claude vs Gemini：2026 哪个更值得订阅？',
+    subtitle: '按写作、编程、长文档与预算选择 AI 助手，模型和价格以官方页面为准',
+    description: 'ChatGPT、Claude、Gemini 场景化对比：从写作、编程、长文档到订阅成本，帮助你按真实需求选型。模型版本、额度和价格会变化，本文把 OpenAI、Anthropic 与 Google 官方页面作为核验入口。',
     tools: ['chatgpt', 'claude', 'gemini'],
     category: 'text-generation',
     tags: ['ChatGPT', 'Claude', 'Gemini', 'AI对比', 'AI助手', '2026评测'],
     author: 'AI Tool Hub 编辑部',
     publishedAt: '2026-05-15',
-    updatedAt: '2026-05-15',
+    updatedAt: '2026-09-13',
     readingTime: 12,
     featured: true,
     content: [
@@ -24,12 +24,12 @@ export const reviews: Review[] = [
       },
       {
         type: 'text',
-        content: '市面上的AI对比文章大多停留在"参数罗列"和"官方宣传"层面。但我们不一样——过去3个月，我们用三个AI助手完成了相同的100+真实任务：写代码、做研究、翻译文档、分析数据、创作内容。这篇文章里的每一个结论，都来自真实的使用体验，而非厂商的PPT。\n\n我们会告诉你：哪个AI写代码最快？哪个最适合读长文档？哪个在中文场景下表现最好？以及最重要的——哪个最值回那$20/月的订阅费。',
+        content: 'AI 助手的模型、额度和套餐变化很快，一张静态排名表很容易过时。因此本文采用“场景 + 成本 + 官方核验”的方式：先看你的主要任务，再比较免费层和付费层，最后打开官方页面确认当前可用模型、地区价格与额度。\n\n你会看到：写作、编程、长文档和团队协作分别适合怎样的选择，以及如何把实际使用频率带入订阅决策。历史测试分数只代表当时的样本，不替代当前版本实测。',
       },
       {
         type: 'callout',
         calloutType: 'info',
-        content: '评测基于各平台2026年5月可用版本：ChatGPT (GPT-4o)、Claude (Claude 4 Sonnet)、Gemini (Gemini 2.5 Pro)。所有测试均在相同网络环境和提示词下进行，力求公平。',
+        content: '信息复核：2026-09-13。ChatGPT、Claude 与 Gemini 的模型、额度和价格会因时间、地区、促销与套餐调整而变化；订阅前请以 OpenAI、Anthropic 和 Google 官方页面为准。本文重点提供场景化决策框架，不把历史版本评分当作当前榜单。',
       },
       {
         type: 'heading',
@@ -41,12 +41,12 @@ export const reviews: Review[] = [
         headers: ['维度', 'ChatGPT', 'Claude', 'Gemini'],
         rows: [
           { tool: '开发方', values: ['OpenAI', 'Anthropic', 'Google DeepMind'] },
-          { tool: '旗舰模型', values: ['GPT-4o', 'Claude 4 Sonnet', 'Gemini 2.5 Pro'] },
-          { tool: '上下文窗口', values: ['128K', '200K', '1M(百万)'] },
-          { tool: '免费额度', values: ['GPT-4o 有限次数', '每日免费额度', '完全免费'] },
-          { tool: 'Pro价格', values: ['$20/月', '$20/月($100/Pro)', '$20/月'] },
+          { tool: '当前模型入口', values: ['以 OpenAI 当前模型列表为准', '以 Anthropic 当前模型列表为准', '以 Google AI 当前模型列表为准'] },
+          { tool: '上下文与输入能力', values: ['以当前官方方案与模型限制为准', '以当前官方方案与模型限制为准', '以当前官方方案与模型限制为准'] },
+          { tool: '免费额度', values: ['功能与额度随方案变化', '免费层额度随地区和负载变化', '免费层额度随地区和方案变化'] },
+          { tool: '入门付费', values: ['Go/Plus：以官方地区价格为准', 'Pro：以官方地区价格为准', 'AI Plus/Pro：以官方地区价格为准'] },
           { tool: '最大优势', values: ['生态丰富/插件多', '长文理解/安全', '搜索集成/超长上下文'] },
-          { tool: '最大短板', values: ['知识截止/偶尔幻觉', '无免费高级功能', '创意写作稍弱'] },
+          { tool: '主要风险', values: ['模型、额度与价格会变化', '模型、额度与价格会变化', '模型、额度与价格会变化'] },
         ],
       },
       {
@@ -56,7 +56,7 @@ export const reviews: Review[] = [
       },
       {
         type: 'text',
-        content: '这是我们测试量最大的环节——50个涵盖逻辑推理、数学计算、常识判断、创意问答的任务。三个AI都展现出了惊人的能力，但差异也很明显。\n\n**ChatGPT GPT-4o** 在大多数标准任务中表现稳健，回答结构清晰，但偶尔会"过度迎合"用户，给你想要听到的答案而不是正确答案。它的多模态能力（图片+文字）是一大亮点。\n\n**Claude 4** 在需要深度思考的场景中脱颖而出。面对复杂的逻辑链问题（如多步骤数学推理），Claude的思维方式更像人类——会展示思考过程，也会承认不确定性。它在中文理解上的细腻程度是三者中最高的。\n\n**Gemini 2.5 Pro** 的杀手锏是100万token的超长上下文窗口。你可以把整本书、整个代码库丢给它，它都能处理。在需要实时信息的任务上，由于集成了Google Search，它的优势无可撼动。',
+        content: '推理能力不能脱离任务判断。日常问答更应关注：是否能稳定完成你的提示词、是否支持所需的文件/图片输入、是否有足够额度，以及答案是否方便核验。\n\n本文的历史样本显示三者各有优势，但这些分数不应被理解为当前版本的固定排名。建议用 3–5 个与你工作最相关的任务做小样本复测，并记录正确率、返工时间和实际额度消耗。',
       },
       {
         type: 'comparison-table',
@@ -77,7 +77,7 @@ export const reviews: Review[] = [
       },
       {
         type: 'text',
-        content: '对于开发者来说，这可能是最重要的环节。我们让三个AI完成了20个真实编程任务：从简单的脚本编写到复杂的多文件重构。\n\n**Claude** 在编程环节给我们最大的惊喜。它生成的代码不仅"能跑"，而且往往是最优雅的解决方案。特别是在处理大型代码库时，Claude对上下文的理解能力让它能够生成高度一致性的代码。很多资深开发者已经转向 Claude Code 作为主力编程工具。\n\n**ChatGPT** 在快速原型开发方面依然很强。得益于庞大的训练数据和丰富的插件生态（Advanced Data Analysis、代码解释器等），它在数据分析和可视化脚本方面有明显优势。\n\n**Gemini** 在这个环节相对落后一些。虽然它能写代码，但在复杂项目的架构设计和错误调试方面不如前两者。不过它在Google Cloud相关的开发场景中有独特的集成优势。',
+        content: '对于开发者来说，关键不是固定排名，而是代码质量、上下文限制、工具接入和返工成本。我们保留历史样本作为阅读参考，但建议用自己的仓库和 3–5 个真实任务复测。\n\nChatGPT 适合快速原型、数据分析和多模态协作；Claude 值得重点测试大型代码库、重构和技术文档；Gemini 则应结合 Google Cloud 或 Workspace 的实际工作流验证。',
       },
       {
         type: 'pros-cons',
@@ -88,13 +88,13 @@ export const reviews: Review[] = [
       {
         type: 'pros-cons',
         toolName: 'Claude 编程',
-        pros: ['代码质量最高，风格一致性好', '200K上下文适合大型项目', '擅长重构和架构设计', '会主动指出潜在问题'],
+        pros: ['代码质量和风格一致性值得重点测试', '适合大型项目、重构和技术文档场景', '会主动指出潜在问题', '应结合当前方案限制核验上下文能力'],
         cons: ['没有内置代码执行环境', '学习曲线略高于ChatGPT', '某些框架的最新文档可能不够新'],
       },
       {
         type: 'pros-cons',
         toolName: 'Gemini 编程',
-        pros: ['100万token上下文窗口无敌', 'Google Cloud集成便利', '完全免费的Pro版本', '擅长处理超长文件'],
+        pros: ['长文档能力适合纳入实测', 'Google Cloud/Workspace 集成便利', '提供免费层，额度与功能以官方方案为准', '适合处理超长文件的候选场景'],
         cons: ['复杂编程任务准确率偏低', '代码调试能力较弱', '生态系统不够成熟'],
       },
       {
@@ -104,7 +104,7 @@ export const reviews: Review[] = [
       },
       {
         type: 'text',
-        content: '这是Claude的主场，也是我们认为差异化最大的环节。\n\n我们给每个AI上传了同一份50页的研究报告PDF，然后提出10个需要跨页面信息整合的问题。结果毫无悬念：\n\n- **Claude**: 10/10 全部正确，还能发现文档中的隐含关联\n- **ChatGPT**: 7/10 基本正确，但有3个遗漏了关键细节\n- **Gemini**: 8/10 表现不错，得益于超大上下文窗口\n\n**实际使用建议**：如果你经常需要处理学术论文、法律合同、技术文档，Claude的200K上下文窗口加上出色的总结能力，是目前最佳选择。Gemini的100万token窗口在极端场景下有用（比如整本书的分析），但日常使用Claude更均衡。',
+        content: '长文档场景不要只看上下文窗口数字，还要检查实际可上传格式、引用准确性、输出速度和额度。法律合同、研究报告和代码库应采用“分段提问 + 原文定位 + 人工复核”的流程，避免把模型的摘要直接当成事实。\n\n如果你经常处理 Google Workspace 文件，优先核验 Gemini 当前计划与集成范围；如果更看重长文档分析的表达和结构，可把 Claude 纳入小样本测试；如果需要通用多模态工作流，则把 ChatGPT 作为对照。',
       },
       {
         type: 'heading',
@@ -129,12 +129,12 @@ export const reviews: Review[] = [
         type: 'pricing-table',
         headers: ['方案', 'ChatGPT', 'Claude', 'Gemini'],
         rows: [
-          { tool: '免费版', values: ['GPT-4o有限(约3条/小时)', '每日免费额度(较多)', '完全免费,速率限制'] },
-          { tool: '基础付费', values: ['$20/月 Plus', '$20/月 Pro', '$20/月 Advanced'] },
-          { tool: '高端付费', values: ['$200/月 Team', '$100/月($200/Team)', '$20/月(同Advanced)'] },
-          { tool: 'API价格(输入)', values: ['$2.5/M tokens', '$3/M tokens', '$1.25/M tokens'] },
-          { tool: 'API价格(输出)', values: ['$10/M tokens', '$15/M / $5/M tokens'] },
-          { tool: '性价比评级', values: ['★★★☆☆', '★★★★☆', '★★★★★'] },
+          { tool: '免费版', values: ['Free：功能与额度以官方页面为准', 'Free：功能与额度以官方页面为准', '免费层：功能、额度和地区以官方页面为准'] },
+          { tool: '基础付费', values: ['Go/Plus：美国标价以官方页面为准，地区可能不同', 'Pro：美国标价以官方页面为准，地区可能不同', 'AI Plus/Pro：美国标价以官方页面为准，地区可能不同'] },
+          { tool: '高端付费', values: ['Pro：以官方页面和地区价格为准', 'Max 5x/20x：以官方页面和地区价格为准', 'AI Ultra：以官方页面、地区和促销为准'] },
+          { tool: 'API价格(输入)', values: ['以 OpenAI API 官方价格页为准', '以 Anthropic API 官方价格页为准', '以 Google Gemini API 官方价格页为准'] },
+          { tool: 'API价格(输出)', values: ['以 OpenAI API 官方价格页为准', '以 Anthropic API 官方价格页为准', '以 Google Gemini API 官方价格页为准'] },
+          { tool: '性价比评级', values: ['按场景、额度和实际使用量核算', '按场景、额度和实际使用量核算', '按场景、额度和实际使用量核算'] },
         ],
       },
       {
@@ -149,13 +149,13 @@ export const reviews: Review[] = [
           { persona: '内容创作者 / 写作者', recommendation: '首选 ChatGPT', reason: '创意写作能力最佳，中文表达自然流畅，插件生态丰富。' },
           { persona: '研究人员 / 学生', recommendation: '首选 Claude 或 Gemini', reason: 'Claude适合学术论文和法律文档，Gemini的超长上下文适合整书分析。两者都有Google Search集成的替代方案。' },
           { persona: '企业用户 / 团队', recommendation: '看生态需求选择', reason: '如果团队已用Microsoft生态→ChatGPT；重视安全合规→Claude；已用Google Workspace→Gemini。' },
-          { persona: '预算敏感的用户', recommendation: 'Gemini 免费版 + Claude 免费额度', reason: 'Gemini Advanced完全免费，Claude每天有不错的免费额度。两个配合可以覆盖大部分场景零成本。' },
+          { persona: '预算敏感的用户', recommendation: '先用免费层，再按实际用量升级', reason: '三家免费层、额度和地区政策不同；先用同一组任务记录频率与返工成本，再决定是否购买 Go/Plus、Pro 或 Google AI 方案，不把促销价当作长期价格。' },
         ],
       },
       {
         type: 'callout',
         calloutType: 'warning',
-        content: '免责声明：本评测基于我们的主观使用体验，结果可能因使用场景而异。本文当前未使用个性化联盟链接；如未来接入，会在按钮与页面披露中明确标注。建议充分利用各平台的免费试用再做决定。',
+        content: '免责声明：本评测包含历史样本和主观使用体验，结果可能因任务、版本、地区和账号额度而异。OpenAI、Anthropic 与 Google 的模型、功能和价格可能随时调整，请通过页面中的官方入口复核。本文当前未使用个性化联盟链接；如未来接入，会在按钮与页面披露中明确标注。',
       },
       {
         type: 'heading',
@@ -164,7 +164,7 @@ export const reviews: Review[] = [
       },
       {
         type: 'text',
-        content: '**ChatGPT** = 最全面的万能选手，适合大多数人的入门选择  \n**Claude** = 专业用户的秘密武器，强于深度工作和代码  \n**Gemini** = 性价比之王，Google生态用户的最佳拍档  \n\n没有完美的AI，只有最适合你需求的AI。建议至少试用两个，找到和你工作方式最合拍的那个。',
+        content: '**ChatGPT** = 通用多模态与生态工作流的对照选项  \n**Claude** = 深度写作、长文档和代码任务的重点候选  \n**Gemini** = Google 生态与 Workspace 场景的重点候选  \n\n没有固定的“最佳 AI”。先用同一组任务和预算记录真实结果，再根据官方当前方案做选择；当模型和价格变化时，优先复核官方入口而不是沿用旧榜单。',
       },
     ],
   },

@@ -14,8 +14,8 @@ interface ReviewPageProps {
 
 const seoOverrides: Record<string, { title: string; description: string }> = {
   'deepseek-vs-qwen-vs-kimi-2026': {
-    title: 'DeepSeek vs Qwen vs Kimi：2026 哪个更值得选？',
-    description: 'DeepSeek、通义千问 Qwen 与 Kimi 三款国产大模型对比：编程、中文理解、推理、API 价格与 Agent 生态。按开发者、团队和企业场景给出选型结论。',
+    title: 'DeepSeek V4 vs Qwen 3.7-Max vs Kimi K2.6：2026国产模型对比',
+    description: '对比 DeepSeek V4、通义千问 Qwen 3.7-Max 与 Kimi K2.6 的编程、推理、中文能力、API成本和适用场景，帮助个人开发者与团队按需求选型；版本与价格请以官方信息为准。',
   },
   'suno-vs-udio-ai-music-battle-2026': {
     title: 'Suno vs Udio：2026 AI 音乐生成哪个好？',

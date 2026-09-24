@@ -2648,68 +2648,93 @@ export const reviews: Review[] = [
 
 ];
 
-// Keep the highest-traffic comparison page honest when model versions and prices move.
-// The source entry is intentionally preserved for historical context; this runtime
-// normalization makes the published page use the current official-verification rule.
+// Keep the highest-traffic model comparison page current using official release notes.
 const currentR15 = reviews.find(review => review.slug === 'deepseek-vs-qwen-vs-kimi-2026');
 if (currentR15) {
-  currentR15.description = 'DeepSeek V4、通义千问 Qwen 3.7-Max 与 Kimi K2.6 的国产大模型横评，比较编程、中文理解、API成本与 Agent 生态。模型版本、能力和价格会持续变化，本文将官方价格页作为核验入口，帮助你按实际场景选型。';
-  currentR15.updatedAt = '2026-09-07';
-  currentR15.content = currentR15.content.map(section => {
-    if (section.type === 'callout' && section.content?.startsWith('评测时间：')) {
-      return { ...section, content: '评测基准：2026年6月初。页面于 2026-09-07 复核 DeepSeek 官方模型与价格入口；Qwen、Kimi 的价格和能力仍应以各自官方页面为准。本文的横评结果不是实时榜单，也不构成采购报价。' };
-    }
-    if (section.type === 'comparison-table' && section.rows) {
-      return {
-        ...section,
-        rows: section.rows.map(row => {
-          if (row.tool === 'API价格(每百万token)') return { ...row, values: ['以官方价格页为准（美元计价，含峰/非峰时段）', '以阿里云百炼官方价格页为准', '以 Moonshot/OpenRouter 官方价格页为准'] };
-          if (row.tool === '最大亮点') return { ...row, values: ['1M上下文+官方 API 与 Agent 工具接入', 'Code Arena国产第一+全链路Agent', '开放权重与开发者生态'] };
-          if (row.tool === '最大短板') return { ...row, values: ['版本与价格政策变化较快，需复核官方文档', 'API价格相对更高', '上下文窗口与可用能力需按版本核验'] };
-          if (row.tool === 'API 价格(输入)') return { ...row, values: ['官方价格页：$0.003625/缓存命中、$0.435/未命中（每百万token）', '以阿里云百炼官方价格页为准', '以 Moonshot/OpenRouter 官方价格页为准'] };
-          if (row.tool === 'API 价格(输出)') return { ...row, values: ['官方价格页：$0.87/百万token（峰时价，非峰时另计）', '以阿里云百炼官方价格页为准', '以 Moonshot/OpenRouter 官方价格页为准'] };
-          if (row.tool === '每日百万token月花费') return { ...row, values: ['按官方峰/非峰时段与实际输入输出比例计算', '按官方价格页与实际 token 量计算', '按官方价格页与实际 token 量计算'] };
-          if (row.tool === '性价比评级') return { ...row, values: ['★★★★★ 价格透明，需按时段核算', '★★★☆☆ 需结合编程质量核算', '★★★★☆ 需结合地区与渠道核算'] };
-          if (row.tool === 'MCP协议支持') return { ...row, values: ['以当前官方 API 与 Agent 文档为准', '以百炼官方文档为准', '以 Moonshot 官方文档为准'] };
-          if (row.tool === '多模态') return { ...row, values: ['以当前官方模型列表为准', '以千问官方模型列表为准', '以 Kimi 官方模型列表为准'] };
-          return row;
-        }),
-      };
-    }
-    if (section.type === 'pros-cons' && section.toolName === 'DeepSeek V4-Pro 编程') {
-      return {
-        ...section,
-        pros: ['官方 API 提供 V4-Pro、V4-Flash 与 Agent 工具接入', 'Agentic Coding 与开放生态是主要优势', '1M超长上下文+1.6T最大参数体量', '版本更新较快，适合持续跟踪官方能力变化', 'MIT许可证 — 适合商用与二次开发核验'],
-        cons: ['版本与多模态能力需以当前官方模型列表核验', '首次调用需预热，延迟略高于Qwen Flash', '模型体量最大，本地部署要求最高(2.3TB显存)'],
-      };
-    }
-    if (section.type === 'verdict' && section.verdicts) {
-      return {
-        ...section,
-        verdicts: section.verdicts.map(verdict => verdict.persona === '高频率API调用/预算敏感'
-          ? { ...verdict, reason: '官方 API 提供 1M 上下文和明确的美元价格入口，适合把真实 token 日志带入预算模型。不要把旧价格或未来版本承诺直接写入采购结论，适合：需要自主核算成本的产品团队和开发者。' }
-          : verdict),
-      };
-    }
-    if (section.type === 'text' && section.content) {
-      let content = section.content;
-      if (content.startsWith('**DeepSeek V4-Pro** =')) {
-        content = '**DeepSeek V4-Pro** = 适合先核验官方 API、上下文和 Agent 工具接入，再用真实 token 日志做成本测算。\n**通义千问 Qwen 3.7-Max** = 适合把编程质量、阿里云生态和实际调用成本一起评估。\n**Kimi K2.6** = 适合重视开放生态、开发者工具和海外渠道的用户。\n\n不要用一张静态排名替代真实任务测试：先选 3–5 个代表性任务，记录质量、延迟、token 和人工复核时间，再决定主力模型。';
-      } else {
-        content = content
-          .replace('6月即将发布的V4.1将首发多模态能力+mcp协议深度支持。', '后续版本与工具协议支持以官方文档为准。')
-          .replace('结合其全球最低的API定价（输出¥6/百万token），这是开发者从闭源模型迁移到国产开源的最佳理由。', '其官方价格、版本和 Agent 能力应按官方文档与真实 token 日志核算。')
-          .replace('DeepSeek的永久降价75%直接把价格打到了地板，Qwen定位中高端定价，Kimi走国际路线。', 'DeepSeek、Qwen 与 Kimi 的价格会随版本、时段和渠道变化，应以各自官方价格页为准。')
-          .replace('**一个真实的对比场景**：如果你每天调用100万token输出（大约相当于AI帮你生成5-10篇长文章或调试50-100个代码片段），三者的月花费差异有多大？DeepSeek每天¥6 × 30天 = ¥180/月；Qwen每天¥36 × 30天 = ¥1080/月；Kimi通过OpenRouter日均$2.00 × 30天 = $60/月（约¥430）。', '**一个可复用的对比场景**：记录每天输入、缓存命中和输出 token，再分别套入三家官方价格页，最后把延迟、上下文、工具调用和人工复核成本一起纳入。')
-          .replace('全球最低的API定价（输出¥6/百万token）', '当前官方价格页与实际 token 日志');
-      }
-      if (content.startsWith('免责声明：本评测基于公开数据')) {
-        content = '免责声明：本评测基于公开数据和主观使用体验，模型能力和定价可能随时变化。DeepSeek 官方模型与价格入口已于 2026-09-07 复核，价格可能受峰/非峰时段、缓存命中和版本调整影响；Qwen 和 Kimi 的价格以各自官方平台为准。本文当前未使用个性化联盟链接；如未来接入，会在按钮与页面披露中明确标注。建议充分利用免费额度和小样本任务测试后再做选择。';
-      }
-      return { ...section, content };
-    }
-    return section;
-  });
+  currentR15.title = 'DeepSeek V4.1-Flash、Qwen 3.8-Max、Kimi K3：版本与选型指南';
+  currentR15.subtitle = '截至 2026-09-24 核对官方更新：分清版本事实与性能结论，并用同一组任务测出适合自己的模型。';
+  currentR15.description = '整理 DeepSeek V4.1-Flash、Qwen 3.8-Max 与 Kimi K3 的官方版本动态，说明各自信息适用范围，并提供可复现的模型对比、延迟与成本核算方法。';
+  currentR15.tools = [];
+  currentR15.tags = ['国产大模型', 'DeepSeek V4.1-Flash', 'Qwen 3.8-Max', 'Kimi K3', '模型对比', '模型选型', 'API成本'];
+  currentR15.updatedAt = '2026-09-24';
+  currentR15.readingTime = 5;
+  currentR15.recommendationReason = '目前能确认的是官方版本与产品渠道发生了变化，不是三款模型在同一测试集上的胜负。若要选主力模型，请先确认你实际使用的 App、API 或编码工具能否调用对应版本，再用自己的任务做同条件测试。';
+  currentR15.content = [
+    {
+      type: 'callout',
+      calloutType: 'info',
+      content: '核对日期：2026-09-24。本文汇总官方更新记录，不是独立跑分榜、价格报价或投资建议。三个名称涉及不同产品渠道，不能仅凭版本号直接横向排名。',
+    },
+    {
+      type: 'heading',
+      level: 1,
+      title: '先给结论：版本更新不等于性能排名',
+    },
+    {
+      type: 'text',
+      content: '截至本次核对，DeepSeek 官方更新日志记录了 V4.1-Flash 的发布及 API 模型路由调整；Qwen Code 的官方周更说明了 Qwen 3.8-Max 在其 Token Plan/编码产品中的稳定版状态；Moonshot 官方资料列出 Kimi K3 及其产品/API 可用渠道。它们能回答“官方最近公布了什么”，但不能单独回答“谁写代码最好”或“谁最便宜”。',
+    },
+    {
+      type: 'comparison-table',
+      headers: ['产品 / 版本', '官方资料能确认的事项', '使用时需要留意'],
+      rows: [
+        { tool: 'DeepSeek V4.1-Flash', values: ['更新日志记载 2026-09-10 发布；并记载 09-14 起 deepseek-v4-pro 的 API 路由调整', '这是 API 路由信息；调用前核对当前模型 ID、兼容说明和价格页'] },
+        { tool: 'Qwen 3.8-Max', values: ['Qwen Code 2026-08-27 周更称其稳定版已开放选择', '该条来源属于 Qwen Code / Token Plan 产品说明，不代表所有 API 或 App 渠道同步可用'] },
+        { tool: 'Kimi K3', values: ['Moonshot 官方帮助资料列出 2026-07-16 发布及 Kimi 产品、Kimi Code 和 API 等渠道', '具体功能、配额、地区及 API 模型名按当前官方产品页确认'] },
+      ],
+    },
+    {
+      type: 'heading',
+      level: 1,
+      title: '官方更新没有证明什么',
+    },
+    {
+      type: 'text',
+      content: '版本公告不等于第三方基准测试，也不能证明每个用户都已获得相同能力。本文没有在同一硬件、同一提示词和同一评分标准下重跑三款模型，因此不再沿用旧稿中无法复现的跑分、星级、参数规模、延迟结论或“第一”排名。价格、上下文长度、开放权重/许可证和可用性也会因模型变体、平台、地区及日期不同而变化；采购或部署前请打开官方页面逐项核验。',
+    },
+    {
+      type: 'heading',
+      level: 1,
+      title: '5 步做出可复现的同条件对比',
+    },
+    {
+      type: 'text',
+      content: '1. **先固定入口**：记录你实际要用的是网页/App、API、CLI 还是云平台，并记下模型 ID、日期、地区和版本。不同入口不要混成一个“模型”。\n\n2. **准备代表性任务**：至少挑 3–5 个真实问题，例如中文资料归纳、代码修复、结构化抽取和多轮工具调用；输入内容、约束和输出格式保持一致。\n\n3. **盲评结果质量**：隐藏模型名称，用正确性、完整性、格式遵循和人工返工时间打分；事实任务保留可核查的标准答案。\n\n4. **记录性能与成本**：多次运行，记录首 token/总耗时、失败或重试、输入/缓存/输出 token；价格使用测试当天对应官方渠道的计费规则计算。\n\n5. **检查上线条件**：再确认数据保留与训练政策、地区、速率限制、上下文和工具调用要求、许可证及故障回退方案。最终选择以你的任务数据为准，而非文章里的绝对结论。',
+    },
+    {
+      type: 'comparison-table',
+      headers: ['评估维度', '建议记录', '避免的误区'],
+      rows: [
+        { tool: '质量', values: ['正确率、任务完成率、人工返工分钟数', '只凭一次演示或主观印象下结论'] },
+        { tool: '速度与稳定性', values: ['多轮耗时、失败率、重试次数', '把不同地区、时段和入口的延迟直接比较'] },
+        { tool: '总成本', values: ['实际输入/缓存/输出 token、订阅费、人工复核', '只比较单价或引用过期价格截图'] },
+        { tool: '部署适配', values: ['模型 ID、SDK兼容、数据/地区/许可约束', '把某一平台的功能当作模型在所有渠道都有'] },
+      ],
+    },
+    {
+      type: 'heading',
+      level: 1,
+      title: '按场景做初筛，而不是给绝对冠军',
+    },
+    {
+      type: 'verdict',
+      verdicts: [
+        { persona: '准备接入 API 的团队', recommendation: '先核对模型 ID 与服务条款', reason: '确认目标模型在你的地区、账号和 SDK 中可调用，再用真实 token 量与官方计费页核算月成本。' },
+        { persona: 'AI 编程用户', recommendation: '在真实仓库中跑同一组任务', reason: '观察补丁是否正确、测试能否通过、需要几轮修复，以及人工审查耗时；产品集成体验也要计入。' },
+        { persona: '个人与内容工作流', recommendation: '用自己的中文任务做盲测', reason: '将事实准确性、文风稳定、长文处理和订阅/配额限制一起评估，不把不同渠道的功能混为一谈。' },
+      ],
+    },
+    {
+      type: 'callout',
+      calloutType: 'tip',
+      content: '成本速算：月成本 = 输入 token 成本 + 缓存 token 成本 + 输出 token 成本 + 订阅/平台费用 + 人工复核成本。每个价格都记录来源和核对日期；价格或模型 ID 更新后重新计算。',
+    },
+    {
+      type: 'callout',
+      calloutType: 'warning',
+      content: '本文只做官方资料摘要，不构成三模型实测结论。官方发布信息可确认版本/渠道变化，具体能力、价格、地区可用性及条款请以各官方页面当前内容为准。',
+    },
+  ];
 }
 
 // 评测查询函数

@@ -14,8 +14,8 @@ interface ReviewPageProps {
 
 const seoOverrides: Record<string, { title: string; description: string }> = {
   'deepseek-vs-qwen-vs-kimi-2026': {
-    title: 'DeepSeek V4 vs Qwen 3.7-Max vs Kimi K2.6：2026国产模型对比',
-    description: '对比 DeepSeek V4、通义千问 Qwen 3.7-Max 与 Kimi K2.6 的编程、推理、中文能力、API成本和适用场景，帮助个人开发者与团队按需求选型；版本与价格请以官方信息为准。',
+    title: 'DeepSeek V4.1-Flash、Qwen 3.8-Max、Kimi K3：版本与选型指南',
+    description: '整理 DeepSeek V4.1-Flash、Qwen 3.8-Max 与 Kimi K3 的官方版本动态，说明各自信息适用范围，并提供可复现的模型对比、延迟与成本核算方法。',
   },
   'suno-vs-udio-ai-music-battle-2026': {
     title: 'Suno vs Udio：2026 AI 音乐生成哪个好？',
@@ -420,6 +420,18 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
 
         {/* Affiliate Disclosure */}
         {hasAffiliateLinks && <AffiliateDisclosure variant="page-top" />}
+
+        {slug === 'deepseek-vs-qwen-vs-kimi-2026' && (
+          <section aria-labelledby="official-model-sources" className="mt-5 mb-8 rounded-2xl border border-cyan-200 bg-cyan-50/70 p-5 dark:border-cyan-900 dark:bg-cyan-950/20">
+            <h2 id="official-model-sources" className="font-semibold text-gray-900 dark:text-white">官方资料核对（2026-09-24）</h2>
+            <ul className="mt-3 space-y-2 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+              <li><a className="font-medium text-cyan-800 underline decoration-cyan-400 underline-offset-4 dark:text-cyan-300" href="https://api-docs.deepseek.com/updates/" target="_blank" rel="noopener noreferrer">DeepSeek API 官方更新日志</a><span>：V4.1-Flash 发布和 API 路由变更记录。</span></li>
+              <li><a className="font-medium text-cyan-800 underline decoration-cyan-400 underline-offset-4 dark:text-cyan-300" href="https://qwenlm.github.io/qwen-code-docs/en/blog/updates/weekly-update-2026-08-27/" target="_blank" rel="noopener noreferrer">Qwen Code 官方周更（2026-08-27）</a><span>：Qwen 3.8-Max 在 Qwen Code / Token Plan 中的稳定版说明。</span></li>
+              <li><a className="font-medium text-cyan-800 underline decoration-cyan-400 underline-offset-4 dark:text-cyan-300" href="https://github.com/MoonshotAI/kimi-help-center/blob/master/en-US/agent/overview.md" target="_blank" rel="noopener noreferrer">Moonshot 官方 Kimi 资料</a><span>：Kimi K3 的发布与产品/API 渠道信息。</span></li>
+            </ul>
+            <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">版本与渠道说明以以上官方页面为依据；本页没有据此推导未经测试的性能排名。</p>
+          </section>
+        )}
 
         {/* Search-intent answer: keep comparison visitors engaged before the monetization path */}
         {(review.recommendationReason || quickVerdicts.length > 0) && (

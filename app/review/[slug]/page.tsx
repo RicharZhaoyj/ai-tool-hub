@@ -423,11 +423,11 @@ export default async function ReviewDetailPage({ params }: ReviewPageProps) {
 
         {slug === 'deepseek-vs-qwen-vs-kimi-2026' && (
           <section aria-labelledby="official-model-sources" className="mt-5 mb-8 rounded-2xl border border-cyan-200 bg-cyan-50/70 p-5 dark:border-cyan-900 dark:bg-cyan-950/20">
-            <h2 id="official-model-sources" className="font-semibold text-gray-900 dark:text-white">官方资料核对（2026-09-24）</h2>
+            <h2 id="official-model-sources" className="font-semibold text-gray-900 dark:text-white">官方资料核对（2026-10-30）</h2>
             <ul className="mt-3 space-y-2 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-              <li><a className="font-medium text-cyan-800 underline decoration-cyan-400 underline-offset-4 dark:text-cyan-300" href="https://api-docs.deepseek.com/updates/" target="_blank" rel="noopener noreferrer">DeepSeek API 官方更新日志</a><span>：V4.1-Flash 发布和 API 路由变更记录。</span></li>
+              <li><a className="font-medium text-cyan-800 underline decoration-cyan-400 underline-offset-4 dark:text-cyan-300" href="https://api-docs.deepseek.com/updates/" target="_blank" rel="noopener noreferrer">DeepSeek API 官方更新日志</a><span>：V4.1-Flash 发布、旧 Flash 模型名兼容路由与 V4-Pro 继续提供 API 服务的说明。</span></li>
               <li><a className="font-medium text-cyan-800 underline decoration-cyan-400 underline-offset-4 dark:text-cyan-300" href="https://qwenlm.github.io/qwen-code-docs/en/blog/updates/weekly-update-2026-08-27/" target="_blank" rel="noopener noreferrer">Qwen Code 官方周更（2026-08-27）</a><span>：Qwen 3.8-Max 在 Qwen Code / Token Plan 中的稳定版说明。</span></li>
-              <li><a className="font-medium text-cyan-800 underline decoration-cyan-400 underline-offset-4 dark:text-cyan-300" href="https://github.com/MoonshotAI/kimi-help-center/blob/master/en-US/agent/overview.md" target="_blank" rel="noopener noreferrer">Moonshot 官方 Kimi 资料</a><span>：Kimi K3 的发布与产品/API 渠道信息。</span></li>
+              <li><a className="font-medium text-cyan-800 underline decoration-cyan-400 underline-offset-4 dark:text-cyan-300" href="https://platform.kimi.ai/docs/guide/kimi-k3-quickstart" target="_blank" rel="noopener noreferrer">Kimi K3 官方 API 文档</a><span>：kimi-k3 调用说明；原帮助资料链接已失效，原文发布日期与跨产品渠道说明待核实。</span></li>
             </ul>
             <p className="mt-3 text-xs text-gray-500 dark:text-gray-400">版本与渠道说明以以上官方页面为依据；本页没有据此推导未经测试的性能排名。</p>
           </section>

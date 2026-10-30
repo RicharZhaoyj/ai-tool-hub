@@ -2652,18 +2652,18 @@ export const reviews: Review[] = [
 const currentR15 = reviews.find(review => review.slug === 'deepseek-vs-qwen-vs-kimi-2026');
 if (currentR15) {
   currentR15.title = 'DeepSeek V4.1-Flash、Qwen 3.8-Max、Kimi K3：版本与选型指南';
-  currentR15.subtitle = '截至 2026-09-24 核对官方更新：分清版本事实与性能结论，并用同一组任务测出适合自己的模型。';
+  currentR15.subtitle = '截至 2026-10-30 核对本文所列版本与官方来源：分清版本事实与性能结论，并用同一组任务测出适合自己的模型。';
   currentR15.description = '整理 DeepSeek V4.1-Flash、Qwen 3.8-Max 与 Kimi K3 的官方版本动态，说明各自信息适用范围，并提供可复现的模型对比、延迟与成本核算方法。';
   currentR15.tools = [];
   currentR15.tags = ['国产大模型', 'DeepSeek V4.1-Flash', 'Qwen 3.8-Max', 'Kimi K3', '模型对比', '模型选型', 'API成本'];
-  currentR15.updatedAt = '2026-09-24';
+  currentR15.updatedAt = '2026-10-30';
   currentR15.readingTime = 5;
   currentR15.recommendationReason = '目前能确认的是官方版本与产品渠道发生了变化，不是三款模型在同一测试集上的胜负。若要选主力模型，请先确认你实际使用的 App、API 或编码工具能否调用对应版本，再用自己的任务做同条件测试。';
   currentR15.content = [
     {
       type: 'callout',
       calloutType: 'info',
-      content: '核对日期：2026-09-24。本文汇总官方更新记录，不是独立跑分榜、价格报价或投资建议。三个名称涉及不同产品渠道，不能仅凭版本号直接横向排名。',
+      content: '核对日期：2026-10-30。本次修正 DeepSeek API 路由说明与 Kimi 官方来源链接；本文所列版本不是各产品的实时最新版本清单，也不是独立跑分榜、价格报价或投资建议。三个名称涉及不同产品渠道，不能仅凭版本号直接横向排名。',
     },
     {
       type: 'heading',
@@ -2672,15 +2672,15 @@ if (currentR15) {
     },
     {
       type: 'text',
-      content: '截至本次核对，DeepSeek 官方更新日志记录了 V4.1-Flash 的发布及 API 模型路由调整；Qwen Code 的官方周更说明了 Qwen 3.8-Max 在其 Token Plan/编码产品中的稳定版状态；Moonshot 官方资料列出 Kimi K3 及其产品/API 可用渠道。它们能回答“官方最近公布了什么”，但不能单独回答“谁写代码最好”或“谁最便宜”。',
+      content: '截至本次核对，DeepSeek 官方更新日志记录了 V4.1-Flash 的发布、旧 Flash 模型名的兼容路由，以及 V4-Pro 在 2026-09-14 后继续提供 API 服务；Qwen Code 的官方周更说明了 Qwen 3.8-Max 在其 Token Plan/编码产品中的稳定版状态；Kimi 官方 API 文档提供 Kimi K3 的调用说明。这些来源能确认本文所列版本的记录或接入方式，但不能单独回答“谁写代码最好”或“谁最便宜”。',
     },
     {
       type: 'comparison-table',
       headers: ['产品 / 版本', '官方资料能确认的事项', '使用时需要留意'],
       rows: [
-        { tool: 'DeepSeek V4.1-Flash', values: ['更新日志记载 2026-09-10 发布；并记载 09-14 起 deepseek-v4-pro 的 API 路由调整', '这是 API 路由信息；调用前核对当前模型 ID、兼容说明和价格页'] },
+        { tool: 'DeepSeek V4.1-Flash', values: ['更新日志记载 2026-09-10 发布；旧 Flash 模型名临时路由至 V4.1-Flash，V4-Pro 在 09-14 后继续提供 API 服务', '路由说明针对旧 Flash 模型名；调用前核对当前模型 ID、兼容说明和价格页'] },
         { tool: 'Qwen 3.8-Max', values: ['Qwen Code 2026-08-27 周更称其稳定版已开放选择', '该条来源属于 Qwen Code / Token Plan 产品说明，不代表所有 API 或 App 渠道同步可用'] },
-        { tool: 'Kimi K3', values: ['Moonshot 官方帮助资料列出 2026-07-16 发布及 Kimi 产品、Kimi Code 和 API 等渠道', '具体功能、配额、地区及 API 模型名按当前官方产品页确认'] },
+        { tool: 'Kimi K3', values: ['Kimi 官方 API 文档提供 kimi-k3 模型的调用示例；原帮助资料链接已失效', '原文的 2026-07-16 发布日期与跨产品渠道说明待核实；具体功能、配额、地区及模型名按当前官方页面确认'] },
       ],
     },
     {

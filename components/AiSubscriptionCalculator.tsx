@@ -169,17 +169,6 @@ export default function AiSubscriptionCalculator() {
     });
   };
 
-  const consultingPlan = summary.totalSeats > summary.selected.length ? 'team' : 'personal';
-  const consultingHref = `/consulting?plan=${consultingPlan}&utm_source=tools&utm_medium=calculator&utm_campaign=service_revenue&utm_content=calculator_generated`;
-
-  const handleConsultingEntry = () => {
-    track('consulting_entry_click', {
-      offer: consultingPlan,
-      selected_plan_count: summary.selected.length,
-      annual_cost_cny: Math.round(summary.annualCny),
-    });
-  };
-
   return (
     <section className="overflow-hidden rounded-3xl border border-violet-200 bg-white shadow-xl shadow-violet-100/60 dark:border-violet-900 dark:bg-gray-900 dark:shadow-none" aria-labelledby="calculator-title">
       <div className="border-b border-violet-100 bg-gradient-to-r from-violet-50 via-white to-cyan-50 p-5 dark:border-violet-900 dark:from-violet-950/30 dark:via-gray-900 dark:to-cyan-950/20 sm:p-7">
@@ -333,14 +322,6 @@ export default function AiSubscriptionCalculator() {
             </div>
           )}
 
-          <a
-            href={consultingHref}
-            onClick={handleConsultingEntry}
-            className="mt-5 flex w-full items-center justify-center rounded-xl border border-cyan-300/40 bg-cyan-300/10 px-4 py-3 text-center font-semibold text-cyan-200 transition hover:bg-cyan-300/20"
-          >
-            获取人工选型与成本优化方案 →
-          </a>
-          <p className="mt-3 text-center text-xs leading-5 text-gray-500">进入站内表单确认需求；提交不会自动扣款，请勿填写密码、密钥或支付信息。</p>
         </aside>
       </div>
     </section>

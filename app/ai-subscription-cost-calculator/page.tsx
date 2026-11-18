@@ -75,38 +75,6 @@ export default function AiSubscriptionCostCalculatorPage() {
 
       <AiSubscriptionCalculator />
 
-      <section className="mt-14" aria-labelledby="service-title">
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="text-sm font-semibold text-violet-700 dark:text-violet-300">从计算到落地</p>
-            <h2 id="service-title" className="mt-1 text-2xl font-bold text-gray-950 dark:text-white">需要人工判断时，可选择首批验证服务</h2>
-          </div>
-          <p className="max-w-xl text-sm leading-6 text-gray-500 dark:text-gray-400">报价覆盖分析与建议，不出售正面评价，不承诺固定节省比例。</p>
-        </div>
-        <div className="mt-6 grid gap-5 md:grid-cols-2">
-          <article className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900">
-            <p className="text-sm font-semibold text-violet-700 dark:text-violet-300">个人 / 创作者</p>
-            <h3 className="mt-2 text-2xl font-bold text-gray-950 dark:text-white">AI工具栈体检 · ¥499 起</h3>
-            <ul className="mt-4 space-y-2 text-sm leading-6 text-gray-600 dark:text-gray-300">
-              <li>• 45 分钟需求与工作流访谈</li>
-              <li>• 当前订阅、功能重叠与年成本清单</li>
-              <li>• 主力工具、替代方案与 30 天验证建议</li>
-            </ul>
-            <Link href="/consulting?plan=personal&utm_source=tools&utm_medium=calculator&utm_campaign=service_revenue&utm_content=calculator_personal_offer" data-growth-event="consulting_entry_click" data-growth-placement="calculator_personal_offer" className="mt-5 inline-flex rounded-xl bg-violet-600 px-5 py-3 font-semibold text-white transition hover:bg-violet-700">咨询个人方案 →</Link>
-          </article>
-          <article className="rounded-2xl border border-cyan-200 bg-gradient-to-br from-cyan-50 to-white p-6 dark:border-cyan-900 dark:from-cyan-950/20 dark:to-gray-900">
-            <p className="text-sm font-semibold text-cyan-700 dark:text-cyan-300">2–20 人小团队</p>
-            <h3 className="mt-2 text-2xl font-bold text-gray-950 dark:text-white">AI选型与成本优化 · ¥1,999 起</h3>
-            <ul className="mt-4 space-y-2 text-sm leading-6 text-gray-600 dark:text-gray-300">
-              <li>• 需求、席位、权限与数据边界梳理</li>
-              <li>• 年度成本模型与 2–3 套工具组合</li>
-              <li>• 实施优先级、试用指标与 7 天答疑</li>
-            </ul>
-            <Link href="/consulting?plan=team&utm_source=tools&utm_medium=calculator&utm_campaign=service_revenue&utm_content=calculator_team_offer" data-growth-event="consulting_entry_click" data-growth-placement="calculator_team_offer" className="mt-5 inline-flex rounded-xl bg-cyan-600 px-5 py-3 font-semibold text-white transition hover:bg-cyan-700">咨询团队方案 →</Link>
-          </article>
-        </div>
-      </section>
-
       <section className="mt-14 grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
         <article className="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900 sm:p-8">
           <h2 className="text-2xl font-bold text-gray-950 dark:text-white">怎么判断一项订阅该不该续费？</h2>
